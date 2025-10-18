@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8jvhnl6b7kme"]
+
+[ext_resource type="Texture2D" uid="uid://chlao64su6uu1" path="res://img/characters/star1.png" id="1_k16j1"]
+[ext_resource type="Script" path="res://scripts/characters/star.gd" id="2_2exfd"]
+
+[node name="star1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, 0)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_k16j1")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_2exfd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-5.96046e-08, 0)
+scale = Vector2(0.08, 0.08)
+polygon = PackedVector2Array(26, -314.7, 26, -312.7, 34, -303.8, 34, -297.8, 32.4, -289, 54.6, -190, 55.4, -190, 67.4, -157, 68.2, -157, 84.2, -127, 85, -127, 108, -95, 108.9, -95, 135.9, -66, 137.7, -66, 177.7, -32, 179.6, -32, 213, -11.1, 213, 6, 210.9, 6, 205.9, 12, 203.2, 12, 191, 15.5, 191, 16.2, 167, 29.3, 167, 30, 135, 56, 135, 56.8, 104, 89.9, 104, 91.7, 64, 146.7, 64, 148.5, 34, 200.5, 34, 202.4, 15, 243.4, 15, 268, 12.8, 268, 5.79999, 275, -5, 275, -5, 272.9, -15, 263.9, -15, 259, -21.7, 218, -22.5, 218, -45.5, 138, -46.3, 138, -61.3, 102, -62.1, 102, -78.1, 76, -78.9, 76, -94.9, 58, -96.6, 58, -121.6, 40, -123.4, 40, -181.4, 17, -192.6, 17, -211, 20.4, -211, 18, -218, 13, -218, 10.4, -220.5, -1, -218.1, -1, -211.1, -12, -207.5, -12, -164, -36.1, -164, -37, -125, -64, -125, -64.9, -104, -82.9, -104, -84.8, -73, -119.7, -73, -121.6, -59, -141.5, -59, -143.5, -37, -185.5, -37, -188.4, -6, -264.6, -6, -268.3, 0, -286.3, 0, -293.3, -3, -297.3, -3, -304.3, -1.39999, -309, 0.299988, -309, 8, -315, 8, -317.3)
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]

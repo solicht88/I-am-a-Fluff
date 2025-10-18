@@ -1,0 +1,94 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cju4d47giq4m6"]
+
+[ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="1_p8n26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1jij"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.87451, 0.701961, 0.0745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xq3i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.87451, 0.701961, 0.0745098, 1)
+draw_center = false
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ouyv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.833454, 0.655868, 0.0676202, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dks6g"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.807843, 0.635294, 0.0627451, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maf8q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.87451, 0.701961, 0.0745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[resource]
+default_font = ExtResource("1_p8n26")
+Button/colors/font_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.635294)
+Button/colors/font_focus_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_hover_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_hover_pressed_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_outline_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_pressed_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_p8n26")
+Button/styles/disabled = SubResource("StyleBoxFlat_y1jij")
+Button/styles/focus = SubResource("StyleBoxFlat_5xq3i")
+Button/styles/hover = SubResource("StyleBoxFlat_6ouyv")
+Button/styles/normal = SubResource("StyleBoxFlat_dks6g")
+Button/styles/pressed = SubResource("StyleBoxFlat_maf8q")
