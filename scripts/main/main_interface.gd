@@ -1,5 +1,8 @@
 extends Control
 
+var menu = preload("res://scenes/main/menu.tscn")
+
+signal menu_open
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,4 +16,8 @@ func _process(_delta):
 
 func _on_upgrade_pressed():
 	get_tree().change_scene_to_file("res://scenes/upgrade/upgrade.tscn")
-	pass # Replace with function body.
+
+
+func _on_menu_pressed():
+	add_child(menu)
+	menu_open.emit()

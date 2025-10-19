@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5kl0q7qgula4"]
 
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_akeyt"]
-[ext_resource type="Script" path="res://scripts/main/save.gd" id="2_7vak5"]
+[ext_resource type="Script" path="res://scripts/main/menu.gd" id="1_utqdv"]
 
 [node name="menu" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_utqdv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1280, 720)
@@ -14,25 +16,39 @@ offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 0.686275)
 
-[node name="exit" type="Button" parent="."]
+[node name="resume" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 490.0
-offset_top = 375.0
+offset_top = 215.0
 offset_right = 790.0
-offset_bottom = 445.0
+offset_bottom = 285.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_akeyt")
-text = "Exit Game"
+text = "Resume"
 
 [node name="save" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 490.0
-offset_top = 275.0
+offset_top = 325.0
 offset_right = 790.0
-offset_bottom = 345.0
+offset_bottom = 395.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_akeyt")
 text = "Save Progress"
-script = ExtResource("2_7vak5")
+
+[node name="exit" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 1
+offset_left = 491.0
+offset_top = 435.0
+offset_right = 791.0
+offset_bottom = 505.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_akeyt")
+text = "Exit Game"
+
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

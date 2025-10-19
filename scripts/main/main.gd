@@ -1,16 +1,19 @@
 extends Node2D
 
+@onready var interface := $interface
 @onready var counter := $interface/counter as Label
 @onready var timer := $Timer as Timer
 # temp testing for manually placed star
 #@onready var star := $star1/Area2D as Node2D
 
+#interface.menu_open.connect(_update_counter)
+
 var star1 = preload("res://scenes/characters/star_1.tscn")
-var menu = preload("res://scenes/main/menu.tscn")
 
 var stars = 0
 var ulcorner = Vector2(400, 50)
 var brcorner = Vector2(1230, 670) 
+var star_coords = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +26,9 @@ func _ready():
 func _process(_delta):
 	pass
 
-func _update_counter():
+# Randomized clickable stars
+func _update_counter(pos):
+	star_coords.remove_at(star_coords.find(pos))
 	stars += 1
 	counter.text = str(stars)
 
@@ -37,6 +42,7 @@ func _spawn_star():
 	var new_star = star1.instantiate()
 	var coords = _get_random_point(ulcorner, brcorner)
 	
+	star_coords.append(coords)
 	add_child(new_star)
 	new_star.set_position(coords)
 	new_star.get_node("Area2D").star_collected.connect(_update_counter)
@@ -44,3 +50,12 @@ func _spawn_star():
 func _on_timer_timeout():
 	_spawn_star()
 	timer.start()
+
+# Menu
+func _menu_opened():
+	pass
+
+func save_progress():
+	Save.save_data.stars = star_coords
+	Save.save_game()
+	print(Save.save_data.stars)

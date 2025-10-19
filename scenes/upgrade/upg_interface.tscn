@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dinpmsn60y4kv"]
+[gd_scene load_steps=9 format=3 uid="uid://dinpmsn60y4kv"]
 
 [ext_resource type="Script" path="res://scripts/upgrade/upg_interface.gd" id="1_edecy"]
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_ttde2"]
 [ext_resource type="Texture2D" uid="uid://srynbfw1fua0" path="res://img/icons/eye.png" id="2_074lk"]
-[ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="2_hc1nt"]
+[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/dark_text.tres" id="4_3u4h4"]
 [ext_resource type="Texture2D" uid="uid://bj6rwfm3cb87e" path="res://img/icons/cloud.png" id="5_2v2mj"]
 [ext_resource type="Texture2D" uid="uid://by210xn245wxk" path="res://img/icons/string.png" id="6_k0ak1"]
 
@@ -13,21 +13,6 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
-
-[sub_resource type="Theme" id="Theme_df3nj"]
-Label/colors/font_color = Color(0, 0.027451, 0.0666667, 1)
-Label/colors/font_outline_color = Color(0, 0.027451, 0.0666667, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 1
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("2_hc1nt")
-Label/styles/normal = SubResource("StyleBoxEmpty_562bb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i304k"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -53,18 +38,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wroqh")
 [node name="gaze" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 115.0
-offset_top = 200.0
+offset_top = 190.0
 offset_right = 1139.0
-offset_bottom = 1224.0
+offset_bottom = 1214.0
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_074lk")
 
 [node name="gaze_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(60, 30)
+layout_mode = 0
 offset_left = 410.0
-offset_top = 219.0
+offset_top = 220.0
 offset_right = 470.0
-offset_bottom = 249.0
+offset_bottom = 250.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_ttde2")
 theme_override_font_sizes/font_size = 16
@@ -74,13 +60,24 @@ text = "lvl up"
 custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 0
 offset_left = 200.0
-offset_top = 202.0
+offset_top = 190.0
 offset_right = 400.0
-offset_bottom = 270.0
-theme = SubResource("Theme_df3nj")
+offset_bottom = 281.0
+theme = ExtResource("4_3u4h4")
 text = "Gaze Proficiency - Increase the rate which stars appear
-(5.0s --> 4.5s)"
+(5.0s --> 4.5s)
+Cost: 6 stars"
 autowrap_mode = 2
+
+[node name="gaze_lvl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 200.0
+offset_right = 427.0
+offset_bottom = 217.0
+theme = ExtResource("4_3u4h4")
+theme_override_font_sizes/font_size = 12
+text = "lvl 1"
 
 [node name="wish" type="TextureRect" parent="."]
 layout_mode = 0
@@ -93,10 +90,11 @@ texture = ExtResource("5_2v2mj")
 
 [node name="wish_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(60, 30)
+layout_mode = 0
 offset_left = 410.0
-offset_top = 343.0
+offset_top = 345.0
 offset_right = 470.0
-offset_bottom = 373.0
+offset_bottom = 375.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_ttde2")
 theme_override_font_sizes/font_size = 16
@@ -107,29 +105,41 @@ text = "lvl up"
 custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 0
 offset_left = 200.0
-offset_top = 326.0
+offset_top = 315.0
 offset_right = 400.0
-offset_bottom = 394.0
-theme = SubResource("Theme_df3nj")
-text = "Ma's Wish - Decrease costs of items in store
-(disabled, TBA)"
+offset_bottom = 406.0
+theme = ExtResource("4_3u4h4")
+text = "Ma's Wish - Decrease cost of certain items in the store
+(disabled, TBA)
+Cost: N/A"
 autowrap_mode = 2
 
-[node name="string" type="TextureRect" parent="."]
+[node name="wish_lvl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 325.0
+offset_right = 427.0
+offset_bottom = 342.0
+theme = ExtResource("4_3u4h4")
+theme_override_font_sizes/font_size = 12
+text = "lvl 1"
+
+[node name="red_string" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 115.0
-offset_top = 445.0
+offset_top = 440.0
 offset_right = 1139.0
-offset_bottom = 1469.0
+offset_bottom = 1464.0
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("6_k0ak1")
 
 [node name="string_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(60, 30)
+layout_mode = 0
 offset_left = 410.0
-offset_top = 467.0
+offset_top = 469.0
 offset_right = 470.0
-offset_bottom = 497.0
+offset_bottom = 499.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_ttde2")
 theme_override_font_sizes/font_size = 16
@@ -139,13 +149,24 @@ text = "lvl up"
 custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 0
 offset_left = 200.0
-offset_top = 450.0
+offset_top = 439.0
 offset_right = 400.0
-offset_bottom = 518.0
-theme = SubResource("Theme_df3nj")
+offset_bottom = 530.0
+theme = ExtResource("4_3u4h4")
 text = "String Skill - Increase the stars earned per star clicked
-(1 --> 2)"
+(1 --> 2)
+Cost: 20 stars"
 autowrap_mode = 2
+
+[node name="string_lvl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 449.0
+offset_right = 427.0
+offset_bottom = 466.0
+theme = ExtResource("4_3u4h4")
+theme_override_font_sizes/font_size = 12
+text = "lvl 1"
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
@@ -163,4 +184,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_i304k")
 theme_override_styles/focus = SubResource("StyleBoxFlat_i304k")
 text = "Return -->"
 
+[connection signal="pressed" from="gaze_btn" to="." method="_on_gaze_btn_pressed"]
+[connection signal="pressed" from="wish_btn" to="." method="_on_wish_btn_pressed"]
+[connection signal="pressed" from="string_btn" to="." method="_on_string_btn_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

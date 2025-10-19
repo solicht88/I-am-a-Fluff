@@ -124,3 +124,4 @@ texture_pressed = ExtResource("8_x2rp1")
 texture_hover = ExtResource("9_no8pp")
 
 [connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,24 @@
+extends Control
+
+signal save_data
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+
+
+func _on_save_pressed():
+	save_data.emit()
+
+
+func _on_resume_pressed():
+	queue_free()
+
+
+func _on_exit_pressed():
+	get_tree().quit()

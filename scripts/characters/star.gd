@@ -1,11 +1,11 @@
 extends Area2D
 
-signal star_collected
+signal star_collected(coords)
 
 func _input_event(_viewport, event, _dx):
 	if event.is_action_pressed("leftclick"):
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-		star_collected.emit()
+		star_collected.emit(get_parent().global_position)
 		get_parent().queue_free()
 
 func _on_mouse_entered():

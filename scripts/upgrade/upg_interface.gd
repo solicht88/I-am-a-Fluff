@@ -12,3 +12,15 @@ func _process(delta):
 
 func _on_exit_pressed():
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+
+func _on_gaze_btn_pressed():
+	pass # Replace with function body.
+
+
+func _on_wish_btn_pressed():
+	pass # Replace with function body.
+
+
+func _on_string_btn_pressed():
+	pass # Replace with function body.
