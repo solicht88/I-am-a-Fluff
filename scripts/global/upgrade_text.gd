@@ -1,13 +1,7 @@
 extends Node
 
-var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s"]
-var gaze_cost = ["6", "12", "25"]
+var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s", "3.8s --> 3.4s", "3.4s --> 3.0s", "3.0s"]
+var gaze_cost = [6, 12, 25, 50, 100, "N/A"]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+var str_upg = ["1 --> 2", "2 --> 3", "3 --> 4", "4 per click"]
+var str_cost = [25, 60, 150, "N/A"]

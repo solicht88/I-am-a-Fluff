@@ -20,4 +20,4 @@ func _on_load_btn_pressed():
 
 
 func _on_quit_btn_pressed():
-	pass # Replace with function body.
+	get_tree().quit()

@@ -3,6 +3,7 @@ extends Button
 # only testing one save file for now
 const save_location = "user://saves/SaveFile.json"
 
+var star1 = preload("res://scenes/characters/star_1.tscn")
 var save_data: Dictionary = {
 	"counter": 0,
 	"stars": [],
@@ -18,3 +19,11 @@ func save_game():
 
 func load_game():
 	pass
+
+# possibly temp? will see how full save/load files go
+func load_stars(coords):
+	for pos in coords:
+		var new_star = star1.instantiate()
+		add_child(new_star)
+		new_star.set_position(pos)
+		#new_star.get_node("Area2D").star_collected.connect(_update_counter)

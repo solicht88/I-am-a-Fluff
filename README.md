@@ -2,14 +2,15 @@
 
 A WIP clicker & story game made in Godot 4.2  
 Play as Puff, a Fluff who left earth to travel the Milky Way in search of her Ma  
-- Collect stars for Puff (In Progress)  
-- Help Puff grow using stars (In Progress)  
+- Collect stars for Puff  
+- Help Puff grow using stars  
 - Trade stars for items to explore further (TBA)  
 - Pick up mementos of Ma (TBA)  
 
 ### Dev Progress  
 - ~~randomly placed, clickable stars~~  
-- spend stars to upgrade Puff's skills  
+- ~~spend stars to upgrade Puff's skills~~  
+- upgraded skills affect gameplay  
 - save/loading game data  
 - ~~working title screen~~  
 - purchasable items in game store  

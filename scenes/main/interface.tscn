@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://csad6threujlr" path="res://img/icons/menu_click.png" id="8_x2rp1"]
 [ext_resource type="Texture2D" uid="uid://3074dqtqng67" path="res://img/icons/menu_hover.png" id="9_no8pp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83sju"]
 
 [sub_resource type="Theme" id="Theme_3xslv"]
 Label/colors/font_color = Color(0.996078, 0.984314, 0.917647, 1)
@@ -24,7 +24,7 @@ Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_3p23v")
-Label/styles/normal = SubResource("StyleBoxEmpty_562bb")
+Label/styles/normal = SubResource("StyleBoxEmpty_83sju")
 
 [node name="interface" type="Control"]
 layout_mode = 3

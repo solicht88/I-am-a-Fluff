@@ -1,12 +1,28 @@
 extends Control
 
+@onready var gaze_label := $gaze_label as Label
+@onready var gaze_lvl_txt := $gaze_lvl as Label
+
+@onready var string_label := $string_label as Label
+@onready var string_lvl_txt := $string_lvl as Label
+
+@onready var counter_label := $counter as Label
+
+var save = Save.save_data
+var upg = UpgText
+
+var gaze_lvl = save.gaze_lvl
+var str_lvl = save.string_lvl
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	gaze_lvl_txt.text = "lvl " + str(gaze_lvl)
+	string_lvl_txt.text = "lvl " + str(str_lvl)
+	counter_label.text = str(save.counter)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -15,7 +31,18 @@ func _on_exit_pressed():
 
 
 func _on_gaze_btn_pressed():
-	pass # Replace with function body.
+	if save.counter >= upg.gaze_cost[gaze_lvl - 1]:
+		save.counter -= upg.gaze_cost[gaze_lvl - 1]
+		gaze_lvl += 1
+		
+		gaze_label.text = "Gaze Proficiency - Increase the rate which stars appear
+		({upgr})
+		Cost: {cost} stars".format({"upgr": upg.gaze_upg[gaze_lvl - 1], "cost": upg.gaze_cost[gaze_lvl - 1]})
+		gaze_lvl_txt.text = "lvl " + str(gaze_lvl)
+		counter_label.text = str(save.counter)
+		
+		if gaze_lvl == 6:
+			$gaze_btn.disabled = true
 
 
 func _on_wish_btn_pressed():
@@ -23,4 +50,16 @@ func _on_wish_btn_pressed():
 
 
 func _on_string_btn_pressed():
-	pass # Replace with function body.
+	if save.counter >= upg.str_cost[str_lvl - 1]:
+		save.counter -= upg.str_cost[str_lvl - 1]
+		str_lvl += 1
+		
+		string_label.text = "String Skill - Increase the stars earned per star clicked
+		({upgr})
+		Cost: {cost} stars".format({"upgr": upg.str_upg[str_lvl - 1], "cost": upg.str_cost[str_lvl - 1]})
+		string_lvl_txt.text = "lvl " + str(str_lvl)
+		counter_label.text = str(save.counter)
+		
+		if str_lvl == 4:
+			$string_btn.disabled = true
+
