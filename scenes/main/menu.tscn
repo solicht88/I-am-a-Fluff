@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_akeyt"]
 [ext_resource type="Script" path="res://scripts/main/menu.gd" id="1_utqdv"]
 
-[node name="menu" type="Control"]
+[node name="menu_ui" type="Control"]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0

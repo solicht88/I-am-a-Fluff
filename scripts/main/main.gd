@@ -1,12 +1,10 @@
 extends Node2D
 
-@onready var interface := $interface
+@onready var interface := $interface as Control
 @onready var counter := $interface/counter as Label
 @onready var timer := $Timer as Timer
 # temp testing for manually placed star
 #@onready var star := $star1/Area2D as Node2D
-
-#interface.menu_open.connect(_update_counter)
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
 
@@ -17,10 +15,12 @@ var star_coords = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
-	#if star:
-		#star.star_collected.connect(_update_counter)
+	randomize()	
+	interface.menu_open.connect(_menu_opened)
 	timer.start()
+	
+	# temp to trash debug save file
+	OS.move_to_trash(ProjectSettings.globalize_path("user://SaveFile.json"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -53,9 +53,11 @@ func _on_timer_timeout():
 
 # Menu
 func _menu_opened():
-	pass
+	$menu_ui.save_data.connect(save_progress)
+	#print("connected")
 
 func save_progress():
+	Save.save_data.counter = counter
 	Save.save_data.stars = star_coords
 	Save.save_game()
-	print(Save.save_data.stars)
+	#print("saved!")

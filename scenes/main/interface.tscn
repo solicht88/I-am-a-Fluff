@@ -111,7 +111,7 @@ texture_normal = ExtResource("4_c5gkt")
 texture_pressed = ExtResource("5_6foa8")
 texture_hover = ExtResource("5_ei4he")
 
-[node name="menu" type="TextureButton" parent="."]
+[node name="menu_btn" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 210.0
 offset_top = 550.0
@@ -124,4 +124,4 @@ texture_pressed = ExtResource("8_x2rp1")
 texture_hover = ExtResource("9_no8pp")
 
 [connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]
-[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="menu_btn" to="." method="_on_menu_pressed"]

@@ -19,5 +19,6 @@ func _on_upgrade_pressed():
 
 
 func _on_menu_pressed():
-	add_child(menu)
+	var menu_ui = menu.instantiate()
+	get_parent().add_child(menu_ui)
 	menu_open.emit()
