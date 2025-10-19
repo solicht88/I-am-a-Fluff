@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5js32q220kcp"]
+[gd_scene load_steps=13 format=3 uid="uid://c5js32q220kcp"]
 
 [ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="1_3p23v"]
 [ext_resource type="Texture2D" uid="uid://bgv26ft4px3kq" path="res://img/characters/star3.png" id="1_ajwyw"]
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_l0ory"]
+[ext_resource type="Script" path="res://scripts/main/main_interface.gd" id="1_uubhd"]
 [ext_resource type="Texture2D" uid="uid://cr5rcnme0yget" path="res://img/icons/info.png" id="4_c5gkt"]
 [ext_resource type="Texture2D" uid="uid://db4xluwy7lt5g" path="res://img/icons/info_click.png" id="5_6foa8"]
 [ext_resource type="Texture2D" uid="uid://by4x3simqbed8" path="res://img/icons/menu.png" id="5_afrp4"]
@@ -32,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uubhd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(50, 50)
@@ -120,3 +122,5 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_afrp4")
 texture_pressed = ExtResource("8_x2rp1")
 texture_hover = ExtResource("9_no8pp")
+
+[connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]

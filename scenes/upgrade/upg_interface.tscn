@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dinpmsn60y4kv"]
+[gd_scene load_steps=11 format=3 uid="uid://dinpmsn60y4kv"]
 
+[ext_resource type="Script" path="res://scripts/upgrade/upg_interface.gd" id="1_edecy"]
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_ttde2"]
+[ext_resource type="Texture2D" uid="uid://srynbfw1fua0" path="res://img/icons/eye.png" id="2_074lk"]
+[ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="2_hc1nt"]
+[ext_resource type="Texture2D" uid="uid://bj6rwfm3cb87e" path="res://img/icons/cloud.png" id="5_2v2mj"]
+[ext_resource type="Texture2D" uid="uid://by210xn245wxk" path="res://img/icons/string.png" id="6_k0ak1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wroqh"]
 bg_color = Color(0.831373, 0.870588, 0.921569, 1)
@@ -9,6 +14,24 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
+
+[sub_resource type="Theme" id="Theme_df3nj"]
+Label/colors/font_color = Color(0, 0.027451, 0.0666667, 1)
+Label/colors/font_outline_color = Color(0, 0.027451, 0.0666667, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 1
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("2_hc1nt")
+Label/styles/normal = SubResource("StyleBoxEmpty_562bb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i304k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="upg_interface" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -16,22 +39,128 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_edecy")
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(350, 450)
+custom_minimum_size = Vector2(350, 400)
 layout_mode = 0
 offset_left = 100.0
-offset_top = 135.0
-offset_right = 450.0
-offset_bottom = 585.0
+offset_top = 160.0
+offset_right = 500.0
+offset_bottom = 560.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wroqh")
 
-[node name="Button" type="Button" parent="."]
+[node name="gaze" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 200.0
+offset_right = 1139.0
+offset_bottom = 1224.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_074lk")
+
+[node name="gaze_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(60, 30)
-offset_left = 370.0
-offset_top = 175.0
-offset_right = 430.0
-offset_bottom = 205.0
+offset_left = 410.0
+offset_top = 219.0
+offset_right = 470.0
+offset_bottom = 249.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_ttde2")
 theme_override_font_sizes/font_size = 16
 text = "lvl up"
+
+[node name="gaze_label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 202.0
+offset_right = 400.0
+offset_bottom = 270.0
+theme = SubResource("Theme_df3nj")
+text = "Gaze Proficiency - Increase the rate which stars appear
+(5.0s --> 4.5s)"
+autowrap_mode = 2
+
+[node name="wish" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 320.0
+offset_right = 1139.0
+offset_bottom = 1344.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_2v2mj")
+
+[node name="wish_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 30)
+offset_left = 410.0
+offset_top = 343.0
+offset_right = 470.0
+offset_bottom = 373.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_ttde2")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "lvl up"
+
+[node name="wish_label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 326.0
+offset_right = 400.0
+offset_bottom = 394.0
+theme = SubResource("Theme_df3nj")
+text = "Ma's Wish - Decrease costs of items in store
+(disabled, TBA)"
+autowrap_mode = 2
+
+[node name="string" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 445.0
+offset_right = 1139.0
+offset_bottom = 1469.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("6_k0ak1")
+
+[node name="string_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 30)
+offset_left = 410.0
+offset_top = 467.0
+offset_right = 470.0
+offset_bottom = 497.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_ttde2")
+theme_override_font_sizes/font_size = 16
+text = "lvl up"
+
+[node name="string_label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 450.0
+offset_right = 400.0
+offset_bottom = 518.0
+theme = SubResource("Theme_df3nj")
+text = "String Skill - Increase the stars earned per star clicked
+(1 --> 2)"
+autowrap_mode = 2
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 100.0
+offset_right = 1180.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_ttde2")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_i304k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i304k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i304k")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i304k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i304k")
+text = "Return -->"
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

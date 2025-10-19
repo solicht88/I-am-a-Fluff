@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4j21q2xruqvu"]
 
-[ext_resource type="Texture2D" uid="uid://d1lyih6sg1vf8" path="res://img/characters/puff_placeholder.png" id="1_6ns6t"]
+[ext_resource type="Texture2D" uid="uid://dexpeo0dgvcb5" path="res://img/characters/puff_main.png" id="1_byt0f"]
 [ext_resource type="PackedScene" uid="uid://dinpmsn60y4kv" path="res://scenes/upgrade/upg_interface.tscn" id="2_ppftl"]
 
 [node name="upgrade" type="Node2D"]
@@ -13,6 +13,6 @@ color = Color(0.00710565, 0.0299158, 0.0907694, 1)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(900, 410)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_6ns6t")
+texture = ExtResource("1_byt0f")
 
 [node name="upg_interface" parent="." instance=ExtResource("2_ppftl")]
