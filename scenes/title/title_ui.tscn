@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://7d0bxha5w0jg"]
+
+[ext_resource type="Theme" uid="uid://gfm5jyry675u" path="res://scenes/light_button.tres" id="1_70ecj"]
+[ext_resource type="Script" path="res://scripts/title_ui.gd" id="1_yke0h"]
+
+[node name="title_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yke0h")
+
+[node name="new_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 320.0
+offset_right = 430.0
+offset_bottom = 390.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_70ecj")
+text = "New Game"
+
+[node name="load_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 420.0
+offset_right = 430.0
+offset_bottom = 490.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_70ecj")
+text = "Load File"
+
+[node name="quit_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 520.0
+offset_right = 430.0
+offset_bottom = 590.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_70ecj")
+text = "Quit"
+
+[connection signal="pressed" from="new_btn" to="." method="_on_new_btn_pressed"]
+[connection signal="pressed" from="load_btn" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="quit_btn" to="." method="_on_quit_btn_pressed"]

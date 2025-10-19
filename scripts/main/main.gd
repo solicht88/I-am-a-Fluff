@@ -20,7 +20,7 @@ func _ready():
 	timer.start()
 	
 	# temp to trash debug save file
-	OS.move_to_trash(ProjectSettings.globalize_path("user://SaveFile.json"))
+	#OS.move_to_trash(ProjectSettings.globalize_path("user://SaveFile.json"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

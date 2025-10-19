@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="I am a Fluff"
-run/main_scene="res://scenes/main/main.tscn"
+run/main_scene="res://scenes/title/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://img/icons/puff_icon.png"
 
 [autoload]
 
-Save="*res://scripts/main/save.gd"
+Save="*res://scripts/global/save.gd"
+UpgText="*res://scripts/global/upgrade_text.gd"
 
 [display]
 
