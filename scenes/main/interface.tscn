@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5js32q220kcp"]
+[gd_scene load_steps=12 format=3 uid="uid://c5js32q220kcp"]
 
 [ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="1_3p23v"]
 [ext_resource type="Texture2D" uid="uid://bgv26ft4px3kq" path="res://img/characters/star3.png" id="1_ajwyw"]
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_l0ory"]
 [ext_resource type="Texture2D" uid="uid://cr5rcnme0yget" path="res://img/icons/info.png" id="4_c5gkt"]
+[ext_resource type="Texture2D" uid="uid://db4xluwy7lt5g" path="res://img/icons/info_click.png" id="5_6foa8"]
 [ext_resource type="Texture2D" uid="uid://by4x3simqbed8" path="res://img/icons/menu.png" id="5_afrp4"]
+[ext_resource type="Texture2D" uid="uid://cl6wx7x1su3dr" path="res://img/icons/info_hover.png" id="5_ei4he"]
+[ext_resource type="Texture2D" uid="uid://csad6threujlr" path="res://img/icons/menu_click.png" id="8_x2rp1"]
+[ext_resource type="Texture2D" uid="uid://3074dqtqng67" path="res://img/icons/menu_hover.png" id="9_no8pp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
 
@@ -39,7 +43,7 @@ offset_bottom = 100.0
 texture = ExtResource("1_ajwyw")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="counter" type="Label" parent="."]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 55.0
@@ -48,7 +52,7 @@ offset_bottom = 99.0
 theme = SubResource("Theme_3xslv")
 text = "0"
 
-[node name="Button" type="Button" parent="."]
+[node name="upgrade" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 50.0
@@ -59,7 +63,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_l0ory")
 text = "upgrade"
 
-[node name="Button2" type="Button" parent="."]
+[node name="store" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 50.0
@@ -70,7 +74,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_l0ory")
 text = "store"
 
-[node name="Button3" type="Button" parent="."]
+[node name="explore" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 50.0
@@ -81,7 +85,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_l0ory")
 text = "explore"
 
-[node name="Button4" type="Button" parent="."]
+[node name="mementos" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 50.0
@@ -93,7 +97,7 @@ theme = ExtResource("1_l0ory")
 text = "mementos
 "
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="info" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 550.0
@@ -102,8 +106,10 @@ offset_bottom = 1574.0
 scale = Vector2(0.1, 0.1)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_c5gkt")
+texture_pressed = ExtResource("5_6foa8")
+texture_hover = ExtResource("5_ei4he")
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="menu" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 210.0
 offset_top = 550.0
@@ -112,3 +118,5 @@ offset_bottom = 1574.0
 scale = Vector2(0.1, 0.1)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_afrp4")
+texture_pressed = ExtResource("8_x2rp1")
+texture_hover = ExtResource("9_no8pp")
