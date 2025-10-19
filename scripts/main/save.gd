@@ -4,8 +4,9 @@ extends Button
 const save_location = "user://SaveFile.json"
 
 var save_data: Dictionary = {
-	"stars": 0,
-	"world": 0
+	"counter": 0,
+	"world": 0,
+	"stars": []
 }
 
 func save_game():
