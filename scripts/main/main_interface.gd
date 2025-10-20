@@ -1,6 +1,7 @@
 extends Control
 
 var menu = preload("res://scenes/main/menu.tscn")
+var info = preload("res://scenes/main/info_popup.tscn")
 
 signal menu_open
 signal change_scene
@@ -24,3 +25,8 @@ func _on_menu_pressed():
 	var menu_ui = menu.instantiate()
 	get_parent().add_child(menu_ui)
 	menu_open.emit()
+
+
+func _on_info_pressed():
+	var info_ui = info.instantiate()
+	get_parent().add_child(info_ui)

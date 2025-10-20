@@ -74,6 +74,7 @@ offset_right = 350.0
 offset_bottom = 330.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_l0ory")
+disabled = true
 text = "store"
 
 [node name="explore" type="Button" parent="."]
@@ -85,6 +86,7 @@ offset_right = 350.0
 offset_bottom = 430.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_l0ory")
+disabled = true
 text = "explore"
 
 [node name="mementos" type="Button" parent="."]
@@ -96,6 +98,7 @@ offset_right = 350.0
 offset_bottom = 530.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_l0ory")
+disabled = true
 text = "mementos
 "
 
@@ -124,4 +127,5 @@ texture_pressed = ExtResource("8_x2rp1")
 texture_hover = ExtResource("9_no8pp")
 
 [connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="menu_btn" to="." method="_on_menu_pressed"]

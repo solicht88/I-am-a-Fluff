@@ -7,6 +7,9 @@ extends Node2D
 #@onready var star := $star1/Area2D as Node2D
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
+var star2 = preload("res://scenes/characters/star_2.tscn")
+var star3 = preload("res://scenes/characters/star_3.tscn")
+var star_scenes = [star1, star2, star3]
 
 var ulcorner = Vector2(400, 50)
 var brcorner = Vector2(1230, 670)
@@ -42,7 +45,7 @@ func _get_random_point(ul: Vector2, br: Vector2) -> Vector2:
 	return(random_point)
 
 func _spawn_star():
-	var new_star = star1.instantiate()
+	var new_star = star_scenes[randi_range(0, 2)].instantiate()
 	var coords = _get_random_point(ulcorner, brcorner)
 	
 	star_coords.append(coords)
@@ -52,6 +55,8 @@ func _spawn_star():
 
 func _on_timer_timeout():
 	_spawn_star()
+	timer.wait_time = 5 - 0.4 * (Save.save_data.gaze_lvl - 1)
+	#print(timer.wait_time)
 	timer.start()
 
 # Menu
@@ -63,7 +68,7 @@ func save_progress():
 	Save.save_data.counter = stars
 	Save.save_data.stars = star_coords
 	#Save.save_game()
-	print("saved!")
+	#print("saved!")
 
 # possibly temp? will see how full save/load files go
 func _load_stars(coords):

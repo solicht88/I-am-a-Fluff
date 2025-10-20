@@ -11,7 +11,7 @@ Play as Puff, a Fluff who left earth to travel the Milky Way in search of her Ma
 - ~~randomly placed, clickable stars~~  
 - ~~spend stars to upgrade Puff's skills~~  
 - upgraded skills affect gameplay  
-- save/loading game data  
+- save/loading game data (1/2 done)  
 - ~~working title screen~~  
 - purchasable items in game store  
 - explore (move on to another 'area')  

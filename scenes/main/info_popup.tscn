@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf58j2y81luwj"]
+
+[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/dark_text.tres" id="1_dqk4u"]
+[ext_resource type="Script" path="res://scripts/main/info_popup.gd" id="1_ohqkf"]
+[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="2_n5a4v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn835"]
+bg_color = Color(0.996078, 0.984314, 0.917647, 0.839216)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oeg23"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="info_popup" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ohqkf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.686275)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(700, 500)
+layout_mode = 0
+offset_left = 290.0
+offset_top = 110.0
+offset_right = 990.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kn835")
+
+[node name="info" type="Label" parent="."]
+custom_minimum_size = Vector2(620, 420)
+layout_mode = 0
+offset_left = 330.0
+offset_top = 135.0
+offset_right = 950.0
+offset_bottom = 555.0
+theme = ExtResource("1_dqk4u")
+theme_override_constants/line_spacing = 2
+theme_override_font_sizes/font_size = 20
+text = "Thank you for playing \"I am a Fluff!\"
+
+The game is still in development, so only part of the clicker gameplay is currently available.
+
+Help Puff find her Ma!
+
+Stars will appear on screen over time, and you will gain stars by clicking them. You can then spend your earned stars on upgrades (and eventually items in the store, still TBA). 
+
+Hope you enjoy the game so far!
+
+-Solicht"
+autowrap_mode = 2
+
+[node name="close" type="Button" parent="."]
+custom_minimum_size = Vector2(49, 33)
+layout_mode = 0
+offset_left = 616.0
+offset_top = 557.0
+offset_right = 665.0
+offset_bottom = 590.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_n5a4v")
+theme_override_colors/font_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_colors/font_hover_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_colors/font_focus_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_colors/font_disabled_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_colors/font_outline_color = Color(0, 0.027451, 0.0666667, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_oeg23")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oeg23")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oeg23")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oeg23")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oeg23")
+text = "close"
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

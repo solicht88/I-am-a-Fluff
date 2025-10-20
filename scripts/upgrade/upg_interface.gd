@@ -16,8 +16,8 @@ var str_lvl = save.string_lvl
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	gaze_lvl_txt.text = "lvl " + str(gaze_lvl)
-	string_lvl_txt.text = "lvl " + str(str_lvl)
+	_update_gaze_text()
+	_update_string_text()
 	counter_label.text = str(save.counter)
 
 
@@ -27,6 +27,8 @@ func _process(_delta):
 
 
 func _on_exit_pressed():
+	Save.save_data.gaze_lvl = gaze_lvl
+	Save.save_data.string_lvl = str_lvl
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 
@@ -35,15 +37,18 @@ func _on_gaze_btn_pressed():
 		save.counter -= upg.gaze_cost[gaze_lvl - 1]
 		gaze_lvl += 1
 		
-		gaze_label.text = "Gaze Proficiency - Increase the rate which stars appear
-		({upgr})
-		Cost: {cost} stars".format({"upgr": upg.gaze_upg[gaze_lvl - 1], "cost": upg.gaze_cost[gaze_lvl - 1]})
-		gaze_lvl_txt.text = "lvl " + str(gaze_lvl)
+		_update_gaze_text()
 		counter_label.text = str(save.counter)
+		
 		
 		if gaze_lvl == 6:
 			$gaze_btn.disabled = true
 
+func _update_gaze_text():
+	gaze_label.text = "Gaze Proficiency - Increase the rate which stars appear
+	({upgr})
+	Cost: {cost} stars".format({"upgr": upg.gaze_upg[gaze_lvl - 1], "cost": upg.gaze_cost[gaze_lvl - 1]})
+	gaze_lvl_txt.text = "lvl " + str(gaze_lvl)
 
 func _on_wish_btn_pressed():
 	pass # Replace with function body.
@@ -54,12 +59,14 @@ func _on_string_btn_pressed():
 		save.counter -= upg.str_cost[str_lvl - 1]
 		str_lvl += 1
 		
-		string_label.text = "String Skill - Increase the stars earned per star clicked
-		({upgr})
-		Cost: {cost} stars".format({"upgr": upg.str_upg[str_lvl - 1], "cost": upg.str_cost[str_lvl - 1]})
-		string_lvl_txt.text = "lvl " + str(str_lvl)
+		_update_string_text()
 		counter_label.text = str(save.counter)
 		
 		if str_lvl == 4:
 			$string_btn.disabled = true
 
+func _update_string_text():
+	string_label.text = "String Skill - Increase the stars earned per star clicked
+	({upgr})
+	Cost: {cost} stars".format({"upgr": upg.str_upg[str_lvl - 1], "cost": upg.str_cost[str_lvl - 1]})
+	string_lvl_txt.text = "lvl " + str(str_lvl)

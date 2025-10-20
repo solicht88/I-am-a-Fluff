@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsbl41kfavb0n"]
+[gd_scene load_steps=4 format=3 uid="uid://bsbl41kfavb0n"]
 
 [ext_resource type="Script" path="res://scripts/main/main.gd" id="1_rtlan"]
 [ext_resource type="Texture2D" uid="uid://y4ob8qqkq50n" path="res://img/backgrounds/sky1.png" id="2_mfvrj"]
-[ext_resource type="PackedScene" uid="uid://b8jvhnl6b7kme" path="res://scenes/characters/star_1.tscn" id="3_66dhc"]
 [ext_resource type="PackedScene" uid="uid://c5js32q220kcp" path="res://scenes/main/interface.tscn" id="4_3u6eg"]
 
 [node name="main" type="Node2D"]
@@ -11,10 +10,6 @@ script = ExtResource("1_rtlan")
 [node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("2_mfvrj")
 centered = false
-
-[node name="star1" parent="." instance=ExtResource("3_66dhc")]
-visible = false
-position = Vector2(605, 178)
 
 [node name="interface" parent="." instance=ExtResource("4_3u6eg")]
 
