@@ -16,6 +16,17 @@ var str_lvl = save.string_lvl
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var parent = get_parent()
+	
+	await parent.ready
+	parent.add_child(Global.transition_node.instantiate())
+	var transition = $"../transition_animation/transition_player"
+	var transition_node = $"../transition_animation"
+	transition_node.get_node("ColorRect").color.a = 255
+	transition.play("fade_out")
+	await get_tree().create_timer(0.5).timeout
+	$"../transition_animation".queue_free()
+	
 	_update_gaze_text()
 	_update_string_text()
 	counter_label.text = str(save.counter)
@@ -29,6 +40,13 @@ func _process(_delta):
 func _on_exit_pressed():
 	Save.save_data.gaze_lvl = gaze_lvl
 	Save.save_data.string_lvl = str_lvl
+	
+	get_parent().add_child(Global.transition_node.instantiate())
+	var transition = $"../transition_animation/transition_player"
+	transition.play("fade_in")
+	await get_tree().create_timer(0.5).timeout
+	$"../transition_animation".queue_free()
+	
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 

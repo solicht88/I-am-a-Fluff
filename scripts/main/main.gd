@@ -9,6 +9,8 @@ extends Node2D
 var star1 = preload("res://scenes/characters/star_1.tscn")
 var star2 = preload("res://scenes/characters/star_2.tscn")
 var star3 = preload("res://scenes/characters/star_3.tscn")
+var transition_load = preload("res://scenes/transition_animation.tscn")
+var transition_animation = transition_load.instantiate()
 var star_scenes = [star1, star2, star3]
 
 var ulcorner = Vector2(400, 50)
@@ -18,6 +20,15 @@ var star_coords = Save.save_data.stars
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# transition
+	add_child(transition_animation)
+	var transition = $transition_animation/transition_player
+	var transition_node = $transition_animation
+	transition_node.get_node("ColorRect").color.a = 255
+	transition.play("fade_out")
+	await get_tree().create_timer(0.5).timeout
+	transition_node.queue_free()
+	
 	randomize()	
 	interface.menu_open.connect(_menu_opened)
 	interface.change_scene.connect(save_progress)
