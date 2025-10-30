@@ -63,6 +63,11 @@ func _spawn_star():
 	add_child(new_star)
 	new_star.set_position(coords)
 	new_star.get_node("Area2D").star_collected.connect(_update_counter)
+	
+	# star appear animation
+	var animation = new_star.get_node("AnimationPlayer")
+	new_star.get_node("Sprite2D").self_modulate.a = 0
+	animation.play("appear")
 
 func _on_timer_timeout():
 	_spawn_star()

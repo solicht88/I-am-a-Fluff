@@ -1,0 +1,262 @@
+[gd_scene load_steps=10 format=3 uid="uid://wbpl5f454xx6"]
+
+[ext_resource type="Texture2D" uid="uid://8rdl3fv4rg6g" path="res://img/items/fuel_stone.png" id="1_q3637"]
+[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/dark_text.tres" id="2_fll3y"]
+[ext_resource type="Texture2D" uid="uid://de8cvvxuhphf8" path="res://img/items/compass.png" id="3_20e6j"]
+[ext_resource type="Texture2D" uid="uid://diaqu5kd5t48j" path="res://img/items/moon_flower.png" id="4_v48ds"]
+[ext_resource type="Texture2D" uid="uid://c8npxx7o5fc2m" path="res://img/items/orange_jelly.png" id="5_k8uh8"]
+[ext_resource type="Theme" uid="uid://gfm5jyry675u" path="res://scenes/light_button.tres" id="6_qf2ww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kekpb"]
+bg_color = Color(0.996078, 0.984314, 0.917647, 0.392157)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_506qc"]
+bg_color = Color(0.996078, 0.984314, 0.917647, 0.784314)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn1e0"]
+bg_color = Color(0.996078, 0.984314, 0.917647, 0.784314)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="shop_interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="store" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 110.0
+offset_right = 780.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kekpb")
+
+[node name="fuel" type="Panel" parent="store"]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 220.0
+offset_bottom = 240.0
+scale = Vector2(0.997672, 0.989173)
+theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
+
+[node name="TextureRect" type="TextureRect" parent="store/fuel"]
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 0
+offset_left = 13.0
+offset_right = 1037.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_q3637")
+
+[node name="Label" type="Label" parent="store/fuel"]
+custom_minimum_size = Vector2(150, 28)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 178.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 20
+text = "Fuel Stone"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="store"]
+offset_left = 40.0
+offset_top = 260.0
+offset_right = 220.0
+offset_bottom = 460.0
+scale = Vector2(1.00205, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
+
+[node name="TextureRect" type="TextureRect" parent="store/Panel2"]
+custom_minimum_size = Vector2(1024, 1024)
+offset_left = 13.0
+offset_right = 1037.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+
+[node name="Label" type="Label" parent="store/Panel2"]
+custom_minimum_size = Vector2(150, 28)
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 178.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 20
+text = "N/A"
+horizontal_alignment = 1
+
+[node name="compass" type="Panel" parent="store"]
+offset_left = 260.0
+offset_top = 40.0
+offset_right = 440.0
+offset_bottom = 240.0
+scale = Vector2(0.997672, 0.989173)
+theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
+
+[node name="TextureRect" type="TextureRect" parent="store/compass"]
+custom_minimum_size = Vector2(1024, 1024)
+offset_left = 13.0
+offset_right = 1037.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_20e6j")
+
+[node name="Label" type="Label" parent="store/compass"]
+custom_minimum_size = Vector2(150, 28)
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 178.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 20
+text = "Compass"
+horizontal_alignment = 1
+
+[node name="flower" type="Panel" parent="store"]
+offset_left = 260.0
+offset_top = 260.0
+offset_right = 440.0
+offset_bottom = 460.0
+scale = Vector2(1.00205, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
+
+[node name="TextureRect" type="TextureRect" parent="store/flower"]
+custom_minimum_size = Vector2(1024, 1024)
+offset_left = 13.0
+offset_right = 1037.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_v48ds")
+
+[node name="Label" type="Label" parent="store/flower"]
+custom_minimum_size = Vector2(150, 28)
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 178.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 20
+text = "Moon Flower"
+horizontal_alignment = 1
+
+[node name="jelly" type="Panel" parent="store"]
+offset_left = 480.0
+offset_top = 40.0
+offset_right = 660.0
+offset_bottom = 240.0
+scale = Vector2(0.997672, 0.989173)
+theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
+
+[node name="TextureRect" type="TextureRect" parent="store/jelly"]
+custom_minimum_size = Vector2(1024, 1024)
+offset_left = 13.0
+offset_right = 1037.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_k8uh8")
+
+[node name="Label" type="Label" parent="store/jelly"]
+custom_minimum_size = Vector2(150, 28)
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 178.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 20
+text = "Orange Jelly"
+horizontal_alignment = 1
+
+[node name="memento" type="Panel" parent="store"]
+offset_left = 480.0
+offset_top = 260.0
+offset_right = 660.0
+offset_bottom = 460.0
+scale = Vector2(1.00205, 1.0076)
+theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
+
+[node name="TextureRect" type="TextureRect" parent="store/memento"]
+custom_minimum_size = Vector2(1024, 1024)
+offset_left = 13.0
+offset_right = 1037.0
+offset_bottom = 1024.0
+scale = Vector2(0.15, 0.15)
+
+[node name="Label" type="Label" parent="store/memento"]
+custom_minimum_size = Vector2(150, 28)
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 178.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 20
+text = "[memento]"
+horizontal_alignment = 1
+
+[node name="selection" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 110.0
+offset_right = 1200.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kekpb")
+
+[node name="display" type="Panel" parent="selection"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+offset_left = 95.0
+offset_top = 60.0
+offset_right = 285.0
+offset_bottom = 250.0
+scale = Vector2(0.997679, 0.998644)
+theme_override_styles/panel = SubResource("StyleBoxFlat_bn1e0")
+
+[node name="name" type="Label" parent="selection"]
+custom_minimum_size = Vector2(200, 33)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 280.0
+offset_right = 290.0
+offset_bottom = 313.0
+theme = ExtResource("2_fll3y")
+theme_override_font_sizes/font_size = 24
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="description" type="Label" parent="selection"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 320.0
+offset_right = 340.0
+offset_bottom = 380.0
+scale = Vector2(0.994668, 1)
+theme = ExtResource("2_fll3y")
+text = "item price
+item description ooooo cool shiny buy today! mega mart lemons"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="buy_btn" type="Button" parent="selection"]
+custom_minimum_size = Vector2(150, 36)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 404.0
+offset_right = 265.0
+offset_bottom = 440.0
+theme = ExtResource("6_qf2ww")
+theme_override_font_sizes/font_size = 20
+text = "buy"
