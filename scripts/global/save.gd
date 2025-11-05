@@ -9,7 +9,8 @@ var save_data: Dictionary = {
 	"stars": [],
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
-	"string_lvl": 1
+	"string_lvl": 1,
+	"price_mult": 1
 }
 
 func save_game():

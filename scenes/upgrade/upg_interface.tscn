@@ -19,7 +19,7 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i304k"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngext"]
 
 [sub_resource type="Theme" id="Theme_tlo38"]
 Label/colors/font_color = Color(0.996078, 0.984314, 0.917647, 1)
@@ -32,7 +32,7 @@ Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("2_hc1nt")
-Label/styles/normal = SubResource("StyleBoxEmpty_562bb")
+Label/styles/normal = SubResource("StyleBoxEmpty_ngext")
 
 [node name="upg_interface" type="Control"]
 layout_mode = 3
@@ -203,6 +203,7 @@ text = "Return -->"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 100.0
@@ -211,6 +212,8 @@ texture = ExtResource("7_2hh67")
 expand_mode = 1
 
 [node name="counter" type="Label" parent="."]
+custom_minimum_size = Vector2(225, 44)
+layout_mode = 0
 offset_left = 100.0
 offset_top = 55.0
 offset_right = 325.0

@@ -18,7 +18,7 @@ config/icon="res://img/icons/puff_icon.png"
 [autoload]
 
 Save="*res://scripts/global/save.gd"
-UpgText="*res://scripts/global/upgrade_text.gd"
+TextData="*res://scripts/global/text_data.gd"
 Global="*res://scripts/global.gd"
 
 [display]

@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://wbpl5f454xx6"]
+[gd_scene load_steps=17 format=3 uid="uid://wbpl5f454xx6"]
 
+[ext_resource type="Script" path="res://scripts/store/shop_interface.gd" id="1_kl2le"]
 [ext_resource type="Texture2D" uid="uid://8rdl3fv4rg6g" path="res://img/items/fuel_stone.png" id="1_q3637"]
 [ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/dark_text.tres" id="2_fll3y"]
 [ext_resource type="Texture2D" uid="uid://de8cvvxuhphf8" path="res://img/items/compass.png" id="3_20e6j"]
 [ext_resource type="Texture2D" uid="uid://diaqu5kd5t48j" path="res://img/items/moon_flower.png" id="4_v48ds"]
 [ext_resource type="Texture2D" uid="uid://c8npxx7o5fc2m" path="res://img/items/orange_jelly.png" id="5_k8uh8"]
 [ext_resource type="Theme" uid="uid://gfm5jyry675u" path="res://scenes/light_button.tres" id="6_qf2ww"]
+[ext_resource type="Texture2D" uid="uid://bgv26ft4px3kq" path="res://img/characters/star3.png" id="8_atpgt"]
+[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="8_unj0j"]
+[ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="9_dcbl7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kekpb"]
 bg_color = Color(0.996078, 0.984314, 0.917647, 0.392157)
@@ -28,6 +32,24 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
+
+[sub_resource type="Theme" id="Theme_np78p"]
+Label/colors/font_color = Color(0.996078, 0.984314, 0.917647, 1)
+Label/colors/font_outline_color = Color(0.996078, 0.984314, 0.917647, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("9_dcbl7")
+Label/styles/normal = SubResource("StyleBoxEmpty_562bb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8npg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="shop_interface" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -35,6 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kl2le")
 
 [node name="store" type="Panel" parent="."]
 layout_mode = 0
@@ -45,11 +68,13 @@ offset_bottom = 610.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kekpb")
 
 [node name="fuel" type="Panel" parent="store"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 220.0
 offset_bottom = 240.0
 scale = Vector2(0.997672, 0.989173)
+mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
 
 [node name="TextureRect" type="TextureRect" parent="store/fuel"]
@@ -74,15 +99,18 @@ text = "Fuel Stone"
 horizontal_alignment = 1
 
 [node name="Panel2" type="Panel" parent="store"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 260.0
 offset_right = 220.0
 offset_bottom = 460.0
 scale = Vector2(1.00205, 1)
+mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
 
 [node name="TextureRect" type="TextureRect" parent="store/Panel2"]
 custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 0
 offset_left = 13.0
 offset_right = 1037.0
 offset_bottom = 1024.0
@@ -90,6 +118,7 @@ scale = Vector2(0.15, 0.15)
 
 [node name="Label" type="Label" parent="store/Panel2"]
 custom_minimum_size = Vector2(150, 28)
+layout_mode = 0
 offset_left = 15.0
 offset_top = 150.0
 offset_right = 165.0
@@ -100,15 +129,18 @@ text = "N/A"
 horizontal_alignment = 1
 
 [node name="compass" type="Panel" parent="store"]
+layout_mode = 0
 offset_left = 260.0
 offset_top = 40.0
 offset_right = 440.0
 offset_bottom = 240.0
 scale = Vector2(0.997672, 0.989173)
+mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
 
 [node name="TextureRect" type="TextureRect" parent="store/compass"]
 custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 0
 offset_left = 13.0
 offset_right = 1037.0
 offset_bottom = 1024.0
@@ -117,6 +149,7 @@ texture = ExtResource("3_20e6j")
 
 [node name="Label" type="Label" parent="store/compass"]
 custom_minimum_size = Vector2(150, 28)
+layout_mode = 0
 offset_left = 15.0
 offset_top = 150.0
 offset_right = 165.0
@@ -127,15 +160,18 @@ text = "Compass"
 horizontal_alignment = 1
 
 [node name="flower" type="Panel" parent="store"]
+layout_mode = 0
 offset_left = 260.0
 offset_top = 260.0
 offset_right = 440.0
 offset_bottom = 460.0
 scale = Vector2(1.00205, 1)
+mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
 
 [node name="TextureRect" type="TextureRect" parent="store/flower"]
 custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 0
 offset_left = 13.0
 offset_right = 1037.0
 offset_bottom = 1024.0
@@ -144,6 +180,7 @@ texture = ExtResource("4_v48ds")
 
 [node name="Label" type="Label" parent="store/flower"]
 custom_minimum_size = Vector2(150, 28)
+layout_mode = 0
 offset_left = 15.0
 offset_top = 150.0
 offset_right = 165.0
@@ -154,15 +191,18 @@ text = "Moon Flower"
 horizontal_alignment = 1
 
 [node name="jelly" type="Panel" parent="store"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 40.0
 offset_right = 660.0
 offset_bottom = 240.0
 scale = Vector2(0.997672, 0.989173)
+mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
 
 [node name="TextureRect" type="TextureRect" parent="store/jelly"]
 custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 0
 offset_left = 13.0
 offset_right = 1037.0
 offset_bottom = 1024.0
@@ -171,6 +211,7 @@ texture = ExtResource("5_k8uh8")
 
 [node name="Label" type="Label" parent="store/jelly"]
 custom_minimum_size = Vector2(150, 28)
+layout_mode = 0
 offset_left = 15.0
 offset_top = 150.0
 offset_right = 165.0
@@ -181,15 +222,18 @@ text = "Orange Jelly"
 horizontal_alignment = 1
 
 [node name="memento" type="Panel" parent="store"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 260.0
 offset_right = 660.0
 offset_bottom = 460.0
 scale = Vector2(1.00205, 1.0076)
+mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_506qc")
 
 [node name="TextureRect" type="TextureRect" parent="store/memento"]
 custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 0
 offset_left = 13.0
 offset_right = 1037.0
 offset_bottom = 1024.0
@@ -197,6 +241,7 @@ scale = Vector2(0.15, 0.15)
 
 [node name="Label" type="Label" parent="store/memento"]
 custom_minimum_size = Vector2(150, 28)
+layout_mode = 0
 offset_left = 15.0
 offset_top = 150.0
 offset_right = 165.0
@@ -224,6 +269,12 @@ offset_bottom = 250.0
 scale = Vector2(0.997679, 0.998644)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bn1e0")
 
+[node name="TextureRect" type="TextureRect" parent="selection/display"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="name" type="Label" parent="selection"]
 custom_minimum_size = Vector2(200, 33)
 layout_mode = 0
@@ -245,7 +296,7 @@ offset_right = 340.0
 offset_bottom = 380.0
 scale = Vector2(0.994668, 1)
 theme = ExtResource("2_fll3y")
-text = "item price
+text = "1000 stars
 item description ooooo cool shiny buy today! mega mart lemons"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -257,6 +308,56 @@ offset_left = 115.0
 offset_top = 404.0
 offset_right = 265.0
 offset_bottom = 440.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_qf2ww")
 theme_override_font_sizes/font_size = 20
 text = "buy"
+
+[node name="star_img" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 50.0
+offset_right = 130.0
+offset_bottom = 100.0
+texture = ExtResource("8_atpgt")
+expand_mode = 1
+
+[node name="counter" type="Label" parent="."]
+custom_minimum_size = Vector2(225, 44)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 55.0
+offset_right = 355.0
+offset_bottom = 99.0
+theme = SubResource("Theme_np78p")
+text = "0"
+
+[node name="exit" type="Button" parent="."]
+custom_minimum_size = Vector2(86, 28)
+layout_mode = 0
+offset_left = 597.0
+offset_top = 650.0
+offset_right = 683.0
+offset_bottom = 678.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("8_unj0j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_m8npg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m8npg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m8npg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_m8npg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m8npg")
+text = "Return -->"
+
+[connection signal="mouse_entered" from="store/fuel" to="." method="_on_fuel_mouse_entered"]
+[connection signal="mouse_exited" from="store/fuel" to="." method="_on_fuel_mouse_exited"]
+[connection signal="mouse_entered" from="store/compass" to="." method="_on_compass_mouse_entered"]
+[connection signal="mouse_exited" from="store/compass" to="." method="_on_compass_mouse_exited"]
+[connection signal="mouse_entered" from="store/flower" to="." method="_on_flower_mouse_entered"]
+[connection signal="mouse_exited" from="store/flower" to="." method="_on_flower_mouse_exited"]
+[connection signal="mouse_entered" from="store/jelly" to="." method="_on_jelly_mouse_entered"]
+[connection signal="mouse_exited" from="store/jelly" to="." method="_on_jelly_mouse_exited"]
+[connection signal="mouse_entered" from="store/memento" to="." method="_on_memento_mouse_entered"]
+[connection signal="mouse_exited" from="store/memento" to="." method="_on_memento_mouse_exited"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

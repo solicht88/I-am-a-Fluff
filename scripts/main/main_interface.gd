@@ -36,3 +36,14 @@ func _on_menu_pressed():
 func _on_info_pressed():
 	var info_ui = info.instantiate()
 	get_parent().add_child(info_ui)
+
+
+func _on_store_pressed():
+	change_scene.emit()
+	get_parent().add_child(Global.transition_node.instantiate())
+	var transition = $"../transition_animation/transition_player"
+	transition.play("fade_in")
+	await get_tree().create_timer(0.5).timeout
+	$"../transition_animation".queue_free()
+	await get_tree().process_frame
+	get_tree().change_scene_to_file("res://scenes/store/store.tscn")

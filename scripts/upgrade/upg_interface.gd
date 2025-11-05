@@ -9,7 +9,7 @@ extends Control
 @onready var counter_label := $counter as Label
 
 var save = Save.save_data
-var upg = UpgText
+var upg = TextData
 
 var gaze_lvl = save.gaze_lvl
 var str_lvl = save.string_lvl
