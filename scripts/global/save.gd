@@ -10,7 +10,8 @@ var save_data: Dictionary = {
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
 	"string_lvl": 1,
-	"price_mult": 1
+	"price_mult": 1,
+	"inventory": []
 }
 
 func save_game():
@@ -21,7 +22,7 @@ func save_game():
 func load_game():
 	pass
 
-# possibly temp? will see how full save/load files go
+# possibly temp? will see how full save/load files go later in dev
 func load_stars(coords):
 	for pos in coords:
 		var new_star = star1.instantiate()

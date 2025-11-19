@@ -18,6 +18,7 @@ func _process(_delta):
 
 func _on_upgrade_pressed():
 	change_scene.emit()
+	'''
 	get_parent().add_child(Global.transition_node.instantiate())
 	var transition = $"../transition_animation/transition_player"
 	transition.play("fade_in")
@@ -25,6 +26,7 @@ func _on_upgrade_pressed():
 	$"../transition_animation".queue_free()
 	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://scenes/upgrade/upgrade.tscn")
+	'''
 
 
 func _on_menu_pressed():
@@ -40,6 +42,7 @@ func _on_info_pressed():
 
 func _on_store_pressed():
 	change_scene.emit()
+	'''
 	get_parent().add_child(Global.transition_node.instantiate())
 	var transition = $"../transition_animation/transition_player"
 	transition.play("fade_in")
@@ -47,3 +50,4 @@ func _on_store_pressed():
 	$"../transition_animation".queue_free()
 	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://scenes/store/store.tscn")
+	'''

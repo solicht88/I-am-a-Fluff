@@ -19,6 +19,9 @@ func _ready():
 	var parent = get_parent()
 	
 	await parent.ready
+	Global.fade_out()
+	
+	'''
 	parent.add_child(Global.transition_node.instantiate())
 	var transition = $"../transition_animation/transition_player"
 	var transition_node = $"../transition_animation"
@@ -26,6 +29,7 @@ func _ready():
 	transition.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
 	$"../transition_animation".queue_free()
+	'''
 	
 	_update_gaze_text()
 	_update_string_text()

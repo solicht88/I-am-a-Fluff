@@ -21,6 +21,7 @@ var star_coords = Save.save_data.stars
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# transition
+	'''
 	add_child(transition_animation)
 	var transition = $transition_animation/transition_player
 	var transition_node = $transition_animation
@@ -28,10 +29,14 @@ func _ready():
 	transition.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
 	transition_node.queue_free()
+	'''
+	await ready
+	Global.fade_out()
 	
 	randomize()	
 	interface.menu_open.connect(_menu_opened)
 	interface.change_scene.connect(save_progress)
+	interface.change_scene.connect(Global.fade_in)
 	counter.text = str(stars)
 	timer.start()
 	_load_stars(star_coords)

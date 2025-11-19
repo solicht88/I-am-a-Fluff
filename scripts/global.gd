@@ -1,9 +1,23 @@
 extends Node
 
 var transition_node = preload("res://scenes/transition_animation.tscn")
+var transition = transition_node.instantiate()
 
-# format: [name, price, description]
-var item_data: Dictionary = {
-	"fuel": ["Fuel Stone", str(100*Save.save_data.price_mult) + " Stars", "Keep Puff warm while travelling the Milky Way"],
-	"compass": ["Compass", str(200*Save.save_data.price_mult) + " Stars", "Helps Puff keep track of directions while exploring"]
-}
+func fade_out():
+	add_child(transition)
+	transition.get_node("ColorRect").color.a = 255
+	
+	var player = $transition_animation/transition_player
+	player.play("fade_out")
+	await get_tree().create_timer(0.5).timeout
+	transition.queue_free()
+
+
+func fade_in():
+	add_child(transition)
+	transition.get_node("ColorRect").color.a = 0
+	
+	var player = $transition_animation/transition_player
+	player.play("fade_in")
+	await get_tree().create_timer(0.5).timeout
+	transition.queue_free()

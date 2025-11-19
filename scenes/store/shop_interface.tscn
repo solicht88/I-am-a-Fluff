@@ -350,14 +350,20 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_m8npg")
 theme_override_styles/focus = SubResource("StyleBoxFlat_m8npg")
 text = "Return -->"
 
+[connection signal="gui_input" from="store/fuel" to="." method="_on_fuel_gui_input"]
 [connection signal="mouse_entered" from="store/fuel" to="." method="_on_fuel_mouse_entered"]
 [connection signal="mouse_exited" from="store/fuel" to="." method="_on_fuel_mouse_exited"]
+[connection signal="gui_input" from="store/compass" to="." method="_on_compass_gui_input"]
 [connection signal="mouse_entered" from="store/compass" to="." method="_on_compass_mouse_entered"]
 [connection signal="mouse_exited" from="store/compass" to="." method="_on_compass_mouse_exited"]
+[connection signal="gui_input" from="store/flower" to="." method="_on_flower_gui_input"]
 [connection signal="mouse_entered" from="store/flower" to="." method="_on_flower_mouse_entered"]
 [connection signal="mouse_exited" from="store/flower" to="." method="_on_flower_mouse_exited"]
+[connection signal="gui_input" from="store/jelly" to="." method="_on_jelly_gui_input"]
 [connection signal="mouse_entered" from="store/jelly" to="." method="_on_jelly_mouse_entered"]
 [connection signal="mouse_exited" from="store/jelly" to="." method="_on_jelly_mouse_exited"]
+[connection signal="gui_input" from="store/memento" to="." method="_on_memento_gui_input"]
 [connection signal="mouse_entered" from="store/memento" to="." method="_on_memento_mouse_entered"]
 [connection signal="mouse_exited" from="store/memento" to="." method="_on_memento_mouse_exited"]
+[connection signal="pressed" from="selection/buy_btn" to="." method="_on_buy_btn_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
