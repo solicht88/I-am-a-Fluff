@@ -14,6 +14,6 @@ var str_cost = [25, 60, 150, "N/A"]
 # store
 # format: [name, price, description]
 var item_data: Dictionary = {
-	"fuel": [fuel_img, "Fuel Stone", str(100*Save.save_data.price_mult) + " Stars", "Keep Puff warm while travelling the Milky Way"],
-	"compass": ["Compass", str(200*Save.save_data.price_mult) + " Stars", "Helps Puff keep track of directions while exploring"]
+	"fuel": [fuel_img, "Fuel Stone", str(100*Save.save_data.price_mult) + " Stars\n", "Keep Puff warm while travelling the Milky Way"],
+	"compass": [compass_img, "Compass", str(200*Save.save_data.price_mult) + " Stars\n", "Helps Puff navigate where to go while exploring the Milky Way"]
 }

@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://c6im7a5gl7wht" path="res://img/characters/star2.png" id="1_bco2w"]
 [ext_resource type="Script" path="res://scripts/characters/star.gd" id="2_syh6h"]
 
+[sub_resource type="Animation" id="Animation_g7gsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_r203k"]
 resource_name = "appear"
 length = 0.5
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_g7gsp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbbe1"]
 _data = {
 "RESET": SubResource("Animation_g7gsp"),
@@ -43,7 +43,6 @@ _data = {
 [node name="star2" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_bco2w")
 

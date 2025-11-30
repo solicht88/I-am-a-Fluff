@@ -9,8 +9,8 @@ extends Node2D
 var star1 = preload("res://scenes/characters/star_1.tscn")
 var star2 = preload("res://scenes/characters/star_2.tscn")
 var star3 = preload("res://scenes/characters/star_3.tscn")
-var transition_load = preload("res://scenes/transition_animation.tscn")
-var transition_animation = transition_load.instantiate()
+#var transition_load = preload("res://scenes/transition_animation.tscn")
+#var transition_animation = transition_load.instantiate()
 var star_scenes = [star1, star2, star3]
 
 var ulcorner = Vector2(400, 50)
@@ -38,8 +38,9 @@ func _ready():
 	interface.change_scene.connect(save_progress)
 	interface.change_scene.connect(Global.fade_in)
 	counter.text = str(stars)
+	#_load_stars(star_coords)
 	timer.start()
-	_load_stars(star_coords)
+	call_deferred("_load_stars", star_coords)
 	
 	# temp to trash debug save file
 	#OS.move_to_trash(ProjectSettings.globalize_path("user://SaveFile.json"))
@@ -93,8 +94,13 @@ func save_progress():
 
 # possibly temp? will see how full save/load files go
 func _load_stars(coords):
+	print(coords)
 	for pos in coords:
-		var new_star = star1.instantiate()
+		print(pos)
+		var new_star = star_scenes[randi_range(0, 2)].instantiate()
 		add_child(new_star)
 		new_star.set_position(pos)
 		new_star.get_node("Area2D").star_collected.connect(_update_counter)
+		
+		# ensure star is visible when loading
+		new_star.get_node("Sprite2D").self_modulate.a = 255

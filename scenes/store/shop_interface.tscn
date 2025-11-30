@@ -263,17 +263,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kekpb")
 custom_minimum_size = Vector2(190, 190)
 layout_mode = 0
 offset_left = 95.0
-offset_top = 60.0
+offset_top = 68.0
 offset_right = 285.0
-offset_bottom = 250.0
+offset_bottom = 258.0
 scale = Vector2(0.997679, 0.998644)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bn1e0")
 
 [node name="TextureRect" type="TextureRect" parent="selection/display"]
-custom_minimum_size = Vector2(190, 190)
+custom_minimum_size = Vector2(1024, 1024)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.186, 0.186)
 
 [node name="name" type="Label" parent="selection"]
 custom_minimum_size = Vector2(200, 33)
@@ -293,7 +294,7 @@ layout_mode = 0
 offset_left = 40.0
 offset_top = 320.0
 offset_right = 340.0
-offset_bottom = 380.0
+offset_bottom = 400.0
 scale = Vector2(0.994668, 1)
 theme = ExtResource("2_fll3y")
 text = "1000 stars
@@ -301,13 +302,24 @@ item description ooooo cool shiny buy today! mega mart lemons"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="owned" type="Label" parent="selection"]
+custom_minimum_size = Vector2(60, 23)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 38.0
+offset_right = 220.0
+offset_bottom = 61.0
+theme = ExtResource("2_fll3y")
+text = "x0 owned"
+horizontal_alignment = 1
+
 [node name="buy_btn" type="Button" parent="selection"]
 custom_minimum_size = Vector2(150, 36)
 layout_mode = 0
 offset_left = 115.0
-offset_top = 404.0
+offset_top = 412.0
 offset_right = 265.0
-offset_bottom = 440.0
+offset_bottom = 448.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_qf2ww")
 theme_override_font_sizes/font_size = 20

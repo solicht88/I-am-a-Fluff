@@ -4,6 +4,8 @@ signal item_bought
 
 var save = Save.save_data
 
+@onready var counter_label := $counter as Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await ready
@@ -26,6 +28,8 @@ func _ready():
 	await get_tree().create_timer(0.5).timeout
 	transition_node.queue_free()
 	'''
+	
+	counter_label.text = str(save.counter)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -60,9 +64,9 @@ func _display_item(item: String):
 	var cur_item_data = TextData.item_data[item]
 	
 	display_img.texture = cur_item_data[0]
-	display_img.scale = 0
+	display_img.scale = Vector2(0.186, 0.186)
 	name_lbl.text = cur_item_data[1]
-	desc_lbl.text = cur_item_data[2]
+	desc_lbl.text = cur_item_data[2] + cur_item_data[3]
 
 # fuel preview
 func _on_fuel_mouse_entered():
@@ -85,7 +89,8 @@ func _on_compass_mouse_exited():
 	_mouse_exited()
 
 func _on_compass_gui_input(event):
-	pass # Replace with function body.
+	if event.is_action_pressed("leftclick"):
+		_display_item("compass")
 
 
 # flower preview
@@ -121,5 +126,7 @@ func _on_memento_gui_input(event):
 	pass # Replace with function body.
 
 # TODO: buy item if player has enough stars
+# - remove stars from counter
+# - add to "inventory"
 func _on_buy_btn_pressed():
 	pass # Replace with function body.

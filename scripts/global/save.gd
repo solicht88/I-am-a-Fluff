@@ -5,13 +5,13 @@ const save_location = "user://saves/SaveFile.json"
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
 var save_data: Dictionary = {
-	"counter": 0,
-	"stars": [],
+	"counter": 0, # count number of stars
+	"stars": [], # keep track of spawned stars coordinates
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
 	"string_lvl": 1,
 	"price_mult": 1,
-	"inventory": []
+	"inventory": {} # dictionary to store shop items
 }
 
 func save_game():
@@ -19,6 +19,8 @@ func save_game():
 	file.store_var(save_data.duplicate())
 	file.close()
 
+# TODO
+# load existing stars, balance, levels, and inv
 func load_game():
 	pass
 

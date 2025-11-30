@@ -15,7 +15,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ubp8a"]
@@ -43,7 +43,6 @@ _data = {
 [node name="star1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(-5.96046e-08, 0)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_k16j1")
