@@ -6,10 +6,7 @@ var save = Save.save_data
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var parent = get_parent()
-	
-	await parent.ready
-	
+	await ready
 	Global.fade_out()
 	# parent.add_child(Global.transition_node.instantiate())
 	'''
@@ -36,13 +33,16 @@ func _process(_delta):
 
 
 func _on_exit_pressed():
+	'''
 	get_parent().add_child(Global.transition_node.instantiate())
 	var transition = $"../transition_animation/transition_player"
 	transition.play("fade_in")
 	await get_tree().create_timer(0.5).timeout
 	$"../transition_animation".queue_free()
+	'''
+	Global.fade_in()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
-
 
 func _mouse_entered():
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
@@ -60,6 +60,7 @@ func _display_item(item: String):
 	var cur_item_data = TextData.item_data[item]
 	
 	display_img.texture = cur_item_data[0]
+	display_img.scale = 0
 	name_lbl.text = cur_item_data[1]
 	desc_lbl.text = cur_item_data[2]
 

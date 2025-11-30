@@ -14,19 +14,17 @@ func _process(_delta):
 	pass
 
 
-func _on_new_btn_pressed():
-	var parent = get_parent()
-	
-	await parent.ready
-	Global.fade_out()
+func _on_new_btn_pressed():	
+	Global.fade_in()
+	#print('ready')
 	
 	'''
 	parent.add_child(transition_animation.instantiate())
 	var transition = $"../transition_animation/transition_player"
 	transition.play("fade_in")
+	'''
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
-	'''
 
 
 func _on_load_btn_pressed():

@@ -16,9 +16,7 @@ var str_lvl = save.string_lvl
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var parent = get_parent()
-	
-	await parent.ready
+	await ready
 	Global.fade_out()
 	
 	'''
@@ -44,13 +42,15 @@ func _process(_delta):
 func _on_exit_pressed():
 	Save.save_data.gaze_lvl = gaze_lvl
 	Save.save_data.string_lvl = str_lvl
-	
+	'''
 	get_parent().add_child(Global.transition_node.instantiate())
 	var transition = $"../transition_animation/transition_player"
 	transition.play("fade_in")
 	await get_tree().create_timer(0.5).timeout
 	$"../transition_animation".queue_free()
-	
+	'''
+	Global.fade_in()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 
