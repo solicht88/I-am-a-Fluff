@@ -4,6 +4,7 @@ extends Button
 const save_location = "user://saves/SaveFile.json"
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
+
 var save_data: Dictionary = {
 	"counter": 0, # count number of stars
 	"stars": [], # keep track of spawned stars coordinates
@@ -11,7 +12,12 @@ var save_data: Dictionary = {
 	"wish_lvl": 1,
 	"string_lvl": 1,
 	"price_mult": 1,
-	"inventory": {} # dictionary to store shop items
+	"inventory": {
+		"fuel": 0,
+		"compass": 0,
+		"jelly": 0,
+		"flower": 0
+		} # dictionary to store shop items
 }
 
 func save_game():

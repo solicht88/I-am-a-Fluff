@@ -94,9 +94,9 @@ func save_progress():
 
 # possibly temp? will see how full save/load files go
 func _load_stars(coords):
-	print(coords)
+	#print(coords)
 	for pos in coords:
-		print(pos)
+		#print(pos)
 		var new_star = star_scenes[randi_range(0, 2)].instantiate()
 		add_child(new_star)
 		new_star.set_position(pos)
