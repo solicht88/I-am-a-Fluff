@@ -1,15 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://wbpl5f454xx6"]
+[gd_scene load_steps=15 format=3 uid="uid://wbpl5f454xx6"]
 
 [ext_resource type="Script" path="res://scripts/store/shop_interface.gd" id="1_kl2le"]
 [ext_resource type="Texture2D" uid="uid://8rdl3fv4rg6g" path="res://img/items/fuel_stone.png" id="1_q3637"]
-[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/dark_text.tres" id="2_fll3y"]
+[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/themes/dark_text.tres" id="2_fll3y"]
 [ext_resource type="Texture2D" uid="uid://de8cvvxuhphf8" path="res://img/items/compass.png" id="3_20e6j"]
 [ext_resource type="Texture2D" uid="uid://diaqu5kd5t48j" path="res://img/items/moon_flower.png" id="4_v48ds"]
 [ext_resource type="Texture2D" uid="uid://c8npxx7o5fc2m" path="res://img/items/orange_jelly.png" id="5_k8uh8"]
-[ext_resource type="Theme" uid="uid://gfm5jyry675u" path="res://scenes/light_button.tres" id="6_qf2ww"]
+[ext_resource type="Theme" uid="uid://gfm5jyry675u" path="res://scenes/themes/light_button.tres" id="6_qf2ww"]
 [ext_resource type="Texture2D" uid="uid://bgv26ft4px3kq" path="res://img/characters/star3.png" id="8_atpgt"]
-[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="8_unj0j"]
-[ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="9_dcbl7"]
+[ext_resource type="Theme" uid="uid://c51qyr2yt5dmr" path="res://scenes/themes/light_text.tres" id="9_lctir"]
+[ext_resource type="Theme" uid="uid://d386tdo3jg30v" path="res://scenes/themes/clear_button.tres" id="10_pqkf0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kekpb"]
 bg_color = Color(0.996078, 0.984314, 0.917647, 0.627451)
@@ -31,21 +31,6 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_562bb"]
-
-[sub_resource type="Theme" id="Theme_np78p"]
-Label/colors/font_color = Color(0.996078, 0.984314, 0.917647, 1)
-Label/colors/font_outline_color = Color(0.996078, 0.984314, 0.917647, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 32
-Label/fonts/font = ExtResource("9_dcbl7")
-Label/styles/normal = SubResource("StyleBoxEmpty_562bb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8npg"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -342,7 +327,7 @@ offset_left = 130.0
 offset_top = 55.0
 offset_right = 355.0
 offset_bottom = 99.0
-theme = SubResource("Theme_np78p")
+theme = ExtResource("9_lctir")
 text = "0"
 
 [node name="exit" type="Button" parent="."]
@@ -353,7 +338,7 @@ offset_top = 650.0
 offset_right = 683.0
 offset_bottom = 678.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("8_unj0j")
+theme = ExtResource("10_pqkf0")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_m8npg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m8npg")

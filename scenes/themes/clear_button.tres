@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d386tdo3jg30v"]
+
+[ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="1_pf4d6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i304k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+default_font = ExtResource("1_pf4d6")
+Button/colors/font_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_disabled_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_focus_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_hover_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_hover_pressed_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_outline_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/font_pressed_color = Color(0.996078, 0.984314, 0.917647, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_pf4d6")
+Button/styles/disabled = SubResource("StyleBoxFlat_i304k")
+Button/styles/focus = SubResource("StyleBoxFlat_i304k")
+Button/styles/hover = SubResource("StyleBoxFlat_i304k")
+Button/styles/normal = SubResource("StyleBoxFlat_i304k")
+Button/styles/pressed = SubResource("StyleBoxFlat_i304k")

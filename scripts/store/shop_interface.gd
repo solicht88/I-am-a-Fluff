@@ -144,6 +144,8 @@ func _on_memento_gui_input(event):
 func _on_buy_btn_pressed():
 	if cur_item == "fuel":
 		_buy_item("fuel")
+	
+	# TODO: add if statements when other items are bought
 
 func _buy_item(item: String):
 	var cost = TextData.item_cost[item]*save.price_mult

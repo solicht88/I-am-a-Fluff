@@ -53,3 +53,10 @@ func _on_store_pressed():
 	'''
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/store/store.tscn")
+
+
+func _on_explore_pressed():
+	change_scene.emit()
+	Global.fade_in()
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/explore/explore.tscn")

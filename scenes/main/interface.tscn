@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="1_3p23v"]
 [ext_resource type="Texture2D" uid="uid://bgv26ft4px3kq" path="res://img/characters/star3.png" id="1_ajwyw"]
-[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_l0ory"]
 [ext_resource type="Script" path="res://scripts/main/main_interface.gd" id="1_uubhd"]
+[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/themes/button.tres" id="4_2hexs"]
 [ext_resource type="Texture2D" uid="uid://cr5rcnme0yget" path="res://img/icons/info.png" id="4_c5gkt"]
 [ext_resource type="Texture2D" uid="uid://db4xluwy7lt5g" path="res://img/icons/info_click.png" id="5_6foa8"]
 [ext_resource type="Texture2D" uid="uid://by4x3simqbed8" path="res://img/icons/menu.png" id="5_afrp4"]
@@ -62,7 +62,7 @@ offset_top = 160.0
 offset_right = 350.0
 offset_bottom = 230.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_l0ory")
+theme = ExtResource("4_2hexs")
 text = "upgrade"
 
 [node name="store" type="Button" parent="."]
@@ -73,7 +73,7 @@ offset_top = 260.0
 offset_right = 350.0
 offset_bottom = 330.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_l0ory")
+theme = ExtResource("4_2hexs")
 text = "store"
 
 [node name="explore" type="Button" parent="."]
@@ -84,8 +84,7 @@ offset_top = 360.0
 offset_right = 350.0
 offset_bottom = 430.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_l0ory")
-disabled = true
+theme = ExtResource("4_2hexs")
 text = "explore"
 
 [node name="mementos" type="Button" parent="."]
@@ -96,7 +95,7 @@ offset_top = 460.0
 offset_right = 350.0
 offset_bottom = 530.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_l0ory")
+theme = ExtResource("4_2hexs")
 disabled = true
 text = "mementos
 "
@@ -127,5 +126,6 @@ texture_hover = ExtResource("9_no8pp")
 
 [connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="store" to="." method="_on_store_pressed"]
+[connection signal="pressed" from="explore" to="." method="_on_explore_pressed"]
 [connection signal="pressed" from="info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="menu_btn" to="." method="_on_menu_pressed"]

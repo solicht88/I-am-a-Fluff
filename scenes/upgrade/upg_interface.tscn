@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dinpmsn60y4kv"]
+[gd_scene load_steps=14 format=3 uid="uid://dinpmsn60y4kv"]
 
 [ext_resource type="Script" path="res://scripts/upgrade/upg_interface.gd" id="1_edecy"]
-[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/button.tres" id="1_ttde2"]
 [ext_resource type="Texture2D" uid="uid://srynbfw1fua0" path="res://img/icons/eye.png" id="2_074lk"]
 [ext_resource type="FontFile" uid="uid://bowrdqh4kjwdd" path="res://fonts/Schoolbell-Regular.ttf" id="2_hc1nt"]
-[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/dark_text.tres" id="4_3u4h4"]
+[ext_resource type="Theme" uid="uid://d386tdo3jg30v" path="res://scenes/themes/clear_button.tres" id="3_8pb6q"]
+[ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/themes/button.tres" id="3_rvson"]
+[ext_resource type="Theme" uid="uid://ba7ehrhp4kipx" path="res://scenes/themes/dark_text.tres" id="4_3u3a8"]
 [ext_resource type="Texture2D" uid="uid://bj6rwfm3cb87e" path="res://img/icons/cloud.png" id="5_2v2mj"]
 [ext_resource type="Texture2D" uid="uid://by210xn245wxk" path="res://img/icons/string.png" id="6_k0ak1"]
 [ext_resource type="Texture2D" uid="uid://bgv26ft4px3kq" path="res://img/characters/star3.png" id="7_2hh67"]
@@ -69,7 +70,7 @@ offset_top = 220.0
 offset_right = 470.0
 offset_bottom = 250.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_ttde2")
+theme = ExtResource("3_rvson")
 theme_override_font_sizes/font_size = 16
 text = "lvl up"
 
@@ -80,7 +81,7 @@ offset_left = 200.0
 offset_top = 190.0
 offset_right = 400.0
 offset_bottom = 281.0
-theme = ExtResource("4_3u4h4")
+theme = ExtResource("4_3u3a8")
 text = "Gaze Proficiency - Increase the rate which stars appear
 (5.0s --> 4.5s)
 Cost: 6 stars"
@@ -92,7 +93,7 @@ offset_left = 410.0
 offset_top = 200.0
 offset_right = 427.0
 offset_bottom = 217.0
-theme = ExtResource("4_3u4h4")
+theme = ExtResource("4_3u3a8")
 theme_override_font_sizes/font_size = 12
 text = "lvl 1"
 
@@ -113,7 +114,7 @@ offset_top = 345.0
 offset_right = 470.0
 offset_bottom = 375.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_ttde2")
+theme = ExtResource("3_rvson")
 theme_override_font_sizes/font_size = 16
 disabled = true
 text = "lvl up"
@@ -125,7 +126,7 @@ offset_left = 200.0
 offset_top = 315.0
 offset_right = 400.0
 offset_bottom = 406.0
-theme = ExtResource("4_3u4h4")
+theme = ExtResource("4_3u3a8")
 text = "Ma's Wish - Decrease cost of certain items in the store
 (disabled, TBA)
 Cost: N/A"
@@ -137,7 +138,7 @@ offset_left = 410.0
 offset_top = 325.0
 offset_right = 427.0
 offset_bottom = 342.0
-theme = ExtResource("4_3u4h4")
+theme = ExtResource("4_3u3a8")
 theme_override_font_sizes/font_size = 12
 text = "lvl 1"
 
@@ -158,7 +159,7 @@ offset_top = 469.0
 offset_right = 470.0
 offset_bottom = 499.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_ttde2")
+theme = ExtResource("3_rvson")
 theme_override_font_sizes/font_size = 16
 text = "lvl up"
 
@@ -169,7 +170,7 @@ offset_left = 200.0
 offset_top = 439.0
 offset_right = 400.0
 offset_bottom = 530.0
-theme = ExtResource("4_3u4h4")
+theme = ExtResource("4_3u3a8")
 text = "String Skill - Increase the stars earned per star clicked
 (1 --> 2)
 Cost: 20 stars"
@@ -181,7 +182,7 @@ offset_left = 410.0
 offset_top = 449.0
 offset_right = 427.0
 offset_bottom = 466.0
-theme = ExtResource("4_3u4h4")
+theme = ExtResource("4_3u3a8")
 theme_override_font_sizes/font_size = 12
 text = "lvl 1"
 
@@ -192,7 +193,7 @@ offset_top = 100.0
 offset_right = 1180.0
 offset_bottom = 128.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_ttde2")
+theme = ExtResource("3_8pb6q")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_i304k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i304k")
