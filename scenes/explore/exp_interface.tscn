@@ -28,6 +28,7 @@ texture = ExtResource("1_2x72c")
 
 [node name="fuel_2" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 75.0
 offset_top = 610.0
 offset_right = 1099.0
@@ -37,6 +38,7 @@ texture = ExtResource("1_2x72c")
 
 [node name="fuel_3" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 50.0
 offset_top = 570.0
 offset_right = 1074.0
@@ -66,6 +68,7 @@ texture = ExtResource("3_7nqv8")
 
 [node name="jelly_2" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 415.0
 offset_top = 610.0
 offset_right = 1439.0
@@ -111,7 +114,6 @@ offset_right = 744.0
 offset_bottom = 238.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_ayq8n")
-disabled = true
 text = "explore"
 
 [node name="exit" type="Button" parent="."]
@@ -124,4 +126,5 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("5_ayq8n")
 text = "Return -->"
 
+[connection signal="pressed" from="exp_btn" to="." method="_on_exp_btn_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

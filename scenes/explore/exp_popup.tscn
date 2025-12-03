@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://7q4rmhu7y2in"]
+
+[ext_resource type="Theme" uid="uid://c51qyr2yt5dmr" path="res://scenes/themes/light_text.tres" id="1_5spc6"]
+[ext_resource type="Script" path="res://scripts/explore/exp_popup.gd" id="1_t4yvq"]
+[ext_resource type="Theme" uid="uid://gfm5jyry675u" path="res://scenes/themes/light_button.tres" id="2_cfswl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m7nw"]
+bg_color = Color(0, 0, 0, 0.882353)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="exp_popup" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t4yvq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.294118)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+offset_left = 390.0
+offset_top = 210.0
+offset_right = 890.0
+offset_bottom = 510.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m7nw")
+
+[node name="Label" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 475.0
+offset_bottom = 275.0
+theme = ExtResource("1_5spc6")
+theme_override_font_sizes/font_size = 20
+text = "Are you ready to move on? This action will progress the story.
+
+Puff will also be unable to return to this area after exploring. Ensure you are finished with the current area before moving on."
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="exp_btn" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(105, 2.08165e-12)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 239.0
+offset_right = 215.0
+offset_bottom = 275.0
+theme = ExtResource("2_cfswl")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Explore"
+
+[node name="cancel_btn" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(105, 2.08165e-12)
+layout_mode = 0
+offset_left = 285.0
+offset_top = 239.0
+offset_right = 420.0
+offset_bottom = 275.0
+theme = ExtResource("2_cfswl")
+theme_override_font_sizes/font_size = 20
+text = "Cancel"
+
+[connection signal="pressed" from="Panel/cancel_btn" to="." method="_on_cancel_btn_pressed"]

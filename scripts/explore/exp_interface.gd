@@ -4,6 +4,7 @@ extends Control
 @onready var jelly_icons = [$jelly_1, $jelly_2]
 
 var save_data = Save.save_data
+var popup = preload("res://scenes/explore/exp_popup.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,8 +18,10 @@ func _ready():
 		$compass_img.visible = true
 	for i in range(inv["jelly"]):
 		jelly_icons[i].visible = true
-		
-	# TODO: update text to match inv
+	
+	$fuel_lbl.text = "fuel: " + str(inv["fuel"]) + "/3"
+	$compass_lbl.text = "compass: " + str(inv["compass"]) + "/1"
+	$jelly_lbl.text = "jelly: " + str(inv["jelly"]) + "/2"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -29,3 +32,9 @@ func _on_exit_pressed():
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+
+func _on_exp_btn_pressed():
+	print("lets explore...")
+	var exp_popup = popup.instantiate()
+	get_parent().add_child(exp_popup)

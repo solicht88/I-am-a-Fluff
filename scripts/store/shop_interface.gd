@@ -77,7 +77,12 @@ func _display_item(item: String):
 	
 	if save.inventory[item] == TextData.item_max[item]:
 		buy_btn.disabled = true
+		buy_btn.text = "sold out"
 		buy_btn.set_default_cursor_shape(Control.CURSOR_ARROW)
+	else:
+		buy_btn.disabled = false
+		buy_btn.text = "buy"
+		buy_btn.set_default_cursor_shape(Control.CURSOR_POINTING_HAND)
 
 # fuel preview
 func _on_fuel_mouse_entered():
@@ -138,14 +143,8 @@ func _on_memento_mouse_exited():
 func _on_memento_gui_input(event):
 	pass # Replace with function body.
 
-# TODO: buy item if player has enough stars
-# - remove stars from counter
-# - add to "inventory"
 func _on_buy_btn_pressed():
-	if cur_item == "fuel":
-		_buy_item("fuel")
-	
-	# TODO: add if statements when other items are bought
+	_buy_item(cur_item)
 
 func _buy_item(item: String):
 	var cost = TextData.item_cost[item]*save.price_mult
