@@ -147,7 +147,7 @@ func _on_buy_btn_pressed():
 	_buy_item(cur_item)
 
 func _buy_item(item: String):
-	var cost = TextData.item_cost[item]*save.price_mult
+	var cost = TextData.item_cost[item]
 	if cost <= save.counter:
 		save.inventory[item] += 1
 		save.counter -= cost

@@ -6,12 +6,11 @@ const save_location = "user://saves/SaveFile.json"
 var star1 = preload("res://scenes/characters/star_1.tscn")
 
 var save_data: Dictionary = {
-	"counter": 0, # count number of stars
+	"counter": 500, # count number of stars
 	"stars": [], # keep track of spawned stars coordinates
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
-	"string_lvl": 1,
-	"price_mult": 1,
+	"str_lvl": 1,
 	"inventory": {
 		"fuel": 0,
 		"compass": 0,

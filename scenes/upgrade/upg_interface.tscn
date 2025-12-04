@@ -116,7 +116,6 @@ offset_bottom = 375.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_rvson")
 theme_override_font_sizes/font_size = 16
-disabled = true
 text = "lvl up"
 
 [node name="wish_label" type="Label" parent="."]
