@@ -96,7 +96,6 @@ offset_right = 350.0
 offset_bottom = 530.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_2hexs")
-disabled = true
 text = "mementos
 "
 
@@ -127,5 +126,6 @@ texture_hover = ExtResource("9_no8pp")
 [connection signal="pressed" from="upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="explore" to="." method="_on_explore_pressed"]
+[connection signal="pressed" from="mementos" to="." method="_on_mementos_pressed"]
 [connection signal="pressed" from="info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="menu_btn" to="." method="_on_menu_pressed"]

@@ -6,6 +6,7 @@ var info = preload("res://scenes/main/info_popup.tscn")
 signal menu_open
 signal change_scene
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,6 +16,17 @@ func _ready():
 func _process(_delta):
 	pass
 
+
+func _on_menu_pressed():
+	var menu_ui = menu.instantiate()
+	get_parent().add_child(menu_ui)
+	menu_open.emit()
+
+
+func _on_info_pressed():
+	var info_ui = info.instantiate()
+	get_parent().add_child(info_ui)
+	
 
 func _on_upgrade_pressed():
 	change_scene.emit()
@@ -28,17 +40,6 @@ func _on_upgrade_pressed():
 	'''
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/upgrade/upgrade.tscn")
-
-
-func _on_menu_pressed():
-	var menu_ui = menu.instantiate()
-	get_parent().add_child(menu_ui)
-	menu_open.emit()
-
-
-func _on_info_pressed():
-	var info_ui = info.instantiate()
-	get_parent().add_child(info_ui)
 
 
 func _on_store_pressed():
@@ -60,3 +61,9 @@ func _on_explore_pressed():
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/explore/explore.tscn")
+
+func _on_mementos_pressed():
+	change_scene.emit()
+	Global.fade_in()
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/mementos/mementos.tscn")

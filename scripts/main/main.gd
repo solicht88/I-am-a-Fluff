@@ -36,7 +36,6 @@ func _ready():
 	randomize()	
 	interface.menu_open.connect(_menu_opened)
 	interface.change_scene.connect(save_progress)
-	interface.change_scene.connect(Global.fade_in)
 	counter.text = str(stars)
 	#_load_stars(star_coords)
 	timer.start()
@@ -52,7 +51,7 @@ func _process(_delta):
 # Randomized clickable stars
 func _update_counter(pos):
 	star_coords.remove_at(star_coords.find(pos))
-	stars += 1 * Save.save_data.string_lvl
+	stars += 1 * Save.save_data.str_lvl
 	counter.text = str(stars)
 
 func _get_random_point(ul: Vector2, br: Vector2) -> Vector2:
