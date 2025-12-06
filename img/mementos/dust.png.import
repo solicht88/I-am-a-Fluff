@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtp08erpkyblb"
-path="res://.godot/imported/expl_1.png-49c214685860e2ef0cc40c458dc6c53a.ctex"
+uid="uid://cwndejr56pnlg"
+path="res://.godot/imported/dust.png-e03278b1aa5cb1dcbeefe9b63fa562cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/backgrounds/expl_1.png"
-dest_files=["res://.godot/imported/expl_1.png-49c214685860e2ef0cc40c458dc6c53a.ctex"]
+source_file="res://img/mementos/dust.png"
+dest_files=["res://.godot/imported/dust.png-e03278b1aa5cb1dcbeefe9b63fa562cd.ctex"]
 
 [params]
 

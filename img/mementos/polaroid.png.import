@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boxv25t60hlr8"
-path="res://.godot/imported/expl_3.png-65ad568294972e070538555166d28b82.ctex"
+uid="uid://clgjwvnjr8ggc"
+path="res://.godot/imported/polaroid.png-87603d7f981f3cf0cac57fe619e550a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/backgrounds/expl_3.png"
-dest_files=["res://.godot/imported/expl_3.png-65ad568294972e070538555166d28b82.ctex"]
+source_file="res://img/mementos/polaroid.png"
+dest_files=["res://.godot/imported/polaroid.png-87603d7f981f3cf0cac57fe619e550a8.ctex"]
 
 [params]
 
