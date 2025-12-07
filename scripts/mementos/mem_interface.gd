@@ -1,5 +1,6 @@
 extends Control
 
+@onready var panels = [$dust, $ribbon, $lotus, $candle, $photo]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,3 +17,13 @@ func _on_exit_pressed():
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+
+func _on_left_btn_pressed():
+	pass
+
+
+func _on_right_btn_pressed():
+	for panel in panels:
+		#var cur_pos
+		panel.position.x += 267

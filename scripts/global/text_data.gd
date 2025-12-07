@@ -40,6 +40,17 @@ var item_max: Dictionary = {
 	"flower": 1
 }
 
+# mementos
+# format: [name, description]
+var mem_data: Dictionary = {
+	"dust": ["Stardust", "Some leftover stardust Ma gave to Puff.\nNow that Puff thinks about it, why did Ma collect so much?"],
+	"ribbon": ["Extra Ribbon", "Excess ribbon from the piece Puff wears.\nMa said this shade of red wlil bring Puff lots of luck!"],
+	"lotus": ["Lotus Flower", "A common flower from Ma's birthplace on Earth.\nSeems kinda ordinary, though... Well, if Ma likes them, Puff does too."],
+	"candle": ["Black Chamberstick", "Ma's old chamberstick. It's holding an unlit candle.\nPuff likes it. It keeps us warm for a long time."],
+	"photo": ["Polaroid Photo", "A polaroid photo of Puff when we first met Ma.\nAww, Puff was so small! Puff wonders how long ago this was taken?"]
+}
+
+
 func update_data():
 	print(1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05))
 	for key in item_cost:

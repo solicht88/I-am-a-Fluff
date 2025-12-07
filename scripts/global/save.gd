@@ -16,7 +16,14 @@ var save_data: Dictionary = {
 		"compass": 0,
 		"jelly": 0,
 		"flower": 0
-		} # dictionary to store shop items
+		}, # dictionary to store shop items
+	"mementos": {
+		"dust": false,
+		"ribbon": false,
+		"lotus": false,
+		"candle": false,
+		"photo": false
+	}
 }
 
 func save_game():

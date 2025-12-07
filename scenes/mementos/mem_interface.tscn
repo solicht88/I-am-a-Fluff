@@ -1,32 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsy7a3cfl1qf5"]
+[gd_scene load_steps=13 format=3 uid="uid://dsy7a3cfl1qf5"]
 
 [ext_resource type="Theme" uid="uid://c51qyr2yt5dmr" path="res://scenes/themes/light_text.tres" id="1_48ut6"]
 [ext_resource type="Script" path="res://scripts/mementos/mem_interface.gd" id="1_enmbb"]
 [ext_resource type="Theme" uid="uid://d386tdo3jg30v" path="res://scenes/themes/clear_button.tres" id="2_0gk1o"]
+[ext_resource type="Texture2D" uid="uid://bshqqtoms2b2" path="res://img/mementos/lotus.png" id="2_y0ehh"]
+[ext_resource type="Texture2D" uid="uid://df8rd6daxktru" path="res://img/mementos/ribbon.png" id="3_l1b4e"]
+[ext_resource type="Texture2D" uid="uid://bu2r3i2a20csf" path="res://img/mementos/dust.png" id="4_5oiup"]
+[ext_resource type="Texture2D" uid="uid://86884fydb7p6" path="res://img/mementos/candle.png" id="5_1nmmq"]
+[ext_resource type="Texture2D" uid="uid://clgjwvnjr8ggc" path="res://img/mementos/polaroid.png" id="6_3fhk6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfea6"]
-bg_color = Color(0.996078, 0.984314, 0.917647, 0.627451)
+bg_color = Color(0.996078, 0.984314, 0.917647, 1)
 corner_radius_top_left = 150
 corner_radius_top_right = 150
 corner_radius_bottom_right = 150
 corner_radius_bottom_left = 150
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7gag"]
-bg_color = Color(0.996078, 0.984314, 0.917647, 0.509804)
+bg_color = Color(0.996078, 0.984314, 0.917647, 1)
 corner_radius_top_left = 150
 corner_radius_top_right = 150
 corner_radius_bottom_right = 150
 corner_radius_bottom_left = 150
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jbuv"]
-bg_color = Color(0.996078, 0.984314, 0.917647, 0.392157)
+bg_color = Color(0.996078, 0.984314, 0.917647, 1)
 corner_radius_top_left = 150
 corner_radius_top_right = 150
 corner_radius_bottom_right = 150
 corner_radius_bottom_left = 150
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wep8t"]
-bg_color = Color(0.996078, 0.984314, 0.917647, 0.392157)
+bg_color = Color(0.996078, 0.984314, 0.917647, 1)
 corner_radius_top_left = 150
 corner_radius_top_right = 150
 corner_radius_bottom_right = 150
@@ -41,7 +46,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_enmbb")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="lotus" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.627451)
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_left = 490.0
@@ -50,37 +56,85 @@ offset_right = 790.0
 offset_bottom = 460.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gfea6")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="lotus"]
+self_modulate = Color(0.0605303, 0.0605304, 0.0605303, 1)
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("2_y0ehh")
+
+[node name="ribbon" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.509804)
 custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
 offset_left = 222.0
 offset_top = 220.0
 offset_right = 402.0
 offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7gag")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="ribbon"]
+self_modulate = Color(0.0605303, 0.0605304, 0.0605303, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("3_l1b4e")
+
+[node name="dust" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
 offset_left = -45.0
 offset_top = 220.0
 offset_right = 135.0
 offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1jbuv")
 
-[node name="Panel4" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="dust"]
+self_modulate = Color(0.0605303, 0.0605304, 0.0605303, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("4_5oiup")
+
+[node name="candle" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.509804)
 custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
 offset_left = 878.0
 offset_top = 220.0
 offset_right = 1058.0
 offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7gag")
 
-[node name="Panel5" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="candle"]
+self_modulate = Color(0.0584206, 0.0584206, 0.0584206, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("5_1nmmq")
+
+[node name="photo" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
 custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
 offset_left = 1145.0
 offset_top = 220.0
 offset_right = 1325.0
 offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wep8t")
+
+[node name="TextureRect" type="TextureRect" parent="photo"]
+self_modulate = Color(0.0584206, 0.0584206, 0.0584206, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("6_3fhk6")
 
 [node name="name" type="Label" parent="."]
 custom_minimum_size = Vector2(300, 44)
@@ -96,10 +150,10 @@ horizontal_alignment = 1
 [node name="desc" type="Label" parent="."]
 custom_minimum_size = Vector2(700, 69)
 layout_mode = 0
-offset_left = 290.0
-offset_top = 510.0
-offset_right = 990.0
-offset_bottom = 579.0
+offset_left = 289.0
+offset_top = 511.0
+offset_right = 989.0
+offset_bottom = 580.0
 theme = ExtResource("1_48ut6")
 theme_override_font_sizes/font_size = 24
 text = "A memento that reminds Puff of Ma.
@@ -112,6 +166,7 @@ offset_left = 150.0
 offset_top = 511.0
 offset_right = 214.0
 offset_bottom = 577.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_0gk1o")
 theme_override_font_sizes/font_size = 48
 text = "<—"
@@ -122,6 +177,7 @@ offset_left = 1068.0
 offset_top = 511.0
 offset_right = 1130.0
 offset_bottom = 577.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_0gk1o")
 theme_override_font_sizes/font_size = 48
 text = "—>"
@@ -137,4 +193,6 @@ theme = ExtResource("2_0gk1o")
 theme_override_colors/font_color = Color(0.996078, 0.984314, 0.917647, 0.784314)
 text = "Return -->"
 
+[connection signal="pressed" from="left_btn" to="." method="_on_left_btn_pressed"]
+[connection signal="pressed" from="right_btn" to="." method="_on_right_btn_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

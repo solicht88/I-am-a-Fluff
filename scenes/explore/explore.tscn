@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw7ifoshueyjg"]
 
-[ext_resource type="Texture2D" uid="uid://cgl6wu0snaded" path="res://img/backgrounds/expl_1.png" id="1_vd6bc"]
+[ext_resource type="Texture2D" uid="uid://dtp08erpkyblb" path="res://img/backgrounds/expl_1.png" id="1_vd6bc"]
 [ext_resource type="PackedScene" uid="uid://3dxsdn3xkksm" path="res://scenes/explore/exp_interface.tscn" id="2_wiooy"]
 
 [node name="explore" type="Node2D"]
