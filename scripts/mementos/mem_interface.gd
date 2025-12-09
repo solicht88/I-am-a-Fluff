@@ -47,40 +47,63 @@ func _on_right_btn_pressed():
 		Vector2(1145, 220)
 	]
 	
-	var modulates = [
-		Color.hex(0xffffff64),
-		Color.hex(0xffffff82),
-		Color.hex(0xffffffa0),
-		Color.hex(0xffffff82),
-		Color.hex(0xffffff64)
-	] 
+	var mods_a = [
+		100,
+		130,
+		160,
+		130,
+		100
+	]
+	
+	var mods_c = [
+		Color8(255, 255, 255, 100),
+		Color8(255, 255, 255, 130),
+		Color8(255, 255, 255, 160),
+		Color8(255, 255, 255, 130),
+		Color8(255, 255, 255, 100)
+	]
 	
 	for btn in btns:
 		btn.disabled = true
+		btn.set_default_cursor_shape(Control.CURSOR_ARROW)
 	
+	''' old, simpler animation code
 	panels[2].size = small_size
 	panels[2].position.y = 220
 	panels[2].get_child(0).scale = small_img_scale
-	#cur_focus.position = Vector2(550, 220)
+	cur_focus.position = Vector2(550, 220)
+	'''
 	
-	# for leaving large circle: 328, all other circles can add 267/268
-	# TODO: add list of goal positions for circles to move to
-	# TODO: have circle on end reappear on other end
-	# TODO: make circle size change gradual instead of instant
-	# TODO: have self-modulate transparency change based on current circle order
+	# adjustment variables for changing from small to large circle
+	var adj_size = Vector2(120.0/133.0, 120.0/133.0) # (300-180)/133 = ~0.9
+	var adj_scale = Vector2(0.117/133.0, 0.117/133.0) # (0.292-0.175)/133 = ~0.00088
+	var adj_y = 60.0/133.0 # (220-160)/133 = ~0.45
 	
-	for i in range(267):
+	for i in range(267/2):
 		for panel in range(len(panels)):
-			'''
-			if panel == cur_focus:
-				panel.position.x += 2.4
-			else:
-				panel.position.x += 2
-			'''
 			var cur_panel = panels[panel]
-			cur_panel.position.x += 1
+			cur_panel.position.x += 2
+			cur_panel.self_modulate.a += (mods_a[(panel+1) % 5] - mods_a[panel]) / 255.0 / 133.0
+			
+			if panel == 2:
+				# make previous center circle smaller
+				cur_panel.size -= adj_size
+				cur_panel.get_child(0).scale -= adj_scale
+				# gradually adjust y value
+				cur_panel.position.x += 388.0/133.0 - 2 # (878-490)/133 - 2 = ~0.92
+				cur_panel.position.y += adj_y
+			
+			if panel == 1:
+				# make oncoming center circle larger
+				cur_panel.size += adj_size
+				cur_panel.get_child(0).scale += adj_scale
+				# gradually adjut y value
+				#cur_panel.position.x += 0
+				cur_panel.position.y -= adj_y
+			
 			#panels[panel].position = positions[(panel+1) % 5]
-			if cur_panel.position.x == 1280:
+			# move panel to the other edge of screen after leaving the screen
+			if cur_panel.position.x >= 1280:
 				new_panels.remove_at(panel)
 				new_panels.push_front(panels[panel])
 				cur_panel.position = Vector2(-180, 220)
@@ -88,17 +111,28 @@ func _on_right_btn_pressed():
 		await get_tree().create_timer(0.001).timeout
 	
 	panels = new_panels
-	#print(panels)
 	
+	# correct position & size & scale of circles at end of animation
 	for i in range(len(panels)):
 		panels[i].position = positions[i]
+		panels[i].self_modulate = mods_c[i]
+		
+		if i == 2:
+			panels[i].size = large_size
+			panels[i].get_child(0).scale = large_img_scale
+		else:
+			panels[i].size = small_size
+			panels[i].get_child(0).scale = small_img_scale
 	
-	
+	''' old animation code
 	var next_focus = panels[2]
 	var next_focus_img = next_focus.get_child(0)
 	next_focus.size = large_size
 	next_focus_img.scale = large_img_scale
+	'''
 	
+	# TODO: change name + description text to match focus memento
 	
 	for btn in btns:
 		btn.disabled = false
+		btn.set_default_cursor_shape(Control.CURSOR_POINTING_HAND)

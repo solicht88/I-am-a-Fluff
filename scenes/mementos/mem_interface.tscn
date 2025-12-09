@@ -191,6 +191,7 @@ offset_bottom = 88.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_0gk1o")
 theme_override_colors/font_color = Color(0.996078, 0.984314, 0.917647, 0.784314)
+theme_override_colors/font_disabled_color = Color(0.996078, 0.984314, 0.917647, 0.784314)
 text = "Return -->"
 
 [connection signal="pressed" from="left_btn" to="." method="_on_left_btn_pressed"]
