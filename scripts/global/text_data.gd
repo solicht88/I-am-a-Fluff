@@ -2,9 +2,14 @@ extends Node
 
 # load item images
 var fuel_img = preload("res://img/items/fuel_stone.png")
+var telescope_img
 var compass_img = preload("res://img/items/compass.png")
 var jelly_img = preload("res://img/items/orange_jelly.png")
 var flower_img = preload("res://img/items/moon_flower.png")
+var lotus_img
+var candle_img
+var photo_img
+# TODO: add new item images to preload
 
 # upgrades
 var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s", "3.8s --> 3.4s", "3.4s --> 3.0s", "3.0s"]
@@ -22,38 +27,50 @@ var item_cost = {
 	"compass": 50,
 	"jelly": 15,
 	"flower": 100,
-	"mem_1": 0
+	"lotus": 80,
+	"candle": 150,
+	"photo": 200
 }
 
+# TODO: add telescope data
 # format: [image, name, price, description]
 var item_data: Dictionary = {
 	"fuel": [fuel_img, "Fuel Stone", str(item_cost["fuel"]) + " Stars\n", "Keeps Puff warm during explorations through the Milky Way"],
+	"telescope": [],
 	"compass": [compass_img, "Compass", str(item_cost["compass"]) + " Stars\n", "Helps Puff to navigate where to go when exploring"],
 	"jelly": [jelly_img, "Orange Jelly", str(item_cost["jelly"]) + " Stars\n", "Puff's favorite snack! Keeps her from going hungry while exploring"],
-	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Hmm, Puff thinks Ma will like it!"]
+	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Hmm, Puff thinks Ma will like it!"],
+	"lotus": [lotus_img, "Lotus Flower", str(item_cost["lotus"]) + " Stars\n", "A pink lotus flower from... Earth? How'd this get here?"],
+	"candle": [candle_img, "Chamberstick", str(item_cost["candle"]) + " Stars\n", "An old chamberstick! Too bad Puff doesn't have a lighter."],
+	"photo": [photo_img, "Photograph", str(item_cost["photo"]) + " Stars\n", "Is that Puff in the photo? If we have extra stars, please let Puff buy this!"]
 }
 
 var item_max: Dictionary = {
 	"fuel": 3,
 	"compass": 1,
 	"jelly": 2,
-	"flower": 1
+	"flower": 1,
+	"lotus": 1,
+	"candle": 1,
+	"photo": 1
 }
+
+# updates store item costs when upgrading for store sales
+func update_data():
+	#print(1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05))
+	for key in item_cost:
+		item_cost[key] = round(item_cost[key] * (1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05)))
+	for key in item_data:
+		item_data[key][2] = str(item_cost[key]) + " Stars\n"
+
 
 # mementos
 # format: [name, description]
 var mem_data: Dictionary = {
 	"dust": ["Stardust", "Some leftover stardust Ma gave to Puff.\nNow that Puff thinks about it, why did Ma collect so much?"],
-	"ribbon": ["Extra Ribbon", "Excess ribbon from the piece Puff wears.\nMa said this shade of red wlil bring Puff lots of luck!"],
-	"lotus": ["Lotus Flower", "A common flower from Ma's birthplace on Earth.\nSeems kinda ordinary, though... Well, if Ma likes them, Puff does too."],
-	"candle": ["Black Chamberstick", "Ma's old chamberstick. It's holding an unlit candle.\nPuff likes it. It keeps us warm for a long time."],
-	"photo": ["Polaroid Photo", "A polaroid photo of Puff when we first met Ma.\nAww, Puff was so small! Puff wonders how long ago this was taken?"]
+	"ribbon": ["Extra Ribbon", "Excess ribbon from the piece Puff wears.\nMa said wearing a red ribbon will bring Puff lots of luck!"],
+	"lotus": ["Lotus Flower", "A common flower from Ma's birthplace on Earth.\nSeems kinda ordinary, though... well, if Ma likes them, Puff does too."],
+	"candle": ["Black Chamberstick", "Ma's old chamberstick. It's holding an unlit candle.\nPuff likes it! It keeps us warm for a long time in the cold."],
+	"photo": ["Polaroid Photo", "A polaroid photo of Puff when we first met Ma.\nAww, Puff was so small! Puff wonders how long ago this was taken?"],
+	"unknown": ["A Memento from Ma", "A memento that reminds Puff of Ma.\nPuff can't remember what it was too clearly..."]
 }
-
-
-func update_data():
-	print(1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05))
-	for key in item_cost:
-		item_cost[key] = round(item_cost[key] * (1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05)))
-	for key in item_data:
-		item_data[key][2] = str(item_cost[key]) + " Stars\n"

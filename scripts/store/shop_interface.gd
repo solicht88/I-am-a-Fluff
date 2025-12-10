@@ -5,6 +5,7 @@ signal item_bought
 var save = Save.save_data
 
 var cur_item = ""
+var cur_mem = ["lotus", "candle", "photo"][save.exp_lvl]
 
 @onready var counter_label := $counter as Label
 
@@ -97,6 +98,20 @@ func _on_fuel_gui_input(event):
 		_display_item("fuel")
 
 
+# telescope preview
+func _on_telescope_mouse_entered():
+	_mouse_entered()
+
+
+func _on_telescope_mouse_exited():
+	_mouse_exited()
+
+
+func _on_telescope_gui_input(event):
+	if event.is_action_pressed("leftclick"):
+		_display_item("telescope")
+
+
 # compass preview
 func _on_compass_mouse_entered():
 	_mouse_entered()
@@ -141,7 +156,9 @@ func _on_memento_mouse_exited():
 	_mouse_exited()
 
 func _on_memento_gui_input(event):
-	pass # Replace with function body.
+	if event.is_action_pressed("leftclick"):
+		_display_item(cur_mem)
+
 
 func _on_buy_btn_pressed():
 	_buy_item(cur_item)

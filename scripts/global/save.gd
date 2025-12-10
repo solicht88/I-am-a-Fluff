@@ -5,12 +5,14 @@ const save_location = "user://saves/SaveFile.json"
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
 
+# TODO: add required mementos to inventory
 var save_data: Dictionary = {
 	"counter": 0, # count number of stars
 	"stars": [], # keep track of spawned stars coordinates
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
 	"str_lvl": 1,
+	"exp_lvl": 0,
 	"inventory": {
 		"fuel": 0,
 		"compass": 0,
@@ -27,12 +29,14 @@ var save_data: Dictionary = {
 }
 
 func save_game():
+	pass
+	'''
 	var file = FileAccess.open(save_location, FileAccess.WRITE)
 	file.store_var(save_data.duplicate())
 	file.close()
+	'''
 
-# TODO
-# load existing stars, balance, levels, and inv
+# TODO: load balance, levels, inv from save file
 func load_game():
 	pass
 
