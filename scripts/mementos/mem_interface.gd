@@ -44,6 +44,14 @@ var mods_c = [
 	Color8(255, 255, 255, 100)
 ]
 
+var child_mods_c = [
+	Color8(150, 150, 150, 255),
+	Color8(200, 200, 200, 255),
+	Color8(255, 255, 255, 255),
+	Color8(200, 200, 200, 255),
+	Color8(150, 150, 150, 255)
+]
+
 var save = Save.save_data
 var mem_data = TextData.mem_data
 
@@ -59,18 +67,27 @@ func _enable_btns(btns):
 		btn.set_default_cursor_shape(Control.CURSOR_POINTING_HAND)
 
 func _update_mem_display(cur_mem):
-	if not save.mementos[cur_mem]:
+	if not save.inventory[cur_mem]:
 		cur_mem = "unknown"
 		#pass
 	mem_name.text = mem_data[cur_mem][0]
 	mem_desc.text = mem_data[cur_mem][1]
+
+func _update_mem_mods(panels):
+	for i in range(len(panels)):
+		var mem = panels[i]
+		if save.inventory[mem.name]:
+			mem.get_child(0).self_modulate = child_mods_c[i]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await ready
 	_update_mem_display(panels[2].name)
+	_update_mem_mods(panels)
 	Global.fade_out()
+	#print(child_mods_c[1])
+	# TODO: update self-modulate of mementos if owned
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -92,13 +109,20 @@ func _on_left_btn_pressed():
 	for i in range(267/2):
 		for panel in range(len(panels)):
 			var cur_panel = panels[panel]
+			var panel_img = cur_panel.get_child(0)
+			
 			cur_panel.position.x += 2
 			cur_panel.self_modulate.a += (mods_a[(panel+1) % 5] - mods_a[panel]) / 255.0 / 133.0
+			
+			if save.inventory[cur_panel.name]:
+				panel_img.self_modulate.r += (child_mods_c[(panel+1) % 5].r8 - child_mods_c[panel].r8) / 255.0 / 133.0
+				panel_img.self_modulate.g += (child_mods_c[(panel+1) % 5].g8 - child_mods_c[panel].g8) / 255.0 / 133.0
+				panel_img.self_modulate.b += (child_mods_c[(panel+1) % 5].b8 - child_mods_c[panel].b8) / 255.0 / 133.0
 			
 			if panel == 2:
 				# make previous center circle smaller
 				cur_panel.size -= adj_size
-				cur_panel.get_child(0).scale -= adj_scale
+				panel_img.scale -= adj_scale
 				# gradually adjust position values
 				cur_panel.position.x += 388.0/133.0 - 2
 				cur_panel.position.y += adj_y
@@ -106,7 +130,7 @@ func _on_left_btn_pressed():
 			if panel == 1:
 				# make oncoming center circle larger
 				cur_panel.size += adj_size
-				cur_panel.get_child(0).scale += adj_scale
+				panel_img.scale += adj_scale
 				# gradually adjut y value
 				cur_panel.position.y -= adj_y
 			
@@ -124,15 +148,21 @@ func _on_left_btn_pressed():
 	
 	# correct position & size & scale of circles at end of animation
 	for i in range(len(panels)):
-		panels[i].position = positions[i]
-		panels[i].self_modulate = mods_c[i]
+		var cur_panel = panels[i]
+		var panel_img = cur_panel.get_child(0)
+		
+		cur_panel.position = positions[i]
+		cur_panel.self_modulate = mods_c[i]
+		
+		if save.inventory[cur_panel.name]:
+			panel_img.self_modulate = child_mods_c[i]
 		
 		if i == 2:
-			panels[i].size = large_size
-			panels[i].get_child(0).scale = large_img_scale
+			cur_panel.size = large_size
+			panel_img.scale = large_img_scale
 		else:
-			panels[i].size = small_size
-			panels[i].get_child(0).scale = small_img_scale
+			cur_panel.size = small_size
+			panel_img.scale = small_img_scale
 	
 	_update_mem_display(panels[2].name)
 	
@@ -157,20 +187,31 @@ func _on_right_btn_pressed():
 	for i in range(267/2):
 		for panel in range(len(panels)):
 			var cur_panel = panels[panel]
+			var panel_img = cur_panel.get_child(0)
+			
 			cur_panel.position.x -= 2
 			cur_panel.self_modulate.a += (mods_a[(panel-1) % 5] - mods_a[panel]) / 255.0 / 133.0
+			
+			if save.inventory[cur_panel.name]:
+				panel_img.self_modulate.r += (child_mods_c[(panel-1) % 5].r8 - child_mods_c[panel].r8) / 255.0 / 133.0
+				panel_img.self_modulate.g += (child_mods_c[(panel-1) % 5].g8 - child_mods_c[panel].g8) / 255.0 / 133.0
+				panel_img.self_modulate.b += (child_mods_c[(panel-1) % 5].b8 - child_mods_c[panel].b8) / 255.0 / 133.0
+			
+			if panel == 2:
+				#print(panel_img.self_modulate)
+				pass
 			
 			if panel == 2:
 				# make previous center circle smaller
 				cur_panel.size -= adj_size
-				cur_panel.get_child(0).scale -= adj_scale
+				panel_img.scale -= adj_scale
 				# gradually adjust y value
 				cur_panel.position.y += adj_y
 			
 			if panel == 3:
 				# make oncoming center circle larger
 				cur_panel.size += adj_size
-				cur_panel.get_child(0).scale += adj_scale
+				panel_img.scale += adj_scale
 				# gradually adjust position values
 				cur_panel.position.x -= 388.0/133.0 - 2 # (878-490)/133 - 2 = ~0.92
 				cur_panel.position.y -= adj_y
@@ -187,15 +228,21 @@ func _on_right_btn_pressed():
 	
 	# correct position & size & scale of circles at end of animation
 	for i in range(len(panels)):
-		panels[i].position = positions[i]
-		panels[i].self_modulate = mods_c[i]
+		var cur_panel = panels[i]
+		var panel_img = cur_panel.get_child(0)
+		
+		cur_panel.position = positions[i]
+		cur_panel.self_modulate = mods_c[i]
+		
+		if save.inventory[cur_panel.name]:
+			panel_img.self_modulate = child_mods_c[i]
 		
 		if i == 2:
 			panels[i].size = large_size
-			panels[i].get_child(0).scale = large_img_scale
+			panel_img.scale = large_img_scale
 		else:
 			panels[i].size = small_size
-			panels[i].get_child(0).scale = small_img_scale
+			panel_img.scale = small_img_scale
 	
 	''' old animation code
 	var next_focus = panels[2]

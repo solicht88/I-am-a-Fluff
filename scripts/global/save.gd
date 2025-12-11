@@ -5,7 +5,6 @@ const save_location = "user://saves/SaveFile.json"
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
 
-# TODO: add required mementos to inventory
 var save_data: Dictionary = {
 	"counter": 0, # count number of stars
 	"stars": [], # keep track of spawned stars coordinates
@@ -17,16 +16,24 @@ var save_data: Dictionary = {
 		"fuel": 0,
 		"compass": 0,
 		"jelly": 0,
-		"flower": 0
+		"telescope": 0,
+		"flower": 0,
+		"dust": 0,
+		"ribbon": 0,
+		"lotus": 1,
+		"candle": 0,
+		"photo": 0
 		}, # dictionary to store shop items
-	"mementos": {
-		"dust": false,
-		"ribbon": false,
-		"lotus": false,
-		"candle": false,
-		"photo": false
-	}
 }
+
+'''
+"mementos": {
+	"dust": false,
+	"ribbon": false,
+	"lotus": false,
+	"candle": false,
+	"photo": false
+}'''
 
 func save_game():
 	pass

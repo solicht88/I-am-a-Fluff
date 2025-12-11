@@ -111,7 +111,7 @@ offset_bottom = 400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7gag")
 
 [node name="TextureRect" type="TextureRect" parent="candle"]
-self_modulate = Color(0.0584206, 0.0584206, 0.0584206, 1)
+self_modulate = Color(0.0588235, 0.0588235, 0.0588235, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

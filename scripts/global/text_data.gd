@@ -2,14 +2,13 @@ extends Node
 
 # load item images
 var fuel_img = preload("res://img/items/fuel_stone.png")
-var telescope_img
+var telescope_img = preload("res://img/items/telescope.png")
 var compass_img = preload("res://img/items/compass.png")
 var jelly_img = preload("res://img/items/orange_jelly.png")
 var flower_img = preload("res://img/items/moon_flower.png")
-var lotus_img
-var candle_img
-var photo_img
-# TODO: add new item images to preload
+var lotus_img = preload("res://img/mementos/lotus.png")
+var candle_img = preload("res://img/mementos/candle.png")
+var photo_img = preload("res://img/mementos/polaroid.png")
 
 # upgrades
 var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s", "3.8s --> 3.4s", "3.4s --> 3.0s", "3.0s"]
@@ -26,6 +25,7 @@ var item_cost = {
 	"fuel": 10,
 	"compass": 50,
 	"jelly": 15,
+	"telescope": 160,
 	"flower": 100,
 	"lotus": 80,
 	"candle": 150,
@@ -36,7 +36,7 @@ var item_cost = {
 # format: [image, name, price, description]
 var item_data: Dictionary = {
 	"fuel": [fuel_img, "Fuel Stone", str(item_cost["fuel"]) + " Stars\n", "Keeps Puff warm during explorations through the Milky Way"],
-	"telescope": [],
+	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "It's a bit expensive, but Puff can spot more stars with this!"],
 	"compass": [compass_img, "Compass", str(item_cost["compass"]) + " Stars\n", "Helps Puff to navigate where to go when exploring"],
 	"jelly": [jelly_img, "Orange Jelly", str(item_cost["jelly"]) + " Stars\n", "Puff's favorite snack! Keeps her from going hungry while exploring"],
 	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Hmm, Puff thinks Ma will like it!"],
@@ -49,6 +49,7 @@ var item_max: Dictionary = {
 	"fuel": 3,
 	"compass": 1,
 	"jelly": 2,
+	"telescope": 1,
 	"flower": 1,
 	"lotus": 1,
 	"candle": 1,

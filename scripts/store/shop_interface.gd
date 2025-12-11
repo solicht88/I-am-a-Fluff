@@ -33,6 +33,7 @@ func _ready():
 	'''
 	
 	counter_label.text = str(save.counter)
+	$store/memento/Label.text = TextData.item_data[cur_mem][1]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
