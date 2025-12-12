@@ -3,7 +3,7 @@ extends Control
 @onready var fuel_icons = [$fuel_1, $fuel_2, $fuel_3]
 @onready var jelly_icons = [$jelly_1, $jelly_2]
 
-var save_data = Save.save_data
+var inv = Save.save_data.inventory
 var popup = preload("res://scenes/explore/exp_popup.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,6 @@ func _ready():
 	await ready
 	Global.fade_out()
 	
-	var inv = save_data.inventory
 	for i in range(inv["fuel"]):
 		fuel_icons[i].visible = true
 	for i in range(inv["compass"]):
@@ -35,6 +34,5 @@ func _on_exit_pressed():
 
 
 func _on_exp_btn_pressed():
-	print("lets explore...")
 	var exp_popup = popup.instantiate()
 	get_parent().add_child(exp_popup)

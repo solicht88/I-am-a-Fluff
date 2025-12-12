@@ -11,8 +11,7 @@ extends Control
 
 @onready var counter_label := $counter as Label
 
-var save = Save.save_data
-var upg = TextData
+var save_data = Save.save_data
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +31,7 @@ func _ready():
 	_update_gaze_text()
 	_update_wish_text()
 	_update_string_text()
-	counter_label.text = str(save.counter)
+	counter_label.text = str(save_data.counter)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,54 +55,54 @@ func _on_exit_pressed():
 func _update_gaze_text():
 	gaze_label.text = "Gaze Proficiency - Increase the rate which stars appear
 	({upgr})
-	Cost: {cost} stars".format({"upgr": upg.gaze_upg[save.gaze_lvl - 1], "cost": upg.gaze_cost[save.gaze_lvl - 1]})
-	gaze_lvl_txt.text = "lvl " + str(save.gaze_lvl)
+	Cost: {cost} stars".format({"upgr": Data.gaze_upg[save_data.gaze_lvl - 1], "cost": Data.gaze_cost[save_data.gaze_lvl - 1]})
+	gaze_lvl_txt.text = "lvl " + str(save_data.gaze_lvl)
 	
-	if save.gaze_lvl == 6:
+	if save_data.gaze_lvl == 6:
 			$gaze_btn.disabled = true
 
 func _on_gaze_btn_pressed():
-	if save.counter >= upg.gaze_cost[save.gaze_lvl - 1]:
-		save.counter -= upg.gaze_cost[save.gaze_lvl - 1]
-		save.gaze_lvl += 1
+	if save_data.counter >= Data.gaze_cost[save_data.gaze_lvl - 1]:
+		save_data.counter -= Data.gaze_cost[save_data.gaze_lvl - 1]
+		save_data.gaze_lvl += 1
 		
 		_update_gaze_text()
-		counter_label.text = str(save.counter)
+		counter_label.text = str(save_data.counter)
 
 
 func _update_wish_text():
 	wish_label.text = "Ma's Wish - Decrease cost of certain items in the store
 	({upgr})
-	Cost: {cost} stars".format({"upgr": upg.wish_upg[save.wish_lvl - 1], "cost": upg.wish_cost[save.wish_lvl - 1]})
-	wish_lvl_txt.text = "lvl " + str(save.wish_lvl)
+	Cost: {cost} stars".format({"upgr": Data.wish_upg[save_data.wish_lvl - 1], "cost": Data.wish_cost[save_data.wish_lvl - 1]})
+	wish_lvl_txt.text = "lvl " + str(save_data.wish_lvl)
 	
-	if save.wish_lvl == 4:
+	if save_data.wish_lvl == 4:
 		$wish_btn.disabled = true
 
 func _on_wish_btn_pressed():
-	if save.counter >= upg.wish_cost[save.wish_lvl - 1]:
-		save.counter -= upg.wish_cost[save.wish_lvl - 1]
-		save.wish_lvl += 1
+	if save_data.counter >= Data.wish_cost[save_data.wish_lvl - 1]:
+		save_data.counter -= Data.wish_cost[save_data.wish_lvl - 1]
+		save_data.wish_lvl += 1
 	
 	_update_wish_text()
-	counter_label.text = str(save.counter)
+	counter_label.text = str(save_data.counter)
 	
-	TextData.update_data()
+	Data.update_data()
 
 
 func _update_string_text():
 	string_label.text = "String Skill - Increase the stars earned per star clicked
 	({upgr})
-	Cost: {cost} stars".format({"upgr": upg.str_upg[save.str_lvl - 1], "cost": upg.str_cost[save.str_lvl - 1]})
-	string_lvl_txt.text = "lvl " + str(save.str_lvl)
+	Cost: {cost} stars".format({"upgr": Data.str_upg[save_data.str_lvl - 1], "cost": Data.str_cost[save_data.str_lvl - 1]})
+	string_lvl_txt.text = "lvl " + str(save_data.str_lvl)
 	
-	if save.str_lvl == 4:
+	if save_data.str_lvl == 4:
 			$string_btn.disabled = true
 
 func _on_string_btn_pressed():
-	if save.counter >= upg.str_cost[save.str_lvl - 1]:
-		save.counter -= upg.str_cost[save.str_lvl - 1]
-		save.str_lvl += 1
+	if save_data.counter >= Data.str_cost[save_data.str_lvl - 1]:
+		save_data.counter -= Data.str_cost[save_data.str_lvl - 1]
+		save_data.str_lvl += 1
 		
 		_update_string_text()
-		counter_label.text = str(save.counter)
+		counter_label.text = str(save_data.counter)

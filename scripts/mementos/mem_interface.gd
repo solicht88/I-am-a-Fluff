@@ -52,8 +52,9 @@ var child_mods_c = [
 	Color8(150, 150, 150, 255)
 ]
 
-var save = Save.save_data
-var mem_data = TextData.mem_data
+var save_data = Save.save_data
+var inv = Save.save_data.inventory
+var mem_data = Data.mem_data
 
 
 func _disable_btns(btns):
@@ -67,7 +68,7 @@ func _enable_btns(btns):
 		btn.set_default_cursor_shape(Control.CURSOR_POINTING_HAND)
 
 func _update_mem_display(cur_mem):
-	if not save.inventory[cur_mem]:
+	if not save_data.inventory[cur_mem]:
 		cur_mem = "unknown"
 		#pass
 	mem_name.text = mem_data[cur_mem][0]
@@ -76,7 +77,7 @@ func _update_mem_display(cur_mem):
 func _update_mem_mods(panels):
 	for i in range(len(panels)):
 		var mem = panels[i]
-		if save.inventory[mem.name]:
+		if inv[mem.name]:
 			mem.get_child(0).self_modulate = child_mods_c[i]
 
 
@@ -87,7 +88,7 @@ func _ready():
 	_update_mem_mods(panels)
 	Global.fade_out()
 	#print(child_mods_c[1])
-	# TODO: update self-modulate of mementos if owned
+	_update_mem_mods(panels)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -114,7 +115,7 @@ func _on_left_btn_pressed():
 			cur_panel.position.x += 2
 			cur_panel.self_modulate.a += (mods_a[(panel+1) % 5] - mods_a[panel]) / 255.0 / 133.0
 			
-			if save.inventory[cur_panel.name]:
+			if inv[cur_panel.name]:
 				panel_img.self_modulate.r += (child_mods_c[(panel+1) % 5].r8 - child_mods_c[panel].r8) / 255.0 / 133.0
 				panel_img.self_modulate.g += (child_mods_c[(panel+1) % 5].g8 - child_mods_c[panel].g8) / 255.0 / 133.0
 				panel_img.self_modulate.b += (child_mods_c[(panel+1) % 5].b8 - child_mods_c[panel].b8) / 255.0 / 133.0
@@ -154,7 +155,7 @@ func _on_left_btn_pressed():
 		cur_panel.position = positions[i]
 		cur_panel.self_modulate = mods_c[i]
 		
-		if save.inventory[cur_panel.name]:
+		if inv[cur_panel.name]:
 			panel_img.self_modulate = child_mods_c[i]
 		
 		if i == 2:
@@ -192,7 +193,7 @@ func _on_right_btn_pressed():
 			cur_panel.position.x -= 2
 			cur_panel.self_modulate.a += (mods_a[(panel-1) % 5] - mods_a[panel]) / 255.0 / 133.0
 			
-			if save.inventory[cur_panel.name]:
+			if inv[cur_panel.name]:
 				panel_img.self_modulate.r += (child_mods_c[(panel-1) % 5].r8 - child_mods_c[panel].r8) / 255.0 / 133.0
 				panel_img.self_modulate.g += (child_mods_c[(panel-1) % 5].g8 - child_mods_c[panel].g8) / 255.0 / 133.0
 				panel_img.self_modulate.b += (child_mods_c[(panel-1) % 5].b8 - child_mods_c[panel].b8) / 255.0 / 133.0
@@ -234,7 +235,7 @@ func _on_right_btn_pressed():
 		cur_panel.position = positions[i]
 		cur_panel.self_modulate = mods_c[i]
 		
-		if save.inventory[cur_panel.name]:
+		if inv[cur_panel.name]:
 			panel_img.self_modulate = child_mods_c[i]
 		
 		if i == 2:

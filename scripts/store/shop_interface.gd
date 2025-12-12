@@ -2,10 +2,12 @@ extends Control
 
 signal item_bought
 
-var save = Save.save_data
+var save_data = Save.save_data
+var inv = Save.save_data.inventory
+var item_data
 
 var cur_item = ""
-var cur_mem = ["lotus", "candle", "photo"][save.exp_lvl]
+var cur_mem = ["lotus", "candle", "photo"][save_data.exp_lvl]
 
 @onready var counter_label := $counter as Label
 
@@ -32,8 +34,9 @@ func _ready():
 	transition_node.queue_free()
 	'''
 	
-	counter_label.text = str(save.counter)
-	$store/memento/Label.text = TextData.item_data[cur_mem][1]
+	counter_label.text = str(save_data.counter)
+	$store/memento/Label.text = Data.item_data[cur_mem][1]
+	$store/memento/TextureRect.texture = Data.item_data[cur_mem][0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -52,11 +55,13 @@ func _on_exit_pressed():
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
+
 func _mouse_entered():
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 func _mouse_exited():
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
 
 # item = string of item's name
 func _display_item(item: String):
@@ -67,20 +72,24 @@ func _display_item(item: String):
 	var owned_lbl = selection.get_node("owned")
 	var buy_btn = selection.get_node("buy_btn")
 	
-	var cur_item_data = TextData.item_data[item]
+	var cur_item_data = Data.item_data[item]
 	
 	display_img.texture = cur_item_data[0]
 	display_img.scale = Vector2(0.186, 0.186)
 	name_lbl.text = cur_item_data[1]
 	desc_lbl.text = cur_item_data[2] + cur_item_data[3]
-	owned_lbl.text = "x" + str(save.inventory[item]) + " owned"
+	owned_lbl.text = "x" + str(inv[item]) + " owned"
 	
 	cur_item = item
 	
-	if save.inventory[item] == TextData.item_max[item]:
+	if inv[item] == Data.item_max[item]:
 		buy_btn.disabled = true
 		buy_btn.text = "sold out"
 		buy_btn.set_default_cursor_shape(Control.CURSOR_ARROW)
+	elif save_data.counter < Data.item_cost[item]:
+		buy_btn.disabled = true
+		buy_btn.text = "buy"
+		buy_btn.set_default_cursor_shape(Input.CURSOR_ARROW)
 	else:
 		buy_btn.disabled = false
 		buy_btn.text = "buy"
@@ -165,10 +174,10 @@ func _on_buy_btn_pressed():
 	_buy_item(cur_item)
 
 func _buy_item(item: String):
-	var cost = TextData.item_cost[item]
-	if cost <= save.counter:
-		save.inventory[item] += 1
-		save.counter -= cost
+	var cost = Data.item_cost[item]
+	if cost <= save_data.counter:
+		inv[item] += 1
+		save_data.counter -= cost
 		
 		_display_item(item)
-		counter_label.text = str(save.counter)
+		counter_label.text = str(save_data.counter)

@@ -10,6 +10,21 @@ var lotus_img = preload("res://img/mementos/lotus.png")
 var candle_img = preload("res://img/mementos/candle.png")
 var photo_img = preload("res://img/mementos/polaroid.png")
 
+
+# load main screen backgrounds
+var main_bg_1 = preload("res://img/backgrounds/sky1.png")
+var main_bg_2 = preload("res://img/backgrounds/sky2.png")
+var main_bg_3 = preload("res://img/backgrounds/sky3.png")
+var main_bg_4 = preload("res://img/backgrounds/sky4.png")
+var main_bgs = [main_bg_1, main_bg_2, main_bg_3, main_bg_4]
+
+# load exploration backgrounds
+var exp_bg_1 = preload("res://img/backgrounds/expl_1.png")
+var exp_bg_2 = preload("res://img/backgrounds/expl_2.png")
+var exp_bg_3 = preload("res://img/backgrounds/expl_3.png")
+var exp_bgs = [exp_bg_1, exp_bg_2, exp_bg_3]
+
+
 # upgrades
 var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s", "3.8s --> 3.4s", "3.4s --> 3.0s", "3.0s"]
 var gaze_cost = [6, 12, 25, 50, 100, "N/A"]
@@ -19,6 +34,7 @@ var wish_cost = [80, 120, 220, "N/A"]
 
 var str_upg = ["1 --> 2", "2 --> 3", "3 --> 4", "4 per click"]
 var str_cost = [25, 80, 180, "N/A"]
+
 
 # store
 var item_cost = {
@@ -32,7 +48,6 @@ var item_cost = {
 	"photo": 200
 }
 
-# TODO: add telescope data
 # format: [image, name, price, description]
 var item_data: Dictionary = {
 	"fuel": [fuel_img, "Fuel Stone", str(item_cost["fuel"]) + " Stars\n", "Keeps Puff warm during explorations through the Milky Way"],
@@ -57,12 +72,17 @@ var item_max: Dictionary = {
 }
 
 # updates store item costs when upgrading for store sales
+# TODO: add shop price multiplier for each exp_lvl
 func update_data():
 	#print(1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05))
 	for key in item_cost:
 		item_cost[key] = round(item_cost[key] * (1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05)))
 	for key in item_data:
 		item_data[key][2] = str(item_cost[key]) + " Stars\n"
+
+
+# explore
+var exp_items = ["fuel", "compass", "jelly"]
 
 
 # mementos

@@ -74,4 +74,5 @@ theme = ExtResource("2_cfswl")
 theme_override_font_sizes/font_size = 20
 text = "Cancel"
 
+[connection signal="pressed" from="Panel/exp_btn" to="." method="_on_exp_btn_pressed"]
 [connection signal="pressed" from="Panel/cancel_btn" to="." method="_on_cancel_btn_pressed"]

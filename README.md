@@ -13,11 +13,11 @@ Play as Puff, a Fluff who left earth to travel the Milky Way in search of her Ma
 - ~~upgraded skills affect gameplay~~  
 - save/loading game data (sorta done...no loading yet)  
 - ~~working title screen~~  
-- purchasable items in game store (1/2 done, additonal items TBA)  
-- explore (move on to another 'area', in progress)  
-- exploration increases shop cost
-- mementos (cutscenes, obtain methods)
-- revisit obtained mementos  
+- ~~purchasable items in game store (1/2 done, additonal items TBA)~~  
+- explore/move on to another 'area' (need to add cutscenes + bg changes)  
+- exploration/moving to a new 'area' increases shop cost  
+- mementos (cutscenes + obtain methods, TBA soon?)  
+- ~~revisit obtained mementos~~  
 - endings (2-3 total)  
 
 This will be periodically updated as I continue developing the game.  

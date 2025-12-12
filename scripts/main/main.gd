@@ -3,6 +3,7 @@ extends Node2D
 @onready var interface := $interface as Control
 @onready var counter := $interface/counter as Label
 @onready var timer := $Timer as Timer
+@onready var bg_sprite := $bg
 # temp testing for manually placed star
 #@onready var star := $star1/Area2D as Node2D
 
@@ -13,10 +14,12 @@ var star3 = preload("res://scenes/characters/star_3.tscn")
 #var transition_animation = transition_load.instantiate()
 var star_scenes = [star1, star2, star3]
 
+var save_data = Save.save_data
+
 var ulcorner = Vector2(400, 50)
 var brcorner = Vector2(1230, 670)
-var stars = Save.save_data.counter
-var star_coords = Save.save_data.stars
+var stars = save_data.counter
+var star_coords = save_data.stars
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +34,8 @@ func _ready():
 	transition_node.queue_free()
 	'''
 	await ready
+	bg_sprite.texture = Data.main_bgs[save_data.exp_lvl]
+	
 	Global.fade_out()
 	
 	randomize()	
@@ -51,7 +56,7 @@ func _process(_delta):
 # Randomized clickable stars
 func _update_counter(pos):
 	star_coords.remove_at(star_coords.find(pos))
-	stars += 1 * Save.save_data.str_lvl
+	stars += 1 * save_data.str_lvl
 	counter.text = str(stars)
 
 func _get_random_point(ul: Vector2, br: Vector2) -> Vector2:
@@ -76,7 +81,7 @@ func _spawn_star():
 
 func _on_timer_timeout():
 	_spawn_star()
-	timer.wait_time = 5 - 0.4 * (Save.save_data.gaze_lvl - 1)
+	timer.wait_time = 5 - 0.4 * (save_data.gaze_lvl - 1)
 	#print(timer.wait_time)
 	timer.start()
 
@@ -86,8 +91,8 @@ func _menu_opened():
 	#print("connected")
 
 func save_progress():
-	Save.save_data.counter = stars
-	Save.save_data.stars = star_coords
+	save_data.counter = stars
+	save_data.stars = star_coords
 	#Save.save_game()
 	#print("saved!")
 
