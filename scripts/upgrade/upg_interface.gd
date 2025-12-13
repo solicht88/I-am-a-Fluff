@@ -87,7 +87,7 @@ func _on_wish_btn_pressed():
 	_update_wish_text()
 	counter_label.text = str(save_data.counter)
 	
-	Data.update_data()
+	Data.update_cost_data()
 
 
 func _update_string_text():

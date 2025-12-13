@@ -4,7 +4,10 @@ extends Control
 @onready var jelly_icons = [$jelly_1, $jelly_2]
 
 var inv = Save.save_data.inventory
+
 var popup = preload("res://scenes/explore/exp_popup.tscn")
+
+var exp_btn_pos = [Vector2(685, 210), Vector2(724, 195), Vector2(1038, 330)][Save.save_data.exp_lvl]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +24,8 @@ func _ready():
 	$fuel_lbl.text = "fuel: " + str(inv["fuel"]) + "/3"
 	$compass_lbl.text = "compass: " + str(inv["compass"]) + "/1"
 	$jelly_lbl.text = "jelly: " + str(inv["jelly"]) + "/2"
+	
+	$exp_btn.position = exp_btn_pos
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

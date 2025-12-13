@@ -13,7 +13,7 @@ func _ready():
 			can_exp = false
 			$Panel/exp_btn.set_default_cursor_shape(Input.CURSOR_ARROW)
 	
-	if can_exp:
+	if can_exp and save_data.exp_lvl < 2:
 		$Panel/exp_btn.disabled = false
 
 
@@ -30,6 +30,13 @@ func _on_exp_btn_pressed():
 	save_data.exp_lvl += 1
 	for item in Data.exp_items:
 		inv[item] = 0
+	Data.update_cost_data()
+	
+	# give associated memento w/ exploration
+	if save_data.exp_lvl == 1:
+		inv["dust"] = 1
+	elif save_data.exp_lvl == 2:
+		inv["ribbon"] = 1
 	
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout

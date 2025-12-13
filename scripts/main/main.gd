@@ -3,6 +3,7 @@ extends Node2D
 @onready var interface := $interface as Control
 @onready var counter := $interface/counter as Label
 @onready var timer := $Timer as Timer
+@onready var flower_timer := $FlowerTimer as Timer
 @onready var bg_sprite := $bg
 # temp testing for manually placed star
 #@onready var star := $star1/Area2D as Node2D
@@ -20,6 +21,7 @@ var ulcorner = Vector2(400, 50)
 var brcorner = Vector2(1230, 670)
 var stars = save_data.counter
 var star_coords = save_data.stars
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,12 +48,19 @@ func _ready():
 	timer.start()
 	call_deferred("_load_stars", star_coords)
 	
+	# moon flower spawns an additional star every 8 seconds
+	if save_data.inventory["flower"]:
+		flower_timer.start()
+	
+	# TODO: add pop-up for obtained memento after increase in exp_lvl
+	
 	# temp to trash debug save file
 	#OS.move_to_trash(ProjectSettings.globalize_path("user://SaveFile.json"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
 
 # Randomized clickable stars
 func _update_counter(pos):
@@ -78,6 +87,9 @@ func _spawn_star():
 	var animation = new_star.get_node("AnimationPlayer")
 	new_star.get_node("Sprite2D").self_modulate.a = 0
 	animation.play("appear")
+	
+	# TODO: add telescope function: connects up to 4 stars together in "groups"
+
 
 func _on_timer_timeout():
 	_spawn_star()
@@ -85,10 +97,17 @@ func _on_timer_timeout():
 	#print(timer.wait_time)
 	timer.start()
 
+func _on_flower_timer_timeout():
+	print("moon flower in action!")
+	_spawn_star()
+	flower_timer.start()
+
+
 # Menu
 func _menu_opened():
 	$menu_ui.save_data.connect(save_progress)
 	#print("connected")
+
 
 func save_progress():
 	save_data.counter = stars

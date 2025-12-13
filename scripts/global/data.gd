@@ -30,31 +30,47 @@ var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s", "3.8s --> 3.4
 var gaze_cost = [6, 12, 25, 50, 100, "N/A"]
 
 var wish_upg = ["0% --> 10% off", "10% --> 15% off", "10% --> 20% off", "20% off"]
-var wish_cost = [80, 120, 220, "N/A"]
+var wish_cost = [80, 120, 180, "N/A"]
 
 var str_upg = ["1 --> 2", "2 --> 3", "3 --> 4", "4 per click"]
 var str_cost = [25, 80, 180, "N/A"]
 
 
+# explore
+var exp_items = ["fuel", "compass", "jelly"]
+
+
 # store
 var item_cost = {
 	"fuel": 10,
-	"compass": 50,
+	"compass": 30,
 	"jelly": 15,
-	"telescope": 160,
-	"flower": 100,
+	"telescope": 180,
+	"flower": 120,
 	"lotus": 80,
-	"candle": 150,
-	"photo": 200
+	"candle": 175,
+	"photo": 250
 }
+
+var og_item_cost = {
+	"fuel": 10,
+	"compass": 30,
+	"jelly": 15,
+	"telescope": 180,
+	"flower": 120,
+	"lotus": 80,
+	"candle": 175,
+	"photo": 250
+}
+
 
 # format: [image, name, price, description]
 var item_data: Dictionary = {
 	"fuel": [fuel_img, "Fuel Stone", str(item_cost["fuel"]) + " Stars\n", "Keeps Puff warm during explorations through the Milky Way"],
-	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "It's a bit expensive, but Puff can spot more stars with this!"],
+	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "A nice telescope. Groups up to 4 stars to be collected together."],
 	"compass": [compass_img, "Compass", str(item_cost["compass"]) + " Stars\n", "Helps Puff to navigate where to go when exploring"],
 	"jelly": [jelly_img, "Orange Jelly", str(item_cost["jelly"]) + " Stars\n", "Puff's favorite snack! Keeps her from going hungry while exploring"],
-	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Hmm, Puff thinks Ma will like it!"],
+	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Attracts an additional star to Puff every 8 secs."],
 	"lotus": [lotus_img, "Lotus Flower", str(item_cost["lotus"]) + " Stars\n", "A pink lotus flower from... Earth? How'd this get here?"],
 	"candle": [candle_img, "Chamberstick", str(item_cost["candle"]) + " Stars\n", "An old chamberstick! Too bad Puff doesn't have a lighter."],
 	"photo": [photo_img, "Photograph", str(item_cost["photo"]) + " Stars\n", "Is that Puff in the photo? If we have extra stars, please let Puff buy this!"]
@@ -72,17 +88,25 @@ var item_max: Dictionary = {
 }
 
 # updates store item costs when upgrading for store sales
-# TODO: add shop price multiplier for each exp_lvl
-func update_data():
+func update_cost_data():
 	#print(1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05))
+	var gaze_disc = 1
+	var exp_mult = 1
+	
+	if Save.save_data.wish_lvl > 1:
+		gaze_disc -= 0.05 * (Save.save_data.wish_lvl - 1) + 0.05
+	
+	if Save.save_data.exp_lvl > 0:
+		exp_mult += 0.5 * Save.save_data.exp_lvl + 0.5
+	
+	
 	for key in item_cost:
-		item_cost[key] = round(item_cost[key] * (1 - (0.05 * (Save.save_data.wish_lvl - 1) + 0.05)))
+		item_cost[key] = round(og_item_cost[key] * gaze_disc)
+		if key in exp_items:
+			item_cost[key] = round(og_item_cost[key] * exp_mult)
+	
 	for key in item_data:
 		item_data[key][2] = str(item_cost[key]) + " Stars\n"
-
-
-# explore
-var exp_items = ["fuel", "compass", "jelly"]
 
 
 # mementos

@@ -17,13 +17,13 @@ var save_data: Dictionary = {
 		"compass": 1,
 		"jelly": 2,
 		"telescope": 0,
-		"flower": 0,
-		"dust": 1,
+		"flower": 1,
+		"dust": 0,
 		"ribbon": 0,
 		"lotus": 1,
 		"candle": 0,
 		"photo": 0
-		}, # dictionary to store shop items
+		}, # dictionary to store owned items
 }
 
 '''
