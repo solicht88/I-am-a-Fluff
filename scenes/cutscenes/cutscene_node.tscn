@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpixgno13xw1c"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/cutscene_node.gd" id="1_tc1lt"]
+[ext_resource type="Texture2D" uid="uid://bba5mxurhq2jb" path="res://img/cutscenes/opening.png" id="1_tqe8f"]
+[ext_resource type="PackedScene" uid="uid://b3xvjxoxsrle" path="res://scenes/cutscenes/dialogue_box.tscn" id="2_jpds3"]
+
+[node name="cutscene" type="Node2D"]
+script = ExtResource("1_tc1lt")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_tqe8f")
+centered = false
+
+[node name="dialogue_box" parent="." instance=ExtResource("2_jpds3")]

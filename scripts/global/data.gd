@@ -119,3 +119,27 @@ var mem_data: Dictionary = {
 	"photo": ["Polaroid Photo", "A polaroid photo of Puff when we first met Ma.\nAww, Puff was so small! Puff wonders how long ago this was taken?"],
 	"unknown": ["A Memento from Ma", "A memento that reminds Puff of Ma.\nPuff can't remember what it was too clearly..."]
 }
+
+
+# cutscene
+# currently testing opening cutscene only
+var open_cutscene = preload("res://img/cutscenes/opening.png")
+
+# key changes depending on cutscene to play
+var cutscene_key = "open"
+
+# format: cutscene_key: [img, [name1, dialogue1], [name2, dialogue2], ...]
+# TODO: maybe add indicators for scene transitions/sfx? or fade in/out in middle of scenes
+# could also reformat this so theres less name repitition n stuff? if theres time
+var cutscene_data = {
+	"open": [
+		open_cutscene,
+		["Puff", "I am a Fluff.\nMy name is Puff."],
+		["Puff", "Puff is on an adventure to find Ma!"],
+		["Puff", "Ma left to explore the Milky Way a while ago, but still hasn't returned..."],
+		["Puff", "Well, surely Ma is just a bit lost! Puff will definitely find her!"],
+		["Puff", "But, uh...Puff may be low on fuel. Maybe it's time to take a break!"],
+		["Puff", "That star looks good! Puff will go land on it. Hopefully it has some sort of fuel!"]
+		],
+	"dust": []
+}

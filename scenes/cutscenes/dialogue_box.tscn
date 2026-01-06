@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3xvjxoxsrle"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/dialogue_box.gd" id="1_2g5gr"]
+[ext_resource type="Theme" uid="uid://c51qyr2yt5dmr" path="res://scenes/themes/light_text.tres" id="1_12qda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ileqh"]
+bg_color = Color(0, 0, 0, 0.882353)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.882353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="dialogue_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2g5gr")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(900, 162)
+layout_mode = 0
+offset_left = 190.0
+offset_top = 530.0
+offset_right = 1090.0
+offset_bottom = 692.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ileqh")
+
+[node name="name" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 45.0
+theme = ExtResource("1_12qda")
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 18
+text = "Placeholder"
+
+[node name="text" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(840, 97)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 45.0
+offset_right = 870.0
+offset_bottom = 142.0
+theme = ExtResource("1_12qda")
+theme_override_font_sizes/font_size = 16
+text = "The brown dog jumps over the lazy fox. Placeholder sentence for testing purposes thank you
+uhh im running out of dialogue
+yeah yeah
+thank you for coming to my ted talk"
+autowrap_mode = 2
+
+[node name="click_img" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
