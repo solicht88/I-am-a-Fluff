@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://cju4d47giq4m6" path="res://scenes/themes/button.tres" id="2_n5a4v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn835"]
-bg_color = Color(0.996078, 0.984314, 0.917647, 0.839216)
+bg_color = Color(0.996078, 0.984314, 0.917647, 0.882353)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -50,17 +50,19 @@ offset_bottom = 555.0
 theme = ExtResource("1_dqk4u")
 theme_override_constants/line_spacing = 2
 theme_override_font_sizes/font_size = 20
-text = "Thank you for playing \"I am a Fluff!\"
+text = "Puff has landed on a star to refuel before continuing the search for Ma! 
 
-The game is still in development, so only part of the clicker gameplay is currently available.
+While resting, Puff met a kind seller that exchanges stars for various items!
 
-Help Puff find her Ma!
+Click on the stars as they appear to collect them.
 
-Stars will appear on screen over time, and you will gain stars by clicking them. You can then spend your earned stars on upgrades (and eventually items in the store, still TBA). 
+Trade stars in the shop to buy exploration materials.
 
-Hope you enjoy the game so far!
+Upgrade Puff's abilities to collect more stars quickly.
 
--Solicht"
+Optionally, help Puff collect mementos from Ma and learn more about their story before the Milky Way!
+
+Puff is counting on you!"
 autowrap_mode = 2
 
 [node name="close" type="Button" parent="."]

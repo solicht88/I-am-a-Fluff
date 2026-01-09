@@ -98,7 +98,7 @@ func _on_timer_timeout():
 	timer.start()
 
 func _on_flower_timer_timeout():
-	print("moon flower in action!")
+	#print("moon flower in action!")
 	_spawn_star()
 	flower_timer.start()
 

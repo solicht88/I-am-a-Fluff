@@ -12,3 +12,4 @@ texture = ExtResource("1_tqe8f")
 centered = false
 
 [node name="dialogue_box" parent="." instance=ExtResource("2_jpds3")]
+visible = false

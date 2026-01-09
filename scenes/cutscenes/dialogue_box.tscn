@@ -60,7 +60,11 @@ yeah yeah
 thank you for coming to my ted talk"
 autowrap_mode = 2
 
-[node name="click_img" type="TextureRect" parent="Panel"]
+[node name="next_img" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="dialogue_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="dialogue_timer" to="." method="_on_dialogue_timer_timeout"]
