@@ -138,7 +138,7 @@ var cutscene_data = {
 		["Puff", "Puff is on an adventure to find Ma!"],
 		["Puff", "Ma left to explore the Milky Way a while ago, but still hasn't returned..."],
 		["Puff", "Well, surely Ma is just a bit lost! Puff will definitely find her!"],
-		["Puff", "But, uh...Puff may be low on fuel. Maybe it's time to take a break!"],
+		["Puff", "But, uh...Puff may be low on fuel.\nPossibly now is a good time to take a break!"],
 		["Puff", "That star looks good! Puff will go land on it. Hopefully it has some sort of fuel!"]
 		],
 	"dust": []

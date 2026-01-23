@@ -24,8 +24,7 @@ func _on_new_btn_pressed():
 	transition.play("fade_in")
 	'''
 	await get_tree().create_timer(0.5).timeout
-	#get_tree().change_scene_to_file("res://scenes/main/main.tscn")
-	# TODO: run opening cutscene
+	# run opening cutscene
 	Data.cutscene_key = "open"
 	get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")
 

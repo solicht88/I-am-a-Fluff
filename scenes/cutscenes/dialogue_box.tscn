@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3xvjxoxsrle"]
+[gd_scene load_steps=8 format=3 uid="uid://b3xvjxoxsrle"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/dialogue_box.gd" id="1_2g5gr"]
 [ext_resource type="Theme" uid="uid://c51qyr2yt5dmr" path="res://scenes/themes/light_text.tres" id="1_12qda"]
@@ -14,6 +14,96 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_q7scd"]
+resource_name = "open"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(631, 530), Vector2(190, 530)]
+}
+
+[sub_resource type="Animation" id="Animation_kgo2b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 530)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6710h"]
+resource_name = "close"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(190, 530), Vector2(631, 530)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.01, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gyo66"]
+_data = {
+"RESET": SubResource("Animation_kgo2b"),
+"close": SubResource("Animation_6710h"),
+"open": SubResource("Animation_q7scd")
+}
 
 [node name="dialogue_box" type="Control"]
 layout_mode = 3
@@ -66,5 +156,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="dialogue_timer" type="Timer" parent="."]
+wait_time = 0.08
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gyo66")
+}
 
 [connection signal="timeout" from="dialogue_timer" to="." method="_on_dialogue_timer_timeout"]
