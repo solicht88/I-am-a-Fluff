@@ -136,7 +136,7 @@ var end_cutscene_1 = preload("res://img/cutscenes/end_1.png")
 var choice_cutscene = preload("res://img/cutscenes/end_truth.png")
 var choice_1_cutscene = preload("res://img/cutscenes/end_truth_1.png")
 var choice_2_cutscene = preload("res://img/cutscenes/end_truth_2.png")
-var final_cutscene = preload("res://img/cutscenes/end_finale.png")
+var finale_cutscene = preload("res://img/cutscenes/end_finale.png")
 
 # key changes depending on cutscene to play
 var cutscene_key = "open"
@@ -153,12 +153,12 @@ var cutscene_data = {
 		["Puff", "Ma left to explore the Milky Way a while ago, but still hasn't returned..."],
 		["Puff", "Well, surely Ma is just a bit lost! Puff will definitely find her!"],
 		["Puff", "But, uh...Puff may be low on fuel.
-		Possibly now is a good time to take a break!"],
-		["Puff", "That star looks good! Puff will go land on it. Hopefully it has some sort of fuel!"]
+		Puff thinks now is a good time to take a break!"],
+		["Puff", "Ooh, that star looks good! Puff will go land on it. Hopefully it has some sort of fuel!"]
 		],
 	"dust": [
 		dust_cutscene,
-		["Puff", "Woah...!!"],
+		["Puff", "Woah...!"],
 		["Puff", "Ma, look!
 		There's so many lights in the sky!"],
 		["Ma", "Careful, Puff!
@@ -197,8 +197,9 @@ var cutscene_data = {
 		["Puff", "Woah, Ma is really fast at rolling the ribbon...!
 		It's such a pretty red color, Puff wanted to learn how to use it like Ma does..."],
 		["Ma", "I see, you just wanted to learn how to tie the ribbon?
-		Hehe, looks like it was a good idea to dress you in this ribbon after all!"],
-		["Ma", "You may not be able to do it the same way Ma does.
+		Hehe, looks like it was a good idea to dress you in this ribbon after all.
+		You really love the color dearly, and it'll bring you plenty of luck!"],
+		["Ma", "Puff may not be able to do it the same as Ma does.
 		Don't get too frustrated at first, alright? It takes time to learn."],
 		["Ma", "Here, watch carefully. First, I wrap the the ribbon around these two fingers.
 		Then, bring the end back around and wrap it around the loop between these fingers."],
@@ -206,7 +207,7 @@ var cutscene_data = {
 		["Ma", "Finally, tuck the loose end into the center, and adjust until you're satisfied!"],
 		["Ma", "Hm, I suppose you don't exactly have hands to do it this way...
 		Let's go find something you can wrap the ribbon around."],
-		["Puff", "Ooh, those pencil crayons Ma bought Puff the other day could work!
+		["Puff", "Ooh, those colored pencils Ma bought Puff the other day could work!
 		Follow Puff, Ma! Puff's going to need some help, but Puff wants to get it right!"],
 		["Ma", "Alright, lead the way, little Puff."]
 	],
@@ -219,7 +220,80 @@ var cutscene_data = {
 		["Ma", "Not this one, Puff. Let's leave this one for the animals in the pond."],
 		["Puff", "Ma, have you ever eaten this flower before?"],
 		["Ma", "Well, not really the flower, no. My family liked to cook the root.
-		I'll buy some from the grocery store for you next time."],
-		["Puff", ""]
+		I'll buy some from the grocery store for you next time!
+		You might not like the taste, though."],
+		["Puff", "Well, any food is worth trying at least once! That's what you like to say, Ma!"],
+		["Puff", "Are these flowers any special, Ma? They seem like normal pink flowers to Puff."],
+		["Puff", "But, not in a bad way! They just seem pretty ordinary. Plain.
+		What makes them different from the other pink flowers, apart from growing on water?"],
+		["Ma", "Hmm, if you want Ma's opinion, I'd say their unique trait is growing on the water's surface."],
+		["Ma", "I like how they look when fully bloomed, more than most other flowers.
+		Besides, they're more common in the region where Ma was born."],
+		["Ma", "Maybe that makes me biased, but I really love the place I was born.
+		We didn't have a whole lot back then. Life moved quickly at all times.
+		Yet, these lotus flowers never budged."],
+		["Ma", "I supposed your Ma just has a personal connection to these flowers, Puff.
+		Ah, by the way, you don't have to like them just because I do."],
+		["Puff", "...No! Puff likes the lotuses, Ma!
+		They a nice shade of pink, and they bloom big across the water!"],
+		["Puff", "So, Puff won't eat these flowers. Not a single one.
+		Hopefully, many more of them bloom across this pond, and Ma can see them every day!"],
+		["Ma", "That's sweet of you, little Puff.
+		One day, when the pond is covered in more lotus flowers, you can try eating one."],
+		["Ma", "Let's try eating the root together first! We best go grocery shopping again soon, anyway."]
+	],
+	"candle": [
+		candle_cutscene,
+		["Puff", "Brrr... It's suddenly so cold...
+		When did the weather get so cold, Ma? Wasn't it sunny just yesterday?"],
+		["Ma", "Seems like the sun left to take a break today. Stay still, Puff. Ma will light a candle."],
+		["Ma", "The weather has been getting pretty cold as of late.
+		It's meant to get chilly at this time of year, after all."],
+		["Ma", "Hm, now that I think of it, I suppose it has been colder than previous years."],
+		["Puff", "Waah... Puff doesn't like the cold."],
+		["Ma", "Just one second... There. Be careful, the flame is hot to touch.
+		This should keep us warm for a while. I made sure to use the cinnamon scented one you like, Puff."],
+		["Puff", "Yes, Puff can smell it. Thank you!"],
+		["Puff", "Say, what's this black plate thing called? It's not part of the candle.
+		Ma places a candle into it, just like she did now, and it lets her carry the candle around."],
+		["Ma", "That's a good question. This is called a chamberstick.
+		It was gifted to me from my grandparents, who got it from their grandparents. 
+		These aren't common to have anymore, since flashlights and electricity are more convenient."],
+		["Puff", "Then, why do these exist? Puff likes it, it keeps us warm, but it doesn't sound like it has much purpose to humans."],
+		["Ma", "There was a time before electricity was used, you know.
+		Candles were a conveninet portable light source, and the chamberstick prevented wax from spilling everywhere."],
+		["Ma", "Well, you are right, that these don't serve much purpose in recent days.
+		But as long as little Puff needs warmth, this chamberstick will let Ma carry a warm candle with us anywhere."],
+		["Ma", "When you grow older, Puff, I'll give this old chamberstick to you.
+		Make sure to take good care of it when that time comes, alright?"]
+	],
+	"photo": [
+		photo_cutscene
+	],
+	
+	"end_0": [
+		end_cutscene_0
+	],
+	"end_1": [
+		end_cutscene_1
+	],
+	"end_finale": [
+		finale_cutscene
+	],
+	
+	"choice": [
+		choice_cutscene
+	],
+	"choice_1": [
+		choice_1_cutscene
+	],
+	"choice_1_finale": [
+		finale_cutscene
+	],
+	"choice_2": [
+		choice_2_cutscene
+	],
+	"choice_2_finale": [
+		finale_cutscene
 	]
 }

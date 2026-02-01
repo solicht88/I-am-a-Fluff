@@ -124,29 +124,28 @@ offset_bottom = 692.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ileqh")
 
 [node name="name" type="Label" parent="Panel"]
-custom_minimum_size = Vector2(150, 25)
+custom_minimum_size = Vector2(150, 28)
 layout_mode = 0
 offset_left = 30.0
 offset_top = 20.0
 offset_right = 180.0
-offset_bottom = 45.0
+offset_bottom = 48.0
 theme = ExtResource("1_12qda")
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 20
 text = "Placeholder"
 
 [node name="text" type="Label" parent="Panel"]
-custom_minimum_size = Vector2(840, 97)
+custom_minimum_size = Vector2(820, 81)
 layout_mode = 0
-offset_left = 30.0
-offset_top = 45.0
-offset_right = 870.0
-offset_bottom = 142.0
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 860.0
+offset_bottom = 137.0
 theme = ExtResource("1_12qda")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 text = "The brown dog jumps over the lazy fox. Placeholder sentence for testing purposes thank you
 uhh im running out of dialogue
-yeah yeah
 thank you for coming to my ted talk"
 autowrap_mode = 2
 

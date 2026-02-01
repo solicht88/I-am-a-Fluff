@@ -181,3 +181,12 @@ func _buy_item(item: String):
 		
 		_display_item(item)
 		counter_label.text = str(save_data.counter)
+		
+		if item == cur_mem:
+			Data.cutscene_key = cur_mem
+			
+			Global.fade_in()
+			await get_tree().create_timer(0.5).timeout
+			
+			#get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+			get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")

@@ -17,10 +17,10 @@ var save_data: Dictionary = {
 		"compass": 1,
 		"jelly": 2,
 		"telescope": 0,
-		"flower": 1,
+		"flower": 0,
 		"dust": 0,
 		"ribbon": 0,
-		"lotus": 1,
+		"lotus": 0,
 		"candle": 0,
 		"photo": 0
 		}, # dictionary to store owned items
