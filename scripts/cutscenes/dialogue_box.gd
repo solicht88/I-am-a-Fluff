@@ -12,7 +12,7 @@ signal cont_dial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_parent().dial_ready and ready
+	await get_parent().dial_ready
 	$AnimationPlayer.play("open")
 	
 	name_lbl.text = ""

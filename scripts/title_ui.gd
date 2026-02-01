@@ -26,7 +26,8 @@ func _on_new_btn_pressed():
 	await get_tree().create_timer(0.5).timeout
 	# run opening cutscene
 	Data.cutscene_key = "open"
-	get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")
+	#get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")
+	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 
 func _on_load_btn_pressed():

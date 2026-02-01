@@ -35,9 +35,12 @@ func _on_exp_btn_pressed():
 	# give associated memento w/ exploration
 	if save_data.exp_lvl == 1:
 		inv["dust"] = 1
+		Data.cutscene_key = "dust"
 	elif save_data.exp_lvl == 2:
 		inv["ribbon"] = 1
+		Data.cutscene_key = "ribbon"
 	
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	#get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")

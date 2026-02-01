@@ -121,25 +121,105 @@ var mem_data: Dictionary = {
 }
 
 
-# cutscene
-# currently testing opening cutscene only
+# cutscene stuff
+# loading progression / mementos cutscene art
 var open_cutscene = preload("res://img/cutscenes/opening.png")
+var dust_cutscene = preload("res://img/cutscenes/stardust.png")
+var ribbon_cutscene = preload("res://img/cutscenes/ribbon.png")
+var lotus_cutscene = preload("res://img/cutscenes/lotus.png")
+var candle_cutscene = preload("res://img/cutscenes/candle.png")
+var photo_cutscene = preload("res://img/cutscenes/photo.png")
+
+# loading ending cutscenes art
+var end_cutscene_0 = preload("res://img/cutscenes/end_0.png")
+var end_cutscene_1 = preload("res://img/cutscenes/end_1.png")
+var choice_cutscene = preload("res://img/cutscenes/end_truth.png")
+var choice_1_cutscene = preload("res://img/cutscenes/end_truth_1.png")
+var choice_2_cutscene = preload("res://img/cutscenes/end_truth_2.png")
+var final_cutscene = preload("res://img/cutscenes/end_finale.png")
 
 # key changes depending on cutscene to play
 var cutscene_key = "open"
 
 # format: cutscene_key: [img, [name1, dialogue1], [name2, dialogue2], ...]
-# TODO: maybe add indicators for scene transitions/sfx? or fade in/out in middle of scenes
+# TODO: add indicators for scene transitions/sfx? or fade in/out in middle of scenes
 # could also reformat this so theres less name repitition n stuff? if theres time
 var cutscene_data = {
 	"open": [
 		open_cutscene,
-		["Puff", "I am a Fluff.\nMy name is Puff."],
+		["Puff", "I am a Fluff.
+		My name is Puff."],
 		["Puff", "Puff is on an adventure to find Ma!"],
 		["Puff", "Ma left to explore the Milky Way a while ago, but still hasn't returned..."],
 		["Puff", "Well, surely Ma is just a bit lost! Puff will definitely find her!"],
-		["Puff", "But, uh...Puff may be low on fuel.\nPossibly now is a good time to take a break!"],
+		["Puff", "But, uh...Puff may be low on fuel.
+		Possibly now is a good time to take a break!"],
 		["Puff", "That star looks good! Puff will go land on it. Hopefully it has some sort of fuel!"]
 		],
-	"dust": []
+	"dust": [
+		dust_cutscene,
+		["Puff", "Woah...!!"],
+		["Puff", "Ma, look!
+		There's so many lights in the sky!"],
+		["Ma", "Careful, Puff!
+		You're too close to the railing!"],
+		["Ma", "Ahaha, you're right, little Puff. There's many stars tonight!
+		Usually the sky isn't this clear. Aren't we lucky?"],
+		["Puff", "Stars...
+		Is that what the lights in the sky are called?"],
+		["Ma", "That's right! They are called stars.
+		Thousands of stars live in the sky, though we usually can't see most of them."],
+		["Ma", "Stars are mostly made of gas and are extremely hot.
+		However, there's a legend that every once in a while, a star begins to weep and drops 'stardust.'
+		Do you believe the tale, Puff?"],
+		["Puff", "Mmm... Sounds more like a fairytale for human children, Ma.
+		Puff is smarter than that! You don't need to tell Puff such strange stories!"],
+		["Ma", "Well, normally it would be, but this one might just be real.
+		See? Ma managed to find some stardust a long time ago. Isn't that wonderful?"],
+		["Puff", "Woah..."],
+		["Puff", "This really came from a star? It isn't just some glitter you bought, right?"],
+		["Ma", "Of course not! Ma won't lie about something like this.
+		In fact, I saw the stars cry many times before. They cry for many reasons."],
+		["Ma", "Here, you can have this. I have much more stardust in my room, after all.
+		You seem interested, Puff. Ma can tell you all kinds of stories about the stars, if you'd like."],
+		["Puff", "Ooo...yes please! Thank you, Ma!"]
+	],
+	"ribbon": [
+		ribbon_cutscene,
+		["Ma", "Oh no! How'd you get in this box, Puff?"],
+		["Ma", "Listen, I understand you really love this red ribbon, but you can't make a mess with it.
+		This is Ma's craft box. It's off limits from now on, okay?
+		Look, the ribbon has unravelled everywhere."],
+		["Puff", "Okay... I'm sorry, Ma..."],
+		["Ma", "...Aw, don't be so upset, little Puff!
+		Here, we can roll the ribbon back around the cardboard together.
+		That way we'll be done cleaning much faster!"],
+		["Puff", "Woah, Ma is really fast at rolling the ribbon...!
+		It's such a pretty red color, Puff wanted to learn how to use it like Ma does..."],
+		["Ma", "I see, you just wanted to learn how to tie the ribbon?
+		Hehe, looks like it was a good idea to dress you in this ribbon after all!"],
+		["Ma", "You may not be able to do it the same way Ma does.
+		Don't get too frustrated at first, alright? It takes time to learn."],
+		["Ma", "Here, watch carefully. First, I wrap the the ribbon around these two fingers.
+		Then, bring the end back around and wrap it around the loop between these fingers."],
+		["Puff", "Huh..."],
+		["Ma", "Finally, tuck the loose end into the center, and adjust until you're satisfied!"],
+		["Ma", "Hm, I suppose you don't exactly have hands to do it this way...
+		Let's go find something you can wrap the ribbon around."],
+		["Puff", "Ooh, those pencil crayons Ma bought Puff the other day could work!
+		Follow Puff, Ma! Puff's going to need some help, but Puff wants to get it right!"],
+		["Ma", "Alright, lead the way, little Puff."]
+	],
+	"lotus": [
+		lotus_cutscene,
+		["Puff", "Those are some interesting flowers, Ma!
+		They're growing on the water!"],
+		["Ma", "That's a lotus flower, Puff. Ma used to see them a lot when she was younger."],
+		["Puff", "Is this an edible flower, Ma? Can Puff try it?"],
+		["Ma", "Not this one, Puff. Let's leave this one for the animals in the pond."],
+		["Puff", "Ma, have you ever eaten this flower before?"],
+		["Ma", "Well, not really the flower, no. My family liked to cook the root.
+		I'll buy some from the grocery store for you next time."],
+		["Puff", ""]
+	]
 }

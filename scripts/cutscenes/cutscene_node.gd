@@ -2,8 +2,7 @@ extends Node2D
 
 var scene_data = Data.cutscene_data[Data.cutscene_key]
 var scene_img = scene_data[0]
-# TODO: take all items but first
-var dialogue = scene_data
+#var dialogue = scene_data
 
 signal dial_ready
 signal dial_finished
@@ -11,6 +10,7 @@ signal dial_finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await ready
+	$bg.texture = scene_img
 	Global.fade_out()
 	
 	dial_finished.connect(_end_scene)
