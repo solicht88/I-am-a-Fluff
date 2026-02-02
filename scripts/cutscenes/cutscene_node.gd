@@ -1,6 +1,7 @@
 extends Node2D
 
-var scene_data = Data.cutscene_data[Data.cutscene_key]
+var key = Data.cutscene_key
+var scene_data = Data.cutscene_data[key]
 var scene_img = scene_data[0]
 #var dialogue = scene_data
 
@@ -27,6 +28,9 @@ func _process(delta):
 
 
 func _end_scene():
+	# TODO: check if we are at an ending n change behaviour
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+# TODO: make function that plays another cutscene (for endings) 

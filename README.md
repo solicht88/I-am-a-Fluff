@@ -22,10 +22,10 @@ Play as Puff, a Fluff who left earth to travel the Milky Way in search of her Ma
 - exploration minigame? (unsure if this will be a feature or not)  
 - ~~mementos obtain methods~~  
 - mementos cutscenes  
-    - create cutscene art  
-    - create dialogue text boxes  
+    - ~~create cutscene art~~  
+    - ~~create dialogue text boxes~~  
 - ~~revisit obtained mementos~~  
-- replay cutscenes when clicking on owned memento(?)  
+- replay cutscenes when clicking on owned memento (unsure if this will be added)  
 - endings (2-3 total)  
 
 This will be periodically updated as I continue developing the game.  

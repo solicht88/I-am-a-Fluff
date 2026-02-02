@@ -180,8 +180,10 @@ var cutscene_data = {
 		["Puff", "This really came from a star? It isn't just some glitter you bought, right?"],
 		["Ma", "Of course not! Ma won't lie about something like this.
 		In fact, I saw the stars cry many times before. They cry for many reasons."],
-		["Ma", "Here, you can have this. I have much more stardust in my room, after all.
-		You seem interested, Puff. Ma can tell you all kinds of stories about the stars, if you'd like."],
+		["Ma", "Here, you can have this. I have much more stardust in my room.
+		It's my dream to become a star one day, after all."],
+		["Ma", "Goodness, you really do like the stars, don't you?
+		I can tell you all sorts of stories about the stars, if you wanna hear them."],
 		["Puff", "Ooo...yes please! Thank you, Ma!"]
 	],
 	"ribbon": [
@@ -268,32 +270,120 @@ var cutscene_data = {
 		Make sure to take good care of it when that time comes, alright?"]
 	],
 	"photo": [
-		photo_cutscene
+		photo_cutscene,
+		["Puff", "Rustling, rustling..."],
+		["Ma", "Huh? What's that noise?
+		Is someone there?"],
+		["Puff", "Fff...fwa! Rustle, rustle!"],
+		["Ma", "Oh! Goodness, you scared me!
+		What's your name, little one?"],
+		["Puff", "Mmm, F...Fluff! Puff!"],
+		["Ma", "Ah, hmm... Puff? Could it be...are you a Fluff?"],
+		["Puff", "Fu...Puff! Puff!
+		Rectangle, click, snap. Puff, like!"],
+		["Ma", "The camera shutter? You like the sound of it clicking when I shoot a photo?"],
+		["Ma", "Hehe, here, let me take your photo."],
+		["Ma", "Well, how is it? Do you like it, Puff?"],
+		["Puff", "Ffua! Very, like. Puff, like lots!"],
+		["Puff", "Rectangle, clicky rectangle, called what?"],
+		["Ma", "Camera. This is called a camera. It takes pictures, or photos, when it clicks.
+		This is the photo I took of you now. If you wait a few minutes, I can print it."],
+		["Ma", "Where's your Ma, little Puff? Isn't it dangerous for Fluffs to be out without a guardian?"],
+		["Puff", "Puff, one. One Fluff, Puff. Ma, who? Ma, you?"],
+		["Ma", "Huh? No, no, I mean, do you not have a guardian?"],
+		["Puff", "One Puff. Fluff. Rustle, rustle, one."],
+		["Ma", "Okay, okay, let's look around for your guardian, Puff.
+		Fluffs should be sticking together, especially one as young as you."],
+		["Puff", "Fwa, click! Click, click!"],
+		["Ma", "I guess, I can always take more photos, but we need to find your guardian first."],
+		["Ma", "Can you lead the way, Puff? Let's find your guardian togetherm, then I can take more photos of you later."]
 	],
 	
+	# for endings, all start at end_0. present a choice when all mementos have been collected
 	"end_0": [
-		end_cutscene_0
+		end_cutscene_0,
+		["Puff", "Ma? Are you here?"],
+		["Puff", "It's so cold...We must be quite far away from Earth now."],
+		["Puff", "That star is so bright... Is she over there? Ma, it's Puff, we can looking for you!"]
 	],
 	"end_1": [
-		end_cutscene_1
+		end_cutscene_1,
+		["Puff", "I guess, Ma isn't here, either..."],
+		["Puff", "Gotta keep searching for Ma. She must be cold out here, too."],
+		["Puff", "Ma? Are you this way instead? Please answer Puff!"],
+		["Puff", "Puff feels lonely... Puff misses Ma...
+		Please come home, Ma. The Milkyway is too cold for Puff."]
 	],
 	"end_finale": [
-		finale_cutscene
+		finale_cutscene,
+		["Puff", "At this rate, Puff may never find Ma...
+		But Puff has to keep going. Puff must know what happened to Ma."],
+		["Puff", "Where could Ma be...?"]
 	],
 	
 	"choice": [
-		choice_cutscene
+		choice_cutscene,
+		["Puff", "Ma, is that you...? Can you hear Puff?"],
+		["Puff", "You've become such a bright star, Ma.
+		Just like the thousands of beautiful stars we can see from Earth."],
+		["Puff", "Puff visited many stars in the Milkyway on the way here!
+		None of them shined as bright as you do. Why is that?"],
+		["Puff", "Of course, you must've worked hard to become such a bright star.
+		It's always been your dream, Ma."],
+		["Puff", "A friendly merchant had a few of your things. Did you leave them for Puff to find?
+		Maybe you knew Puff would come, so you left behind all sorts of items as hints for us."],
+		["Puff", "That's kind of you, Ma. Puff wouldn't have found you if it weren't for those items."],
+		["Puff", "See, Puff collected so many stars to find you.
+		The Milkyway was such a lovely experience. No matter where we went, the twinkling stars were there to greet us."],
+		["Puff", "Mmm, yes, Puff is also happy we found you in the end.
+		Everything about this exploration was well worth it."],
+		["Puff", "Now then, as beautiful as she is, Ma certainly cannot return to Earth in this form.
+		What should Puff do..."]
 	],
 	"choice_1": [
-		choice_1_cutscene
+		choice_1_cutscene,
+		["Puff", "Thank you for everything, Ma."],
+		["Puff", "You've taught Puff so much, gave Puff the warmth of love..."],
+		["Puff", "Earth was a wonderful experience, Ma."],
+		["Puff", "Now you're fulfilling your dream, becoming a bright star in the Milkyway."],
+		["Puff", "Please, allow Puff to help you. So that you can shine brighter with Puff's support."],
+		["Puff", "The journey was long and cold, but it was all worth seeing you again, Ma."],
+		["Puff", "Don't worry. Puff will be alright.
+		It's Puff's turn to help you, after all."],
+		["Puff", "And besides, Puff was just thinking how beautiful it must be to become a star as bright as you."],
+		["Puff", "So, let's reach your dream together. Let's become just like the shining stars in the clear night sky."]
 	],
 	"choice_1_finale": [
-		finale_cutscene
+		finale_cutscene,
+		["Puff", "It's warm. We have become a bright, warm star."],
+		["Puff", "Ma chose this path as a human, on her own volition.
+		A beautiful path, though it commonly belongs to the Fluffs at the end of their lifetime."],
+		["Puff", "Now, it's Puff's turn to teach Ma new things. To become a star."],
+		["Puff", "Together, Ma and Puff will light up the dark sky.
+		We'll shine even brighter than any star we could ever dream of becoming."]
 	],
 	"choice_2": [
-		choice_2_cutscene
+		choice_2_cutscene,
+		["Puff", "Puff will be going now, Ma."],
+		["Puff", "As beautiful as you are, as pretty as all the stars are...Puff wants to return to Earth."],
+		["Puff", "Puff is glad we got to see each other once more, Ma."],
+		["Puff", "It was a long journey, but Puff knows the way back, so don't worry"],
+		["Puff", "Thank you for teaching Puff so many things. Thank you for taking care of Puff until now."],
+		["Puff", "We may not have been able to find the other Fluffs that day, but you treated Puff like your own child."],
+		["Puff", "Thanks to you, Puff got to learn so much. 
+		We experienced the beauty of the world, the warmth of love, without even meeting another Fluff."],
+		["Puff", "Puff might visit again one day. So don't disappear, okay? Promise."],
+		["Puff", "By then, Puff will have experience so much more of the Earth. Puff will bring so many memories, so many stories to tell you, Ma."],
+		["Puff", "It'll be Puff's turn to teach you new things."],
+		["Puff", "So, Puff is thankful for everything you've given us. See you later, Ma."]
 	],
 	"choice_2_finale": [
-		finale_cutscene
+		finale_cutscene,
+		["Puff", "It's cold. Puff will definitely miss you, Ma."],
+		["Puff", "But, Puff can't rely on Ma forever. Eventually, we would split to go our own ways."],
+		["Puff", "The path you chose was beautiful, Ma.
+		It's just not the path Puff will follow. At least, not now."],
+		["Puff", "Ma, we will meet again one day. 
+		Keep shining brightly, and be the star you've always dreamed of becoming."]
 	]
 }
