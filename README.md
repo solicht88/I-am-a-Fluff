@@ -11,22 +11,22 @@ Play as Puff, a Fluff who left earth to travel the Milky Way in search of her Ma
 - ~~randomly placed, clickable stars~~  
 - ~~spend stars to upgrade Puff's skills~~  
 - ~~upgraded skills affect gameplay~~  
-- save/loading game data  
+- save/load game data  
 - ~~working title screen~~  
 - ~~purchasable items in game store~~  
     - add gameplay functions for certain items  
-- explore/move on to another 'area'
-    - add cutscenes  
+- explore/move on to another 'area'  
+    - ~~add cutscenes~~  
     - ~~bg changes~~  
 - exploration/moving to a new 'area' increases shop cost  
-- exploration minigame? (unsure if this will be a feature or not)  
 - ~~mementos obtain methods~~  
-- mementos cutscenes  
+- ~~mementos cutscenes~~  
     - ~~create cutscene art~~  
     - ~~create dialogue text boxes~~  
 - ~~revisit obtained mementos~~  
-- replay cutscenes when clicking on owned memento (unsure if this will be added)  
 - endings (2-3 total)  
+- add background + cutscene music  
+- finish adding all cutscenes  
 
 This will be periodically updated as I continue developing the game.  
 Completed tasks are crossed out.  

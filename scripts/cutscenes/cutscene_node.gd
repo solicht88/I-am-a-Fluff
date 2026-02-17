@@ -7,6 +7,7 @@ var scene_img = scene_data[0]
 
 signal dial_ready
 signal dial_finished
+signal play_cutscene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +32,34 @@ func _end_scene():
 	# TODO: check if we are at an ending n change behaviour
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	
+	'''
+	if key == "end_0":
+		pass
+	else:
+		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	'''
+	
+	# TODO: maybe try checking if current key is equal to dial key
+	# if not, change behaviour for ending
+	# otherwise, end cutscene
+	
+	if key != $dialogue_box.key:
+		_update_data()
+		_play_scene()
+	else:
+		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 # TODO: make function that plays another cutscene (for endings) 
+func _play_scene():
+	$bg.texture = scene_img
+	Global.fade_out()
+	
+	await get_tree().create_timer(1).timeout
+	$dialogue_box.visible = true
+	dial_ready.emit()
+
+func _update_data():
+	key = $dialogue_box.key
+	scene_data = Data.cutscene_data[key]
+	scene_img = scene_data[0]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3xvjxoxsrle"]
+[gd_scene load_steps=9 format=3 uid="uid://b3xvjxoxsrle"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/dialogue_box.gd" id="1_2g5gr"]
 [ext_resource type="Theme" uid="uid://c51qyr2yt5dmr" path="res://scenes/themes/light_text.tres" id="1_12qda"]
+[ext_resource type="PackedScene" uid="uid://b42y1es88dsu7" path="res://scenes/cutscenes/choice.tscn" id="3_3ta63"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ileqh"]
 bg_color = Color(0, 0, 0, 0.882353)
@@ -161,5 +162,9 @@ wait_time = 0.08
 libraries = {
 "": SubResource("AnimationLibrary_gyo66")
 }
+
+[node name="choice" parent="." instance=ExtResource("3_3ta63")]
+visible = false
+layout_mode = 1
 
 [connection signal="timeout" from="dialogue_timer" to="." method="_on_dialogue_timer_timeout"]

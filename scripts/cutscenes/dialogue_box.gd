@@ -5,8 +5,7 @@ extends Control
 @onready var text_lbl = $Panel/text
 
 var key = Data.cutscene_key
-var scene_img = Data.cutscene_data[key][0]
-var dialogue = Data.cutscene_data[key].slice(1)
+#var dialogue = Data.cutscene_data[key].slice(1)
 var save_data = Save.save_data
 var inv = save_data.inventory
 
@@ -15,36 +14,65 @@ signal change_img(img)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO: change this to connect dialogue function w/ dial_ready signal
+	# then wait for dialogue finished signal to close
 	await get_parent().dial_ready
+	$choice.visible = false
 	$AnimationPlayer.play("open")
 	
+	# TODO: move this into start_dial
 	name_lbl.text = ""
 	text_lbl.text = ""
 	
-	'''
-	for line in dialogue:
-		#print("hello")
-		name_lbl.text = line[0]
-		await _load_text(line)
-		# TODO: show "next_img" when line finished
-		await cont_dial
-	'''
-	# TODO: fix whateveres causing the dialogue to skip
-	# TODO: move dialogue code to a function so it can be replayed
-	await _play_dial(dialogue)
+	await _play_dial(Data.cutscene_data[key].slice(1))
 	
+	# maybe move this after key checking?
 	$AnimationPlayer.play("close")
 	await $AnimationPlayer.animation_finished
 	visible = false
 	
 	await get_tree().create_timer(1).timeout
 	
-	# TODO: add ending scene code? will prob move this to cutscene_node
+	# TODO: change key based on ending, play dialgoue on _play_s cene() in parent
+	# TODO: update this using _update_data if i don't move it
+	'''oh goodness this needs to be cleaned up
 	if key == "end_0":
 		if inv.dust and inv.ribbon and inv.lotus and inv.candle and inv.photo:
 			pass
 		else:
-			_play_dial(Data.cutscene_data["end_1"].slice(1))
+			Data.cutscene_key = "end_1"
+	
+	elif key == "end_1":
+		Data.cutscene_key = "end_finale"
+	elif key == "choice_1":
+		Data.cutscene_key = "choice_1_finale"
+	elif key == "choice_2":
+		Data.cutscene_key = "choice_2_finale"
+	'''
+	
+	# changing above match
+	match key:
+		"end_1":
+			pass
+		"choice":
+			# TODO: implement choice endings
+			$choice.chosen_choice.connect(_update_data)
+			$choice.visible = true
+			$choice/AnimationPLayer.play("fade_in")
+		_:
+			# check if at ending
+			if key == "end_0":
+				var extend_end = true
+				for mem_key in inv.slice(5):
+					if !inv[mem_key]:
+						_update_data("end_1")
+						extend_end = false
+						break
+				
+				if extend_end:
+					_update_data("choice")
+			else:
+				pass
 	
 	get_parent().dial_finished.emit()
 
@@ -70,12 +98,23 @@ func _load_text(line):
 		#await get_tree().create_timer(0.08).timeout
 
 
+# TODO: starts dialogue 
+func _start_dial():
+	pass
+
+
 func _play_dial(dialogue):
 	for line in dialogue:
 		name_lbl.text = line[0]
 		await _load_text(line)
 		# TODO: show "next_img" when line finished
 		await cont_dial
+	# TODO: add signal for end of dialogue
+
+
+func _update_data(new_key):
+	Data.cutscene_key = new_key
+	key = new_key
 
 
 func _on_dialogue_timer_timeout():
