@@ -20,7 +20,8 @@ func _ready():
 	$choice.visible = false
 	$AnimationPlayer.play("open")
 	
-	# TODO: move this into start_dial
+	# TODO: move this into start_dial, await start_dial instead?
+	# OR: connect dialogue to parent dial_ready signal
 	name_lbl.text = ""
 	text_lbl.text = ""
 	
@@ -50,30 +51,44 @@ func _ready():
 		Data.cutscene_key = "choice_2_finale"
 	'''
 	
-	# changing above match
+	# changing above to match 
 	match key:
 		"end_1":
 			pass
 		"choice":
 			# TODO: implement choice endings
+			# connects _update_data to selected choice
 			$choice.chosen_choice.connect(_update_data)
+			$choice.color.a = 0
 			$choice.visible = true
-			$choice/AnimationPLayer.play("fade_in")
+			$choice/AnimationPlayer.play("fade_in")
+			await get_tree().create_timer(0.5).timeout
+			
+			# fade out after picking a choice
+			await $choice.chosen_choice
+			$choice/AnimationPlayer.play("fade_out")
+			await get_tree().create_timer(0.5).timeout
+			$choice.visible = false
 		_:
 			# check if at ending
 			if key == "end_0":
 				var extend_end = true
-				for mem_key in inv.slice(5):
-					if !inv[mem_key]:
+				
+				var i = 0 
+				for mem_key in inv:
+					if !inv[mem_key] and i > 4:
 						_update_data("end_1")
 						extend_end = false
 						break
+					i += 1
 				
 				if extend_end:
 					_update_data("choice")
+			# continue ending if needed
 			else:
 				pass
 	
+	# this must be last
 	get_parent().dial_finished.emit()
 
 
@@ -90,7 +105,6 @@ func _input(event):
 
 # text animation
 func _load_text(line):
-	#print("gogogo")
 	for i in range(len(line[1])):
 		text_lbl.text = line[1].substr(0, i+1)
 		timer.start()
@@ -98,18 +112,24 @@ func _load_text(line):
 		#await get_tree().create_timer(0.08).timeout
 
 
-# TODO: starts dialogue 
+# TODO: starts new dialogue (mostly useful for endings) 
 func _start_dial():
-	pass
+	$choice.visible = false
+	$AnimationPlayer.play("open")
+	name_lbl.text = ""
+	text_lbl.text = ""
+	
+	await _play_dial(Data.cutscene_data[key].slice(1))
 
 
 func _play_dial(dialogue):
 	for line in dialogue:
 		name_lbl.text = line[0]
 		await _load_text(line)
-		# TODO: show "next_img" when line finished
+		# TODO: show "next_img" in dialogue box when line finished (might not do this)
 		await cont_dial
-	# TODO: add signal for end of dialogue
+	# TODO: add signal for end of dialogue (might not need?)
+	# only add if doesn't wait for _start_dial()
 
 
 func _update_data(new_key):

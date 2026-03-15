@@ -11,9 +11,10 @@ func _ready():
 	for item in Data.exp_items:
 		if inv[item] != item_max[item]:
 			can_exp = false
+			print("cant explore :()")
 			$Panel/exp_btn.set_default_cursor_shape(Input.CURSOR_ARROW)
 	
-	if can_exp and save_data.exp_lvl < 2:
+	if can_exp and save_data.exp_lvl < 3:
 		$Panel/exp_btn.disabled = false
 
 
@@ -39,6 +40,8 @@ func _on_exp_btn_pressed():
 	elif save_data.exp_lvl == 2:
 		inv["ribbon"] = 1
 		Data.cutscene_key = "ribbon"
+	else:
+		Data.cutscene_key = "end_0"
 	
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout

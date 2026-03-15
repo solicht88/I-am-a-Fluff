@@ -6,11 +6,12 @@ signal chosen_choice(key)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	chosen_choice.connect($AnimationPlayer.play("fade_out"))
+	#chosen_choice.connect($AnimationPlayer.play("fade_out"))
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 

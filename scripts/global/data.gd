@@ -304,7 +304,7 @@ var cutscene_data = {
 		end_cutscene_0,
 		["Puff", "Ma? Are you here?"],
 		["Puff", "It's so cold...We must be quite far away from Earth now."],
-		["Puff", "That star is so bright... Is she over there? Ma, it's Puff, we can looking for you!"]
+		["Puff", "That star is so bright... Is she over there? Ma, it's Puff, we came looking for you!"]
 	],
 	"end_1": [
 		end_cutscene_1,

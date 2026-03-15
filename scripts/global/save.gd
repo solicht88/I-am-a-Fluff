@@ -11,7 +11,7 @@ var save_data: Dictionary = {
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
 	"str_lvl": 1,
-	"exp_lvl": 0,
+	"exp_lvl": 2,
 	"inventory": {
 		"fuel": 3,
 		"compass": 1,
