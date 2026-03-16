@@ -5,7 +5,7 @@ var scene_data = Data.cutscene_data[key]
 var scene_img = scene_data[0]
 #var dialogue = scene_data
 
-var is_ending = false
+var the_end = false
 
 signal dial_ready
 signal dial_finished
@@ -47,13 +47,11 @@ func _end_scene():
 	# if not, continue cutscene for selected ending
 	# otherwise, end cutscene
 	if key != $dialogue_box.key:
-		is_ending = true
-		_update_data()
+		await _update_data()
 		_play_scene()
-	elif false:
-		# TODO: go to title screen after ending ends instead of main screen
-		#get_tree().change_scene_to_file("res://scenes/title/title_screen.tscn")
-		pass
+	elif the_end:
+		# go to title screen after ending ends instead of main screen
+		get_tree().change_scene_to_file("res://scenes/title/title_screen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
@@ -61,9 +59,11 @@ func _end_scene():
 # TODO: make function that plays cutscenes (mostly useful for endings) 
 func _play_scene():
 	$bg.texture = scene_img
+	# TODO: fix whatever is making this fade out not play properly
 	Global.fade_out()
 	
 	await get_tree().create_timer(1).timeout
+	print("playing new scene!")
 	$dialogue_box.visible = true
 	dial_ready.emit()
 

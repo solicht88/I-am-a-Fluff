@@ -29,9 +29,13 @@ func _on_cancel_btn_pressed():
 
 func _on_exp_btn_pressed():
 	save_data.exp_lvl += 1
-	for item in Data.exp_items:
-		inv[item] = 0
-	Data.update_cost_data()
+	if save_data.exp_lvl > 3:
+		save_data.exp_lvl = 3
+	
+	if save_data.exp_lvl < 3:
+		for item in Data.exp_items:
+			inv[item] = 0
+		Data.update_cost_data()
 	
 	# give associated memento w/ exploration
 	if save_data.exp_lvl == 1:
