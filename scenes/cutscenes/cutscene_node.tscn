@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpixgno13xw1c"]
+[gd_scene load_steps=5 format=3 uid="uid://bpixgno13xw1c"]
 
 [ext_resource type="Script" path="res://scripts/cutscenes/cutscene_node.gd" id="1_tc1lt"]
 [ext_resource type="Texture2D" uid="uid://bba5mxurhq2jb" path="res://img/cutscenes/opening.png" id="1_tqe8f"]
 [ext_resource type="PackedScene" uid="uid://b3xvjxoxsrle" path="res://scenes/cutscenes/dialogue_box.tscn" id="2_jpds3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtowu"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="cutscene" type="Node2D"]
 script = ExtResource("1_tc1lt")
@@ -13,3 +16,10 @@ centered = false
 
 [node name="dialogue_box" parent="." instance=ExtResource("2_jpds3")]
 visible = false
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+z_index = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wtowu")

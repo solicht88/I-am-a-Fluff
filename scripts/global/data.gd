@@ -67,7 +67,7 @@ var og_item_cost = {
 # format: [image, name, price, description]
 var item_data: Dictionary = {
 	"fuel": [fuel_img, "Fuel Stone", str(item_cost["fuel"]) + " Stars\n", "Keeps Puff warm during explorations through the Milky Way"],
-	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "A nice telescope. Groups up to 4 stars to be collected together."],
+	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "A nice telescope. Helps Puff spot an additional star every 6 secs."],
 	"compass": [compass_img, "Compass", str(item_cost["compass"]) + " Stars\n", "Helps Puff to navigate where to go when exploring"],
 	"jelly": [jelly_img, "Orange Jelly", str(item_cost["jelly"]) + " Stars\n", "Puff's favorite snack! Keeps her from going hungry while exploring"],
 	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Attracts an additional star to Puff every 8 secs."],
@@ -369,20 +369,23 @@ var cutscene_data = {
 		["Puff", "Puff is glad we got to see each other once more, Ma."],
 		["Puff", "It was a long journey, but Puff knows the way back, so don't worry"],
 		["Puff", "Thank you for teaching Puff so many things. Thank you for taking care of Puff until now."],
-		["Puff", "We may not have been able to find the other Fluffs that day, but you treated Puff like your own child."],
+		["Puff", "We may not have been able to find the other Fluffs that day...
+		But you took Puff in, and treated us like your own human child."],
 		["Puff", "Thanks to you, Puff got to learn so much. 
 		We experienced the beauty of the world, the warmth of love, without even meeting another Fluff."],
 		["Puff", "Puff might visit again one day. So don't disappear, okay? Promise."],
 		["Puff", "By then, Puff will have experience so much more of the Earth. Puff will bring so many memories, so many stories to tell you, Ma."],
 		["Puff", "It'll be Puff's turn to teach you new things."],
-		["Puff", "So, Puff is thankful for everything you've given us. See you later, Ma."]
+		["Puff", "So, Puff is thankful for everything you've given us.
+		See you later, Ma."]
 	],
 	"choice_2_finale": [
 		finale_cutscene,
 		["Puff", "It's cold. Puff will definitely miss you, Ma."],
 		["Puff", "But, Puff can't rely on Ma forever. Eventually, we would split to go our own ways."],
 		["Puff", "The path you chose was beautiful, Ma.
-		It's just not the path Puff will follow. At least, not now."],
+		It's just not the path Puff will follow. Not yet, at least.
+		After all, Puff wants to try living on Earth a little longer."],
 		["Puff", "Ma, we will meet again one day. 
 		Keep shining brightly, and be the star you've always dreamed of becoming."]
 	]

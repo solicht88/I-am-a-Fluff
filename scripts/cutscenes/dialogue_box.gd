@@ -16,23 +16,18 @@ signal change_img(img)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# TODO: change this to connect dialogue function w/ dial_ready signal
-	# then wait for dialogue finished signal to close
 	await get_parent().dial_ready
-	print("dial ready!")
+	#print("dial ready!")
 	$choice.visible = false
 	$AnimationPlayer.play("open")
 	
-	# TODO: move this into start_dial, await start_dial instead?
-	# OR: connect dialogue to parent dial_ready signal
+	# ready does initial cutscene 
+	# + connect dialogue to parent dial_ready signal for endings
 	name_lbl.text = ""
 	text_lbl.text = ""
 	get_parent().dial_ready.connect(_start_dial)
 	
 	await _play_dial(Data.cutscene_data[key].slice(1))
-	
-	# TODO: change key based on ending, play dialgoue on _play_s cene() in parent
-	# TODO: update this using _update_data if i don't move it
 	
 	# changing above to match 
 	match key:
@@ -55,9 +50,7 @@ func _ready():
 			
 			# fade out after picking a choice
 			await $choice.chosen_choice
-			$choice/AnimationPlayer.play("fade_out")
 			await get_tree().create_timer(0.5).timeout
-			$choice.visible = false
 		"choice_1":
 			_update_data("choice_1_finale")
 		"choice_2":
@@ -87,7 +80,7 @@ func _process(_delta):
 
 # click proceeds dialogue
 func _input(event):
-	if event.is_action_pressed("leftclick"):
+	if event.is_action_released("leftclick"):
 		cont_dial.emit()
 		if playing_dial:
 			skip_dial = true
@@ -130,7 +123,6 @@ func _start_dial():
 			# implements choice endings
 			# connects _update_data to selected choice
 			$choice.chosen_choice.connect(_update_data)
-			$choice.color.a = 0
 			$choice.visible = true
 			$choice/AnimationPlayer.play("fade_in")
 			await get_tree().create_timer(0.5).timeout
@@ -169,8 +161,8 @@ func _play_dial(dialogue):
 		playing_dial = false
 		# TODO: show "next_img" in dialogue box when line finished (might not do this)
 		await cont_dial
-	# TODO: add signal for end of dialogue (might not need?)
-	# only add if doesn't wait for _start_dial()
+		# prevents accidentally skipping next dialogue
+		await get_tree().create_timer(0.05).timeout
 
 
 func _update_data(new_key):

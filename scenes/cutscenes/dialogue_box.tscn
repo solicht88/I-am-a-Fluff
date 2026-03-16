@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 530)]
+"values": [Vector2(631, 530)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.01, 0.01)]
 }
 
 [sub_resource type="Animation" id="Animation_6710h"]
@@ -118,10 +118,11 @@ script = ExtResource("1_2g5gr")
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(900, 162)
 layout_mode = 0
-offset_left = 190.0
+offset_left = 631.0
 offset_top = 530.0
-offset_right = 1090.0
+offset_right = 1531.0
 offset_bottom = 692.0
+scale = Vector2(0.01, 0.01)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ileqh")
 
 [node name="name" type="Label" parent="Panel"]

@@ -16,13 +16,13 @@ var save_data: Dictionary = {
 		"fuel": 3,
 		"compass": 1,
 		"jelly": 2,
-		"telescope": 0,
-		"flower": 0,
-		"dust": 0,
-		"ribbon": 0,
-		"lotus": 0,
-		"candle": 0,
-		"photo": 0
+		"telescope": 1,
+		"flower": 1,
+		"dust": 1,
+		"ribbon": 1,
+		"lotus": 1,
+		"candle": 1,
+		"photo": 1
 		}, # dictionary to store owned items
 }
 

@@ -56,14 +56,16 @@ func _end_scene():
 		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 
-# TODO: make function that plays cutscenes (mostly useful for endings) 
+# plays cutscenes (mostly useful for endings) 
 func _play_scene():
+	$Panel.visible = true
 	$bg.texture = scene_img
-	# TODO: fix whatever is making this fade out not play properly
+	await get_tree().create_timer(0.05).timeout
+	# an honest brute force fix for the animation using a panel
+	$Panel.visible = false
 	Global.fade_out()
 	
 	await get_tree().create_timer(1).timeout
-	print("playing new scene!")
 	$dialogue_box.visible = true
 	dial_ready.emit()
 

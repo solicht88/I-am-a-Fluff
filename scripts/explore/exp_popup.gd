@@ -11,10 +11,10 @@ func _ready():
 	for item in Data.exp_items:
 		if inv[item] != item_max[item]:
 			can_exp = false
-			print("cant explore :()")
+			#print("cant explore :(")
 			$Panel/exp_btn.set_default_cursor_shape(Input.CURSOR_ARROW)
 	
-	if can_exp and save_data.exp_lvl < 3:
+	if can_exp and save_data.exp_lvl <= 3:
 		$Panel/exp_btn.disabled = false
 
 

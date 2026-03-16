@@ -7,7 +7,7 @@ var inv = Save.save_data.inventory
 
 var popup = preload("res://scenes/explore/exp_popup.tscn")
 
-var exp_btn_pos = [Vector2(685, 210), Vector2(724, 195), Vector2(1038, 330)][Save.save_data.exp_lvl]
+var exp_btn_pos = [Vector2(685, 210), Vector2(724, 195), Vector2(1038, 330), Vector2(1038, 330)][Save.save_data.exp_lvl]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

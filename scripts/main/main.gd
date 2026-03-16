@@ -4,6 +4,7 @@ extends Node2D
 @onready var counter := $interface/counter as Label
 @onready var timer := $Timer as Timer
 @onready var flower_timer := $FlowerTimer as Timer
+@onready var tele_timer := $TeleTimer as Timer
 @onready var bg_sprite := $bg
 # temp testing for manually placed star
 #@onready var star := $star1/Area2D as Node2D
@@ -51,6 +52,9 @@ func _ready():
 	# moon flower spawns an additional star every 8 seconds
 	if save_data.inventory["flower"]:
 		flower_timer.start()
+	# telescope spawns an additional star every 6 seconds
+	if save_data.inventory["telescope"]:
+		tele_timer.start()
 	
 	# TODO: add pop-up for obtained memento after increase in exp_lvl
 	
@@ -88,7 +92,7 @@ func _spawn_star():
 	new_star.get_node("Sprite2D").self_modulate.a = 0
 	animation.play("appear")
 	
-	# TODO: add telescope function: connects up to 4 stars together in "groups"
+	# (maybe in future update/remake) telescope function: connects up to 4 stars together in "groups"
 
 
 func _on_timer_timeout():
@@ -97,10 +101,15 @@ func _on_timer_timeout():
 	#print(timer.wait_time)
 	timer.start()
 
+
 func _on_flower_timer_timeout():
 	#print("moon flower in action!")
 	_spawn_star()
 	flower_timer.start()
+
+func _on_tele_timer_timeout():
+	_spawn_star()
+	tele_timer.start()
 
 
 # Menu
