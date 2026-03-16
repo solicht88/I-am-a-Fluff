@@ -7,7 +7,8 @@ var inv = Save.save_data.inventory
 var item_data
 
 var cur_item = ""
-var cur_mem = ["lotus", "candle", "photo"][save_data.exp_lvl]
+var shop_mems = ["lotus", "candle", "photo"]
+var cur_mem = ""
 
 @onready var counter_label := $counter as Label
 
@@ -15,6 +16,11 @@ var cur_mem = ["lotus", "candle", "photo"][save_data.exp_lvl]
 func _ready():
 	await ready
 	Global.fade_out()
+	
+	if save_data.exp_lvl < 3:
+		cur_mem = shop_mems[save_data.exp_lvl]
+	else:
+		cur_mem = shop_mems[2]
 	# parent.add_child(Global.transition_node.instantiate())
 	'''
 	var transition = $"../transition_animation/transition_player"

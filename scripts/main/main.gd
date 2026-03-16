@@ -50,10 +50,10 @@ func _ready():
 	timer.start()
 	call_deferred("_load_stars", star_coords)
 	
-	# moon flower spawns an additional star every 8 seconds
+	# moon flower spawns an additional star every 6 seconds
 	if save_data.inventory["flower"]:
 		flower_timer.start()
-	# telescope spawns an additional star every 5 seconds
+	# telescope spawns an additional star every 4 seconds
 	if save_data.inventory["telescope"]:
 		tele_timer.start()
 	
