@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yke0h")
 
-[node name="new_btn" type="Button" parent="."]
+[node name="play_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 0
 offset_left = 130.0
@@ -46,6 +46,6 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_70ecj")
 text = "Quit"
 
-[connection signal="pressed" from="new_btn" to="." method="_on_new_btn_pressed"]
+[connection signal="pressed" from="play_btn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="credits_btn" to="." method="_on_credits_btn_pressed"]
 [connection signal="pressed" from="quit_btn" to="." method="_on_quit_btn_pressed"]

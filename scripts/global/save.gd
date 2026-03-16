@@ -26,6 +26,8 @@ var save_data: Dictionary = {
 		}, # dictionary to store owned items
 }
 
+var ending_viewed = false
+
 '''
 "mementos": {
 	"dust": false,

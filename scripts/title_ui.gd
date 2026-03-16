@@ -9,6 +9,9 @@ var credits = preload("res://scenes/credits_popup.tscn")
 func _ready():
 	Global.fade_out()
 	Audio.play_title_bgm()
+	
+	if Save.ending_viewed:
+		$play_btn.text = "Continue"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,21 +19,23 @@ func _process(_delta):
 	pass
 
 
-func _on_new_btn_pressed():	
+func _on_play_btn_pressed():	
 	Global.fade_in()
 	#print('ready')
 	Audio.stop_audio()
-	
-	'''
-	parent.add_child(transition_animation.instantiate())
-	var transition = $"../transition_animation/transition_player"
-	transition.play("fade_in")
-	'''
 	await get_tree().create_timer(0.5).timeout
-	# run opening cutscene
-	Data.cutscene_key = "open"
-	get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")
-	#get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	
+	if Save.ending_viewed:
+		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	else:
+		'''
+		parent.add_child(transition_animation.instantiate())
+		var transition = $"../transition_animation/transition_player"
+		transition.play("fade_in")
+		'''
+		# run opening cutscene
+		Data.cutscene_key = "open"
+		get_tree().change_scene_to_file("res://scenes/cutscenes/cutscene_node.tscn")
 
 
 func _on_credits_btn_pressed():

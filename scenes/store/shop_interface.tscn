@@ -287,7 +287,8 @@ offset_bottom = 400.0
 scale = Vector2(0.994668, 1)
 theme = ExtResource("2_fll3y")
 text = "1000 stars
-item description ooooo cool shiny buy today! mega mart lemons"
+item description ooooo cool shiny buy today! 
+top choice items in the Milkyway!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -312,6 +313,7 @@ offset_bottom = 448.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_qf2ww")
 theme_override_font_sizes/font_size = 20
+disabled = true
 text = "buy"
 
 [node name="star_img" type="TextureRect" parent="."]

@@ -57,7 +57,7 @@ func _ready():
 	if save_data.inventory["telescope"]:
 		tele_timer.start()
 	
-	# TODO: add pop-up for obtained memento after increase in exp_lvl
+	# TODO: add pop-up for obtained memento after increase in exp_lvl (future update?)
 	
 	# temp to trash debug save file
 	#OS.move_to_trash(ProjectSettings.globalize_path("user://SaveFile.json"))
@@ -73,11 +73,13 @@ func _update_counter(pos):
 	stars += 1 * save_data.str_lvl
 	counter.text = str(stars)
 
+
 func _get_random_point(ul: Vector2, br: Vector2) -> Vector2:
 	var x_value = randi_range(ul.x, br.x)
 	var y_value = randi_range(ul.y, br.y)
 	var random_point = Vector2(x_value, y_value)
 	return(random_point)
+
 
 func _spawn_star():
 	var new_star = star_scenes[randi_range(0, 2)].instantiate()
@@ -108,6 +110,7 @@ func _on_flower_timer_timeout():
 	_spawn_star()
 	flower_timer.start()
 
+
 func _on_tele_timer_timeout():
 	#print("telescope in action!")
 	_spawn_star()
@@ -126,7 +129,8 @@ func save_progress():
 	#Save.save_game()
 	#print("saved!")
 
-# possibly temp? will see how full save/load files go
+
+# possibly temp? will see how full save/load files go (keeping this for now)
 func _load_stars(coords):
 	#print(coords)
 	for pos in coords:

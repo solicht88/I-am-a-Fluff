@@ -46,6 +46,7 @@ func _on_exp_btn_pressed():
 		Data.cutscene_key = "ribbon"
 	else:
 		Data.cutscene_key = "end_0"
+		Save.ending_viewed = true
 	
 	Global.fade_in()
 	await get_tree().create_timer(0.5).timeout
