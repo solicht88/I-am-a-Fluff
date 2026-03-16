@@ -16,7 +16,11 @@ func _ready():
 	await ready
 	$bg.texture = scene_img
 	Global.fade_out()
-	Audio.play_cutscene_bgm()
+	
+	if key == "end_0":
+		Audio.play_ending_bgm()
+	else:
+		Audio.play_cutscene_bgm()
 	
 	dial_finished.connect(_end_scene)
 	

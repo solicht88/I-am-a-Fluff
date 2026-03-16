@@ -9,7 +9,14 @@ All digital art found in the game are original pieces made by solicht88 (Github)
 Music
 --------------------------------------------------------------------------
 
-TBA (Not yet included)
+All music used is by Tomomi_Kato on pixabay.
+Title: https://pixabay.com/music/modern-classical-holy-night-11014/
+BGM: https://pixabay.com/music/solo-piano-calm-piano-8996/
+Cutscenes: https://pixabay.com/music/solo-piano-the-sound-of-light-8863/
+Ending Cutscenes: https://pixabay.com/music/modern-classical-elegy-455234/
+
+Pixabay License 
+https://pixabay.com/service/license-summary/
 
 
 --------------------------------------------------------------------------

@@ -27,7 +27,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_akeyt")
 text = "Resume"
 
-[node name="save" type="Button" parent="."]
+[node name="credits" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 1
 offset_left = 490.0
@@ -36,7 +36,8 @@ offset_right = 790.0
 offset_bottom = 395.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_akeyt")
-text = "Save Progress"
+text = "Credits
+"
 
 [node name="exit" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
@@ -50,5 +51,5 @@ theme = ExtResource("1_akeyt")
 text = "Exit Game"
 
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

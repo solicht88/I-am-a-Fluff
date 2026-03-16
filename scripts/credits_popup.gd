@@ -1,11 +1,6 @@
 extends Control
 
 
-var credits = preload("res://scenes/credits_popup.tscn")
-
-signal save_data
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,14 +11,5 @@ func _process(_delta):
 	pass
 
 
-func _on_resume_pressed():
+func _on_close_pressed():
 	queue_free()
-
-
-func _on_credits_pressed():
-	var credits_popup = credits.instantiate()
-	add_child(credits_popup)
-
-
-func _on_exit_pressed():
-	get_tree().quit()

@@ -1,6 +1,6 @@
 # I am a Fluff
 
-A clicker & story game made in Godot 4.2  
+A clicker & story game made in Godot 4.2.2, written in GDScript  
 Play as Puff, a Fluff who left earth to travel the Milky Way in search of her Ma  
 - Collect stars for Puff  
 - Help Puff grow using stars  

@@ -127,8 +127,8 @@ offset_right = 400.0
 offset_bottom = 406.0
 theme = ExtResource("4_3u3a8")
 text = "Ma's Wish - Decrease cost of certain items in the store
-(disabled, TBA)
-Cost: N/A"
+(0% --> 10% off)
+Cost: 30 stars"
 autowrap_mode = 2
 
 [node name="wish_lvl" type="Label" parent="."]

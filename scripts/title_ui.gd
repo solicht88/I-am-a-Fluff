@@ -3,11 +3,12 @@ extends Control
 @onready var parent = $"../"
 
 var transition_animation = preload("res://scenes/transition_animation.tscn")
+var credits = preload("res://scenes/credits_popup.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.fade_out()
-	Audio.play_bgm()
+	Audio.play_title_bgm()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,7 +34,8 @@ func _on_new_btn_pressed():
 
 
 func _on_credits_btn_pressed():
-	pass # Replace with function body.
+	var credits_popup = credits.instantiate()
+	get_parent().add_child(credits_popup)
 
 
 func _on_quit_btn_pressed():
