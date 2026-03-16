@@ -1,7 +1,7 @@
 extends Button
 
 # only testing one save file for now
-const save_location = "user://saves/SaveFile.json"
+#const save_location = "user://saves/SaveFile.json"
 
 var star1 = preload("res://scenes/characters/star_1.tscn")
 
@@ -11,18 +11,18 @@ var save_data: Dictionary = {
 	"gaze_lvl": 1,
 	"wish_lvl": 1,
 	"str_lvl": 1,
-	"exp_lvl": 2,
+	"exp_lvl": 0,
 	"inventory": {
 		"fuel": 3,
 		"compass": 1,
 		"jelly": 2,
-		"telescope": 1,
-		"flower": 1,
-		"dust": 1,
-		"ribbon": 1,
-		"lotus": 1,
-		"candle": 1,
-		"photo": 1
+		"telescope": 0,
+		"flower": 0,
+		"dust": 0,
+		"ribbon": 0,
+		"lotus": 0,
+		"candle": 0,
+		"photo": 0
 		}, # dictionary to store owned items
 }
 
@@ -35,17 +35,22 @@ var save_data: Dictionary = {
 	"photo": false
 }'''
 
+'''
 func save_game():
-	pass
-	'''
 	var file = FileAccess.open(save_location, FileAccess.WRITE)
 	file.store_var(save_data.duplicate())
 	file.close()
-	'''
 
 # TODO: load balance, levels, inv from save file
 func load_game():
-	pass
+	if FileAccess.file_exists(save_location):
+		var file = FileAccess.open(save_location, FileAccess.READ)
+		var data = file.get_var()
+		file.close
+		
+		var temp = data.duplicate()
+		save_data
+'''
 
 # possibly temp? will see how full save/load files go later in dev
 func load_stars(coords):

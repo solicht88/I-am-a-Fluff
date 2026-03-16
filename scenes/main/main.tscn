@@ -20,7 +20,7 @@ wait_time = 5.0
 wait_time = 8.0
 
 [node name="TeleTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="FlowerTimer" to="." method="_on_flower_timer_timeout"]

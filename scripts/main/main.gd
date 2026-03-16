@@ -40,6 +40,7 @@ func _ready():
 	bg_sprite.texture = Data.main_bgs[save_data.exp_lvl]
 	
 	Global.fade_out()
+	Audio.play_bgm()
 	
 	randomize()	
 	interface.menu_open.connect(_menu_opened)
@@ -52,7 +53,7 @@ func _ready():
 	# moon flower spawns an additional star every 8 seconds
 	if save_data.inventory["flower"]:
 		flower_timer.start()
-	# telescope spawns an additional star every 6 seconds
+	# telescope spawns an additional star every 5 seconds
 	if save_data.inventory["telescope"]:
 		tele_timer.start()
 	
@@ -108,6 +109,7 @@ func _on_flower_timer_timeout():
 	flower_timer.start()
 
 func _on_tele_timer_timeout():
+	#print("telescope in action!")
 	_spawn_star()
 	tele_timer.start()
 

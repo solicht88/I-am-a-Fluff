@@ -14,9 +14,9 @@ signal play_cutscene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await ready
-	# TODO: replace this w/ function
 	$bg.texture = scene_img
 	Global.fade_out()
+	Audio.play_cutscene_bgm()
 	
 	dial_finished.connect(_end_scene)
 	
@@ -51,8 +51,10 @@ func _end_scene():
 		_play_scene()
 	elif the_end:
 		# go to title screen after ending ends instead of main screen
+		Audio.stop_audio()
 		get_tree().change_scene_to_file("res://scenes/title/title_screen.tscn")
 	else:
+		Audio.stop_audio()
 		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 

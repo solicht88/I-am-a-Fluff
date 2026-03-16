@@ -20,6 +20,7 @@ config/icon="res://img/icons/puff_icon.png"
 Save="*res://scripts/global/save.gd"
 Data="*res://scripts/global/data.gd"
 Global="*res://scripts/global/global.gd"
+Audio="*res://scenes/audio.tscn"
 
 [display]
 

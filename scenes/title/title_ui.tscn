@@ -21,9 +21,9 @@ offset_right = 430.0
 offset_bottom = 390.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_70ecj")
-text = "New Game"
+text = "Play Game"
 
-[node name="load_btn" type="Button" parent="."]
+[node name="credits_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 0
 offset_left = 130.0
@@ -32,7 +32,8 @@ offset_right = 430.0
 offset_bottom = 490.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_70ecj")
-text = "Load File"
+text = "Credits
+"
 
 [node name="quit_btn" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 70)
@@ -46,5 +47,5 @@ theme = ExtResource("1_70ecj")
 text = "Quit"
 
 [connection signal="pressed" from="new_btn" to="." method="_on_new_btn_pressed"]
-[connection signal="pressed" from="load_btn" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="credits_btn" to="." method="_on_credits_btn_pressed"]
 [connection signal="pressed" from="quit_btn" to="." method="_on_quit_btn_pressed"]

@@ -30,10 +30,10 @@ var gaze_upg = ["5.0s --> 4.6s", "4.6s --> 4.2s", "4.2s --> 3.8s", "3.8s --> 3.4
 var gaze_cost = [6, 12, 25, 50, 100, "N/A"]
 
 var wish_upg = ["0% --> 10% off", "10% --> 15% off", "10% --> 20% off", "20% off"]
-var wish_cost = [80, 120, 180, "N/A"]
+var wish_cost = [30, 65, 100, "N/A"]
 
 var str_upg = ["1 --> 2", "2 --> 3", "3 --> 4", "4 per click"]
-var str_cost = [25, 80, 180, "N/A"]
+var str_cost = [20, 70, 160, "N/A"]
 
 
 # explore
@@ -45,29 +45,29 @@ var item_cost = {
 	"fuel": 10,
 	"compass": 30,
 	"jelly": 15,
-	"telescope": 180,
-	"flower": 120,
-	"lotus": 80,
-	"candle": 175,
-	"photo": 250
+	"telescope": 120,
+	"flower": 100,
+	"lotus": 60,
+	"candle": 150,
+	"photo": 200
 }
 
 var og_item_cost = {
 	"fuel": 10,
 	"compass": 30,
 	"jelly": 15,
-	"telescope": 180,
-	"flower": 120,
-	"lotus": 80,
-	"candle": 175,
-	"photo": 250
+	"telescope": 120,
+	"flower": 100,
+	"lotus": 60,
+	"candle": 150,
+	"photo": 200
 }
 
 
 # format: [image, name, price, description]
 var item_data: Dictionary = {
 	"fuel": [fuel_img, "Fuel Stone", str(item_cost["fuel"]) + " Stars\n", "Keeps Puff warm during explorations through the Milky Way"],
-	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "A nice telescope. Helps Puff spot an additional star every 6 secs."],
+	"telescope": [telescope_img, "Telescope", str(item_cost["telescope"]) + " Stars\n", "A nice telescope. Helps Puff spot an additional star every 5 secs."],
 	"compass": [compass_img, "Compass", str(item_cost["compass"]) + " Stars\n", "Helps Puff to navigate where to go when exploring"],
 	"jelly": [jelly_img, "Orange Jelly", str(item_cost["jelly"]) + " Stars\n", "Puff's favorite snack! Keeps her from going hungry while exploring"],
 	"flower": [flower_img, "Moon Flower", str(item_cost["flower"]) + " Stars\n", "A peculiar flower. Attracts an additional star to Puff every 8 secs."],
