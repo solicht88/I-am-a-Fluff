@@ -112,7 +112,7 @@ func update_cost_data():
 # mementos
 # format: [name, description]
 var mem_data: Dictionary = {
-	"dust": ["Stardust", "Some leftover stardust Ma gave to Puff.\nNow that Puff thinks about it, why did Ma collect so much?"],
+	"dust": ["Stardust", "Some leftover stardust Ma gave to Puff.\nNow that Puff thinks about it, how did Ma collect so much?"],
 	"ribbon": ["Extra Ribbon", "Excess ribbon from the piece Puff wears.\nMa said wearing a red ribbon will bring Puff lots of luck!"],
 	"lotus": ["Lotus Flower", "A common flower from Ma's birthplace on Earth.\nSeems kinda ordinary, though... well, if Ma likes them, Puff does too."],
 	"candle": ["Black Chamberstick", "Ma's old chamberstick. It's holding an unlit candle.\nPuff likes it! It keeps us warm for a long time in the cold."],
@@ -149,12 +149,14 @@ var cutscene_data = {
 		open_cutscene,
 		["Puff", "I am a Fluff.
 		My name is Puff."],
-		["Puff", "Puff is on an adventure to find Ma!"],
-		["Puff", "Ma left to explore the Milky Way a while ago, but still hasn't returned..."],
+		["Puff", "Fluffs are... Well, Puff isn't actually sure.
+		We're small, round, fluffy..."],
+		["Puff", "Anyway! Puff is on an adventure to find Ma!"],
+		["Puff", "Ma left Earth to explore the Milky Way a while ago, but still hasn't returned..."],
 		["Puff", "Well, surely Ma is just a bit lost! Puff will definitely find her!"],
 		["Puff", "But, uh...Puff may be low on fuel.
 		Puff thinks now is a good time to take a break!"],
-		["Puff", "Ooh, that star looks good! Puff will go land on it. Hopefully it has some sort of fuel!"]
+		["Puff", "Ooh, that star looks soft! Puff will go land on it. Hopefully we can refuel there!"]
 		],
 	"dust": [
 		dust_cutscene,
@@ -163,7 +165,7 @@ var cutscene_data = {
 		There's so many lights in the sky!"],
 		["Ma", "Careful, Puff!
 		You can't lean over the balcony like that!"],
-		["Ma", "Ahaha, you're right, little Puff. There's many stars tonight!
+		["Ma", "Aha, you're right, little Puff. There are so many stars tonight!
 		Usually the sky isn't this clear. Aren't we lucky?"],
 		["Puff", "Stars...
 		Is that what the lights in the sky are called?"],
@@ -171,19 +173,19 @@ var cutscene_data = {
 		Thousands of stars live in the sky, though we can't see most of them."],
 		["Ma", "Stars are mostly made of hydrogen and helium gas, and they are extremely hot."],
 		["Ma", "However, there's a legend that every once in a while, a star begins to weep from the heat, and its tears become 'stardust.'
-		Do you believe the tale, Puff?"],
+		What do you think? Do you believe in this tale, Puff?"],
 		["Puff", "Mmm... Sounds more like a fairytale for human children, Ma.
 		Puff is smarter than that! You don't need to tell Puff such strange stories!"],
 		["Ma", "Well, it sounds strange, right? But this one might just be real.
-		See? Ma managed to find some stardust, a long, long time ago. Isn't that wonderful?"],
+		See? I managed to find some stardust, a long, long time ago. Isn't that wonderful?"],
 		["Puff", "Woah..."],
 		["Puff", "This really came from a star? It isn't just some glitter you bought, right?"],
-		["Ma", "Of course not! Ma won't lie about small things like this.
-		In fact, I saw the stars cry many times before. They weep for many reasons."],
-		["Ma", "Here, you can have this. I have collected plenty of stardust myself.
+		["Ma", "Of course not! I won't lie about small things like this.
+		In fact, I saw the stars cry many times before. They weep for many reasons, more than just heat."],
+		["Ma", "Here, you can have this. I have already collected plenty of stardust myself.
 		It's my dream to become a star one day, after all."],
 		["Ma", "Goodness, look at you, jumping around with so much energy! You really do like the stars, don't you?
-		I can tell you all sorts of stories about the stars, if you wanna hear them."],
+		Here, if you're so curious, I can tell you all sorts of stories about the stars, dear Puff."],
 		["Puff", "Ooo...yes, please! Thank you, Ma!"]
 	],
 	"ribbon": [
@@ -194,15 +196,15 @@ var cutscene_data = {
 		Look, the ribbon has unravelled everywhere..."],
 		["Puff", "Okay... I'm sorry, Ma..."],
 		["Ma", "...Aw, don't be so upset, little Puff!
-		Here, we can roll the ribbon back around the spool together.
-		That way we'll be done cleaning much faster!"],
-		["Puff", "Woah, Ma is really fast...!
-		It's such a pretty red color, Puff wanted to learn how to use it like Ma does..."],
+		Here, you can help me roll the ribbon back around the spool.
+		It's not a big deal, and we can clean up faster together!"],
+		["Puff", "Woah, Ma is really fast...!"],
+		["Puff", "It's such a pretty red color, Puff wanted to learn how to use it like Ma does..."],
 		["Ma", "I see, you just wanted to learn how to tie the ribbon?
 		Hehe, looks like it was a good idea to dress you in this ribbon after all.
-		You love the color dearly, and it'll bring you plenty of luck!"],
+		Puff loves the color dearly, and it'll bring you plenty of luck!"],
 		["Ma", "Puff may not be able to do it the same way as Ma does at first.
-		Don't get too frustrated, alright? It takes time to learn, be patient with yourself."],
+		Don't be too frustrated, alright? It takes time to learn, be patient with yourself."],
 		["Ma", "Here, watch carefully. First, I wrap the the ribbon around these two fingers.
 		Then, bring the end back between your fingers and wrap it around the loop."],
 		["Puff", "Huh..."],
@@ -228,12 +230,12 @@ var cutscene_data = {
 		["Puff", "Are these flowers any special, Ma? They seem like normal pink flowers to Puff."],
 		["Puff", "But, not in a bad way! They just seem pretty ordinary. Plain.
 		What makes them different from the other pink flowers, apart from growing on water?"],
-		["Ma", "Hmm, if you want Ma's opinion, I'd say their unique trait really is about growing on the water."],
-		["Ma", "Plus, I like how they look when fully bloomed. I like them more than most other flowers.
+		["Ma", "Hmm, I'd say their unique trait really is about growing on the water."],
+		["Ma", "If you want my opinion, I like how they look when fully bloomed. I like them more than most other flowers.
 		They're more common in the region where I was born, too."],
 		["Ma", "Maybe that makes me biased, but I really love the place I was born.
 		We didn't have a whole lot back then, and life moved quickly at all times.
-		Yet, these lotus flowers never budged. Always grew right back."],
+		Yet, these lotus flowers never budged. Always grew right back in a little pond by my home."],
 		["Ma", "I suppose I just has a personal connection to these flowers, Puff.
 		Ah, by the way, you don't have to like them just because I do."],
 		["Puff", "...No! Puff likes the lotuses, Ma!
@@ -241,8 +243,8 @@ var cutscene_data = {
 		["Puff", "So, Puff won't eat these flowers. Not a single one.
 		Hopefully, many more of them bloom across this pond, and Ma can see them every day!"],
 		["Ma", "That's sweet of you, little Puff!
-		One day, when the pond is covered in more lotus flowers, you can try eating one."],
-		["Ma", "Let's try eating the root together first! We best go grocery shopping again soon, anyway."]
+		One day, when the water is covered in more lotus flowers, you can try eating one from this pond."],
+		["Ma", "Let's try eating the root together first! Shall we go grocery shopping now?"]
 	],
 	"candle": [
 		candle_cutscene,
@@ -313,22 +315,21 @@ var cutscene_data = {
 		["Puff", "Gotta keep searching for Ma. She must be cold out here, too."],
 		["Puff", "Ma? Are you this way instead? Please answer Puff!"],
 		["Puff", "Puff feels lonely... Puff misses Ma...
-		Please come home, Ma. The Milkyway is too cold for Puff."]
+		Please come home, Ma. The Milky Way is too cold for Puff."]
 	],
 	"end_finale": [
 		finale_cutscene,
 		["Puff", "At this rate, Puff may never find Ma...
 		But Puff has to keep going. Puff must know what happened to Ma."],
-		["Puff", "Brr... Ma, are you here? Or did you leave the Milkyway, instead?"],
+		["Puff", "Brr... Ma, are you here? Or did you leave the Milky Way, already?"],
 		["Puff", "Where could Ma be...?"]
 	],
-	
 	"choice": [
 		choice_cutscene,
 		["Puff", "Ma, is that you...? Can you hear Puff?"],
 		["Puff", "You've become such a bright star, Ma.
 		Just like the thousands of beautiful stars we can see from Earth."],
-		["Puff", "Puff visited many stars in the Milkyway on the way here!
+		["Puff", "Puff visited many stars in the Milky Way on the way here!
 		None of them shined as bright as you do. Why is that?"],
 		["Puff", "Of course, you must've worked hard to become such a bright star.
 		It's always been your dream, Ma."],
@@ -336,7 +337,7 @@ var cutscene_data = {
 		Maybe you knew Puff would come, so you left behind all sorts of items as hints for us."],
 		["Puff", "That's kind of you, Ma. Puff wouldn't have found you if it weren't for those items."],
 		["Puff", "See, Puff collected so many stars to find you.
-		The Milkyway was such a lovely experience. No matter where we went, the twinkling stars were there to greet us."],
+		The Milky Way was such a lovely experience. No matter where we went, the twinkling stars were there to greet us."],
 		["Puff", "Mmm, yes, Puff is also happy we found you in the end.
 		Everything about this exploration was well worth it."],
 		["Puff", "Now then, as beautiful as she is, Ma certainly cannot return to Earth in this form.
@@ -347,7 +348,7 @@ var cutscene_data = {
 		["Puff", "Thank you for everything, Ma."],
 		["Puff", "You've taught Puff so much, gave Puff the warmth of love..."],
 		["Puff", "Earth was a wonderful experience, Ma."],
-		["Puff", "Now you're fulfilling your dream, becoming a bright star in the Milkyway."],
+		["Puff", "Now you're fulfilling your dream, becoming a bright star in the Milky Way."],
 		["Puff", "Please, allow Puff to help you. So that you can shine brighter with Puff's support."],
 		["Puff", "The journey was long and cold, but it was all worth seeing you again, Ma."],
 		["Puff", "Don't worry. Puff will be alright.
